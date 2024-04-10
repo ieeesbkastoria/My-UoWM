@@ -28,7 +28,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="src/assets/myUOMLogo.png" alt="Logo" width="80" height="80">
+    <img src="MyUoWM-App/src/assets/myUOMLogo.png" alt="Logo" width="80" height="80">
   <h3 align="center">myUoM</h3>
 
   <p align="center">
