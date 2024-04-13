@@ -36,7 +36,7 @@ public class WebAppController {
         return null;
     }
 
-    @GetMapping("/myuowm/personal{personalId}")
+    @GetMapping("/myuowm/personal/{personalId}")
     public Personal getPersonal(@PathVariable("personalId") String personalID) {
         //TODO
         return null;
@@ -48,7 +48,7 @@ public class WebAppController {
         return null;
     }
 
-    @GetMapping("/myuowm/clubs{clubId}")
+    @GetMapping("/myuowm/clubs/{clubId}")
     public Club getClubDetail(@PathVariable("clubId") String clubID) {
         //TODO
         return null;
