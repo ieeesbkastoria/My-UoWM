@@ -3,6 +3,7 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -17,11 +18,13 @@ public class WebAppController {
     //Serve Static Files
     @GetMapping("/timetable")
     public String getTimeTable() {
+        //TODO
         return "";
     }
 
     @GetMapping("/lesxi")
     public String getMealPlan() {
+        //TODO
         return "";
     }
 
@@ -31,8 +34,20 @@ public class WebAppController {
         return null;
     }
 
-    @GetMapping("/club")
+    @GetMapping("/personl{personalId}")
+    public Personal getPersonal(@PathVariable("personalId") String personalID) {
+        //TODO
+        return null;
+    }
+
+    @GetMapping("/clubs")
     public List<Club> getAllClubInfo() {
+        //TODO
+        return null;
+    }
+
+    @GetMapping("/clubs{clubId}")
+    public Club getClubDetail(@PathVariable("clubId") String clubID) {
         //TODO
         return null;
     }
