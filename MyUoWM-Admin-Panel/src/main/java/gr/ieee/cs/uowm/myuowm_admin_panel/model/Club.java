@@ -1,11 +1,16 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-//@Entity
-//@Table(name = "club_info")
+@Entity
+@Table(name = "club_info")
 public class Club {
 
+    @Id
+    private String club_id;
     private String clubName;
     private String link;
 
@@ -13,6 +18,8 @@ public class Club {
         this.clubName = clubName;
         this.link = link;
     }
+
+    public Club() {}
 
     public String getLink() {
         return link;
