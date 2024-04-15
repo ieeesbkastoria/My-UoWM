@@ -1,0 +1,10 @@
+## for the database to connect there must be a database schema called myuowm running on port 3306, otherwise change url
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/myuowm?useSSL=false
+    username: #add username here
+    password: #add password here
+  jpa:
+    hibernate:
+      ddl-auto: create
+

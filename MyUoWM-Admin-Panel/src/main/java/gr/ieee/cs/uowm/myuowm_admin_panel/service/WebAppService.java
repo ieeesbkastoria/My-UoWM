@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface WebAppService {
     public String getTimeTable();
+    public void saveTimeTable(String url);
     public String getDinnerPlan();
     public List<Personal> getAllPersonal();
     public Personal getPersonal(String id);

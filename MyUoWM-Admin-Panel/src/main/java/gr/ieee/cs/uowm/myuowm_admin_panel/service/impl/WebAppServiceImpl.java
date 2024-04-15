@@ -22,7 +22,7 @@ public class WebAppServiceImpl implements WebAppService {
     MyUoWmAdminPanelPersonalRepository personalRepository;
     MyUoWmAdminPanelTimeTableRepository timeTableRepository;
 
-
+    @Override
     public void saveTimeTable(String url) {
         TimeTable timeTable = new TimeTable();
         timeTable.setUrl(url);

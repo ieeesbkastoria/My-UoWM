@@ -5,10 +5,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
