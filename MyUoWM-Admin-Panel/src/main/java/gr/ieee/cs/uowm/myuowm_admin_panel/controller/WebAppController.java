@@ -23,12 +23,12 @@ public class WebAppController {
     }
 
     @GetMapping("/timetable")
-    public TimeTable getTimeTable() {
+    public String getTimeTable() {
         return webAppService.getTimeTable();
     }
 
     @GetMapping("/lesxi")
-    public DinnerPlan getMealPlan() {
+    public String getMealPlan() {
         return webAppService.getDinnerPlan();
     }
 

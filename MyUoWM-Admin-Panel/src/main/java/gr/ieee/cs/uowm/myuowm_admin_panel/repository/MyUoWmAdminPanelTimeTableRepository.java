@@ -1,8 +1,11 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.repository;
 
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
 import org.springframework.data.jpa.repository.JpaRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 
-public interface MyUoWmAdminPanelTimeTableRepository extends JpaRepository<TimeTable, String>{
+import java.util.Optional;
 
+public interface MyUoWmAdminPanelTimeTableRepository extends JpaRepository<TimeTable, Long>{
+    Optional<TimeTable> findTopByOrderByIdDesc();
 }

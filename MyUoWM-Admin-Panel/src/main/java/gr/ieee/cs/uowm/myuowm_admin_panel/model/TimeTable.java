@@ -1,27 +1,32 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "time_table")
 public class TimeTable {
 
     @Id
-    private String link;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(nullable = false)
+    private String url;
 
-    public TimeTable(String link) {
-        this.link = link;
+    public Long getId() {
+        return id;
     }
 
-    public TimeTable() {}
-
-    public String getLink() {
-        return link;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

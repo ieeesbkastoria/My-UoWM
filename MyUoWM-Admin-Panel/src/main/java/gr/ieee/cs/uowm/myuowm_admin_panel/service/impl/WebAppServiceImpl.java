@@ -12,6 +12,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class WebAppServiceImpl implements WebAppService {
@@ -21,14 +22,37 @@ public class WebAppServiceImpl implements WebAppService {
     MyUoWmAdminPanelPersonalRepository personalRepository;
     MyUoWmAdminPanelTimeTableRepository timeTableRepository;
 
+
+    public void saveTimeTable(String url) {
+        TimeTable timeTable = new TimeTable();
+        timeTable.setUrl(url);
+        timeTableRepository.save(timeTable);
+    }
     @Override
-    public TimeTable getTimeTable() {
-        return null;
+    public String getTimeTable() {
+        Optional<TimeTable> optionalTimeTable = timeTableRepository.findTopByOrderByIdDesc();
+        if(optionalTimeTable.isPresent()) {
+            return optionalTimeTable.get().getUrl();
+        } else {
+            //TODO throw error
+            return null;
+        }
     }
 
+    public void saveDinnerPlan(String url) {
+        DinnerPlan dinnerPlan = new DinnerPlan();
+        dinnerPlan.setUrl(url);
+        dinnerPlanRepository.save(dinnerPlan);
+    }
     @Override
-    public DinnerPlan getDinnerPlan() {
-        return null;
+    public String getDinnerPlan() {
+        Optional<DinnerPlan> optionalDinnerPlan = dinnerPlanRepository.findTopByOrderByIdDesc();
+        if(optionalDinnerPlan.isPresent()) {
+            return optionalDinnerPlan.get().getUrl();
+        } else {
+            //TODO throw error
+            return null;
+        }
     }
 
     @Override
