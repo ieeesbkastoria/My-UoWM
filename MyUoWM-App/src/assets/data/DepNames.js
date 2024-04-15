@@ -38,51 +38,17 @@
 import i18n from "../../i18n";
 
 export const DEPARTMENT_CODES = {
-  INFORMATICS: "dai",
-  ECONOMICS: "eco",
-  BUSINESS_ADMINISTRATION: "ba",
-  ACCOUNTING_FINANCE: "fin",
-  EUROPEAN_STUDIES: "ies",
-  BALKAN_STUDIES: "bso",
-  MUSIC: "msa",
-  EDUCATION: "esp",
+  INFORMATICS: "cs",
+  Math: "math",
+  
 }
 export const DEPARTMENTS = [
   {
-    code: DEPARTMENT_CODES.BALKAN_STUDIES,
-    name: i18n.t("bso_department"),
-  }, {
-    code: DEPARTMENT_CODES.EUROPEAN_STUDIES,
-    name: i18n.t("ies_department"),
-  }, {
-    code: DEPARTMENT_CODES.BUSINESS_ADMINISTRATION,
-    name: i18n.t("ba_department"),
-  }, {
-    code: DEPARTMENT_CODES.ACCOUNTING_FINANCE,
-    name: i18n.t("fin_department"),
-  }, {
-    code: DEPARTMENT_CODES.MUSIC,
-    name: i18n.t("msa_department"),
-  }, {
-    code: DEPARTMENT_CODES.EDUCATION,
-    name: i18n.t("esp_department"),
-  }, {
-    code: DEPARTMENT_CODES.ECONOMICS,
-    name: i18n.t("eco_department"),
-  }, {
     code: DEPARTMENT_CODES.INFORMATICS,
-    name: i18n.t("dai_department"),
-  },
-
+    name: i18n.t("cs_department"),
+  }, {
+    code: DEPARTMENT_CODES.Math,
+    name: i18n.t("Math_department"),
+  }
+  // CS & Math for now
 ];
-
-// export const DEPARTMENTS = [
-//   i18n.t("bso_department"),
-//   i18n.t("ies_department"),
-//   i18n.t("esp_department"),
-//   i18n.t("dai_department"),
-//   i18n.t("fin_department"),
-//   i18n.t("msa_department"),
-//   i18n.t("eco_department"),
-//   i18n.t("ba_department")
-// ]
