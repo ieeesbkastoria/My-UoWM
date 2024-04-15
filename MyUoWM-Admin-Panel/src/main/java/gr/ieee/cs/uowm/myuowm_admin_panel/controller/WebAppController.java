@@ -1,9 +1,7 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.springframework.web.bind.annotation.*;
 
