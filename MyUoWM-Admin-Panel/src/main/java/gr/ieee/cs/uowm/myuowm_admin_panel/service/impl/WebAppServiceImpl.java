@@ -9,9 +9,11 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelDinnerPlanR
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonalRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelTimeTableRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class WebAppServiceImpl implements WebAppService {
 
     MyUoWmAdminPanelClubRepository clubRepository;
@@ -20,12 +22,12 @@ public class WebAppServiceImpl implements WebAppService {
     MyUoWmAdminPanelTimeTableRepository timeTableRepository;
 
     @Override
-    public TimeTable getTimeTable(String link) {
+    public TimeTable getTimeTable() {
         return null;
     }
 
     @Override
-    public DinnerPlan getDinnerPlan(String link) {
+    public DinnerPlan getDinnerPlan() {
         return null;
     }
 

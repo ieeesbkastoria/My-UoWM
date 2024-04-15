@@ -4,6 +4,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
+import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,43 +13,43 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/myuowm")
 public class WebAppController {
 
-    @GetMapping("/myuowm/timetable")
+    private final WebAppService webAppService;
+
+    public WebAppController(WebAppService webAppService) {
+        this.webAppService = webAppService;
+    }
+
+    @GetMapping("/timetable")
     public TimeTable getTimeTable() {
-        //TODO
-        return new TimeTable("/");
+        return webAppService.getTimeTable();
     }
 
-    @GetMapping("/myuowm/lesxi")
+    @GetMapping("/lesxi")
     public DinnerPlan getMealPlan() {
-        //TODO
-        return new DinnerPlan("/");
+        return webAppService.getDinnerPlan();
     }
 
-    @GetMapping("/myuowm/personal")
+    @GetMapping("/personal")
     public List<Personal> getAllPersonalInfo() {
-        //TODO
-        return null;
+        return webAppService.getAllPersonal();
     }
 
-    @GetMapping("/myuowm/personal/{personalId}")
+    @GetMapping("/personal/{personalId}")
     public Personal getPersonal(@PathVariable("personalId") String personalID) {
-        //TODO
-        return null;
+        return webAppService.getPersonal(personalID);
     }
 
-    @GetMapping("/myuowm/clubs")
+    @GetMapping("/clubs")
     public List<Club> getAllClubInfo() {
-        //TODO
-        return null;
+        return webAppService.getAllClubs();
     }
 
-    @GetMapping("/myuowm/clubs/{clubId}")
+    @GetMapping("/clubs/{clubId}")
     public Club getClubDetail(@PathVariable("clubId") String clubID) {
-        //TODO
-        return null;
+        return webAppService.getClub(clubID);
     }
 
 
