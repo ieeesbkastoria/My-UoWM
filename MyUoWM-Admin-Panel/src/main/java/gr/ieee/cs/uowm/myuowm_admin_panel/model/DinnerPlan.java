@@ -16,7 +16,7 @@ public class DinnerPlan {
     }
 
     public DinnerPlan() {}
-    
+
     public String getLink() {
         return link;
     }
