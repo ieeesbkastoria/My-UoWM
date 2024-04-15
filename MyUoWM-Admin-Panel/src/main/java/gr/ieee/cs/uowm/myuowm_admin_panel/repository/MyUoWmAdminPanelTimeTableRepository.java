@@ -1,6 +1,5 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.repository;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
 import org.springframework.data.jpa.repository.JpaRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 

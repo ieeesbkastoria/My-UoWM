@@ -1,9 +1,7 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.service;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 
 import java.util.List;
 

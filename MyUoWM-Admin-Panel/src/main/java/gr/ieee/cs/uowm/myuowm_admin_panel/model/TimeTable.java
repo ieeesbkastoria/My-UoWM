@@ -2,7 +2,6 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.model;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "time_table")
