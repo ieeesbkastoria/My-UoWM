@@ -4,15 +4,20 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelClubRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelDinnerPlanRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonalRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelTimeTableRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 
 import java.util.List;
 
 public class WebAppServiceImpl implements WebAppService {
 
-    // add repository reference i.e.
-    // UOWMRepository uowmRepository
-    // use repository methods to service methods
+    MyUoWmAdminPanelClubRepository clubRepository;
+    MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository;
+    MyUoWmAdminPanelPersonalRepository personalRepository;
+    MyUoWmAdminPanelTimeTableRepository timeTableRepository;
 
     @Override
     public TimeTable getTimeTable(String link) {
@@ -26,21 +31,27 @@ public class WebAppServiceImpl implements WebAppService {
 
     @Override
     public List<Personal> getAllPersonal() {
-        return null;
+        return personalRepository.findAll();
     }
 
     @Override
     public Personal getPersonal(String id) {
-        return null;
+        if(personalRepository.findById(id).isEmpty())
+            //change system.out to custom Exception
+            System.out.println("Error");
+        return personalRepository.findById(id).get();
     }
 
     @Override
     public List<Club> getAllClubs() {
-        return null;
+        return clubRepository.findAll();
     }
 
     @Override
     public Club getClub(String id) {
-        return null;
+        if(clubRepository.findById(id).isEmpty())
+            //change system.out to custom Exception
+            System.out.println("Error");
+        return clubRepository.findById(id).get();
     }
 }
