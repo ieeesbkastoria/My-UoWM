@@ -23,12 +23,6 @@ public class WebAppServiceImpl implements WebAppService {
     MyUoWmAdminPanelTimeTableRepository timeTableRepository;
 
     @Override
-    public void saveTimeTable(String url) {
-        TimeTable timeTable = new TimeTable();
-        timeTable.setUrl(url);
-        timeTableRepository.save(timeTable);
-    }
-    @Override
     public String getTimeTable() {
         Optional<TimeTable> optionalTimeTable = timeTableRepository.findTopByOrderByIdDesc();
         if(optionalTimeTable.isPresent()) {
@@ -39,11 +33,6 @@ public class WebAppServiceImpl implements WebAppService {
         }
     }
 
-    public void saveDinnerPlan(String url) {
-        DinnerPlan dinnerPlan = new DinnerPlan();
-        dinnerPlan.setUrl(url);
-        dinnerPlanRepository.save(dinnerPlan);
-    }
     @Override
     public String getDinnerPlan() {
         Optional<DinnerPlan> optionalDinnerPlan = dinnerPlanRepository.findTopByOrderByIdDesc();
