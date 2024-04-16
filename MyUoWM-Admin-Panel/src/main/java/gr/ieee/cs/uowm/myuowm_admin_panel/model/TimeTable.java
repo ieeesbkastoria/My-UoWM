@@ -13,6 +13,13 @@ public class TimeTable {
     @Column(nullable = false)
     private String url;
 
+    public TimeTable(Long id, String url) {
+        this.id = id;
+        this.url = url;
+    }
+
+    public TimeTable() {}
+
     public Long getId() {
         return id;
     }

@@ -4,7 +4,6 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.hibernate.annotations.UuidGenerator;
 
 @Entity
 @Table(name = "club_info")

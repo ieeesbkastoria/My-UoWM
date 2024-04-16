@@ -36,7 +36,7 @@ public class WebAppServiceImpl implements WebAppService {
             return optionalTimeTable.get().getUrl();
         } else {
             //TODO throw error
-            return null;
+            return "Couldnt get TimeTable";
         }
     }
 
@@ -47,8 +47,10 @@ public class WebAppServiceImpl implements WebAppService {
             return optionalDinnerPlan.get().getUrl();
         } else {
             //TODO throw error
-            return null;
+            return "Couldnt get DinnerPlan";
         }
+
+
     }
 
     @Override

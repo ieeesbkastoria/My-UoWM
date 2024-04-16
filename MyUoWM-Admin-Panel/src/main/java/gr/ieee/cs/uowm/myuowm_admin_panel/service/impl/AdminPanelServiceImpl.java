@@ -30,6 +30,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String saveTimeTable(TimeTable timeTable) {
         try {
+            timeTable.setId(1L);
             timeTableRepository.save(timeTable);
             return "TimeTable saved successfully";
         } catch (Exception e) {
@@ -41,6 +42,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String saveDinnerPlan(DinnerPlan dinnerPlan) {
         try {
+            dinnerPlan.setId(1L);
             dinnerPlanRepository.save(dinnerPlan);
             return "DinnerPlan saved successfully";
         } catch (Exception e) {
