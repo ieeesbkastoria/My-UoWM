@@ -3,7 +3,7 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,17 +22,17 @@ public class AdminPanelController {
     }
 
     @PostMapping("/personal")
-    public String addPersonal(@RequestBody Personal personal) {
+    public String addPersonal(@RequestBody Personnel personnel) {
         return "Personal added successfully";
     }
 
     @PutMapping("/personal/{personalId}")
-    public String updatePersonal(@RequestBody Personal personal, @PathVariable("personalId") String personalId) {
+    public String updatePersonal(@RequestBody Personnel personnel, @PathVariable("personalId") String personalId) {
         return "Personal updated successfully";
     }
 
     @DeleteMapping("personal/{personalId}")
-    public String deletePersonal(@RequestBody Personal personal, @PathVariable("personalId") String personalId) {
+    public String deletePersonal(@RequestBody Personnel personnel, @PathVariable("personalId") String personalId) {
         return "Personal deleted successfully";
     }
 

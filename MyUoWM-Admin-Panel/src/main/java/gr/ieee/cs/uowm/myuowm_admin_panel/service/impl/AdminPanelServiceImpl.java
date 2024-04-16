@@ -4,11 +4,11 @@ import org.springframework.stereotype.Service;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelClubRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelDinnerPlanRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonalRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelTimeTableRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 
@@ -17,7 +17,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
 
     MyUoWmAdminPanelTimeTableRepository timeTableRepository;
     MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository;
-    MyUoWmAdminPanelPersonalRepository personalRepository;
+    MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelClubRepository clubRepository;
     
     @Override
@@ -49,7 +49,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String savePersonal(String personalId, String department, String name, String phone, String office, String officeHours, String email) {
         try {
-            Personal personal = new Personal(
+            Personnel personnel = new Personnel(
                 personalId,
                 department,
                 name,
@@ -58,7 +58,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
                 officeHours,
                 email
             );
-            personalRepository.save(personal);
+            personnelRepository.save(personnel);
             return "Personal saved successfully";
         } catch (Exception e) {
             //TODO throw error
@@ -69,14 +69,14 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String updatePersonal(String personalId, String department, String name, String phone, String office, String officeHours, String email) {
         try {
-            Personal personal = personalRepository.findById(personalId).get();
-            personal.setDepartment(department);
-            personal.setName(name);
-            personal.setPhone(phone);
-            personal.setOffice(office);
-            personal.setOfficeHours(officeHours);
-            personal.setEmail(email);
-            personalRepository.save(personal);
+            Personnel personnel = personnelRepository.findById(personalId).get();
+            personnel.setDepartment(department);
+            personnel.setName(name);
+            personnel.setPhone(phone);
+            personnel.setOffice(office);
+            personnel.setOfficeHours(officeHours);
+            personnel.setEmail(email);
+            personnelRepository.save(personnel);
             return "Personal updated successfully";
         } catch (Exception e) {
             //TODO throw error
@@ -87,7 +87,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String deletePersonal(String personalId) {
         try {
-            personalRepository.deleteById(personalId);
+            personnelRepository.deleteById(personalId);
             return "Personal deleted successfully";
         } catch (Exception e) {
             //TODO throw error

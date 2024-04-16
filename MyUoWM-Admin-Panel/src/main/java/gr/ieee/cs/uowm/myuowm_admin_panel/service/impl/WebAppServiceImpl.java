@@ -2,11 +2,11 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelClubRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelDinnerPlanRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonalRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelTimeTableRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class WebAppServiceImpl implements WebAppService {
 
     MyUoWmAdminPanelClubRepository clubRepository;
     MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository;
-    MyUoWmAdminPanelPersonalRepository personalRepository;
+    MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelTimeTableRepository timeTableRepository;
 
     @Override
@@ -45,16 +45,16 @@ public class WebAppServiceImpl implements WebAppService {
     }
 
     @Override
-    public List<Personal> getAllPersonal() {
-        return personalRepository.findAll();
+    public List<Personnel> getAllPersonal() {
+        return personnelRepository.findAll();
     }
 
     @Override
-    public Personal getPersonal(String id) {
-        if(personalRepository.findById(id).isEmpty())
+    public Personnel getPersonal(String id) {
+        if(personnelRepository.findById(id).isEmpty())
             //change system.out to custom Exception
             System.out.println("Error");
-        return personalRepository.findById(id).get();
+        return personnelRepository.findById(id).get();
     }
 
     @Override

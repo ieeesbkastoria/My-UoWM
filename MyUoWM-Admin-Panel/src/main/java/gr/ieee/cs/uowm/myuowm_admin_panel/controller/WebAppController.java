@@ -1,7 +1,7 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personal;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,12 +28,12 @@ public class WebAppController {
     }
 
     @GetMapping("/personal")
-    public List<Personal> getAllPersonalInfo() {
+    public List<Personnel> getAllPersonalInfo() {
         return webAppService.getAllPersonal();
     }
 
     @GetMapping("/personal/{personalId}")
-    public Personal getPersonal(@PathVariable("personalId") String personalID) {
+    public Personnel getPersonal(@PathVariable("personalId") String personalID) {
         return webAppService.getPersonal(personalID);
     }
 

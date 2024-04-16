@@ -5,11 +5,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "personal_info")
-public class Personal {
+@Table(name = "personnel_info")
+public class Personnel {
 
     @Id
-    private String personal_id;
+    private String personnel_id;
     private String department;
     private String name;
     private String phone;
@@ -17,8 +17,8 @@ public class Personal {
     private String officeHours;
     private String email;
 
-    public Personal(String personal_id, String department, String name, String phone, String office, String officeHours, String email) {
-        this.personal_id = personal_id;
+    public Personnel(String personnel_id, String department, String name, String phone, String office, String officeHours, String email) {
+        this.personnel_id = personnel_id;
         this.department = department;
         this.name = name;
         this.phone = phone;
@@ -27,14 +27,14 @@ public class Personal {
         this.email = email;
     }
 
-    public Personal() {}
+    public Personnel() {}
 
-    public String getPersonal_id() {
-        return personal_id;
+    public String getPersonnel_id() {
+        return personnel_id;
     }
 
-    public void setPersonal_id(String personal_id) {
-        this.personal_id = personal_id;
+    public void setPersonnel_id(String personal_id) {
+        this.personnel_id = personal_id;
     }
 
     public String getDepartment() {
