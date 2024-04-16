@@ -8,8 +8,8 @@ import java.util.List;
 public interface WebAppService {
     public String getTimeTable();
     public String getDinnerPlan();
-    public List<Personnel> getAllPersonal();
-    public Personnel getPersonal(String id);
+    public List<Personnel> getAllPersonnel();
+    public Personnel getPersonnel(String id);
     public List<Club> getAllClubs();
     public Club getClub(String id);
 }

@@ -22,17 +22,17 @@ public class AdminPanelController {
     }
 
     @PostMapping("/personal")
-    public String addPersonal(@RequestBody Personnel personnel) {
+    public String addPersonnel(@RequestBody Personnel personnel) {
         return "Personal added successfully";
     }
 
     @PutMapping("/personal/{personalId}")
-    public String updatePersonal(@RequestBody Personnel personnel, @PathVariable("personalId") String personalId) {
+    public String updatePersonnel(@RequestBody Personnel personnel, @PathVariable("personalId") String personalId) {
         return "Personal updated successfully";
     }
 
     @DeleteMapping("personal/{personalId}")
-    public String deletePersonal(@RequestBody Personnel personnel, @PathVariable("personalId") String personalId) {
+    public String deletePersonnel(@RequestBody Personnel personnel, @PathVariable("personalId") String personalId) {
         return "Personal deleted successfully";
     }
 

@@ -21,10 +21,8 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     MyUoWmAdminPanelClubRepository clubRepository;
     
     @Override
-    public String saveTimeTable(String url) {
+    public String saveTimeTable(TimeTable timeTable) {
         try {
-            TimeTable timeTable = new TimeTable();
-            timeTable.setUrl(url);
             timeTableRepository.save(timeTable);
             return "TimeTable saved successfully";
         } catch (Exception e) {
@@ -34,10 +32,8 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String saveDinnerPlan(String url) {
+    public String saveDinnerPlan(DinnerPlan dinnerPlan) {
         try {
-            DinnerPlan dinnerPlan = new DinnerPlan();
-            dinnerPlan.setUrl(url);
             dinnerPlanRepository.save(dinnerPlan);
             return "DinnerPlan saved successfully";
         } catch (Exception e) {
@@ -47,17 +43,8 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String savePersonal(String personalId, String department, String name, String phone, String office, String officeHours, String email) {
+    public String savePersonnel(Personnel personnel) {
         try {
-            Personnel personnel = new Personnel(
-                personalId,
-                department,
-                name,
-                phone,
-                office,
-                officeHours,
-                email
-            );
             personnelRepository.save(personnel);
             return "Personal saved successfully";
         } catch (Exception e) {
@@ -67,15 +54,11 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String updatePersonal(String personalId, String department, String name, String phone, String office, String officeHours, String email) {
+    public String updatePersonnel(Personnel personnel) {
         try {
-            Personnel personnel = personnelRepository.findById(personalId).get();
-            personnel.setDepartment(department);
-            personnel.setName(name);
-            personnel.setPhone(phone);
-            personnel.setOffice(office);
-            personnel.setOfficeHours(officeHours);
-            personnel.setEmail(email);
+            if(personnelRepository.findById(personnel.getPersonnel_id()).isEmpty())
+                //TODO throw proper error message1
+                return "Couldnt find personnel";
             personnelRepository.save(personnel);
             return "Personal updated successfully";
         } catch (Exception e) {
@@ -85,9 +68,12 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String deletePersonal(String personalId) {
+    public String deletePersonnel(String personnelId) {
         try {
-            personnelRepository.deleteById(personalId);
+            if(personnelRepository.findById(personnelId).isEmpty())
+                // TODO throw proper error message
+                return "Couldnt find personnel";
+            personnelRepository.deleteById(personnelId);
             return "Personal deleted successfully";
         } catch (Exception e) {
             //TODO throw error
@@ -96,12 +82,8 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String saveClub(String clubId, String clubName, String link) {
+    public String saveClub(Club club) {
         try {
-            Club club = new Club(
-                clubName,
-                link
-            );
             clubRepository.save(club);
             return "Club saved successfully";
         } catch (Exception e) {
@@ -111,22 +93,25 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String updateClub(String clubId, String clubName, String link) {
+    public String updateClub(Club club) {
         try {
-            Club club = clubRepository.findById(clubId).get();
-            club.setClubName(clubName);
-            club.setLink(link);
+            if(clubRepository.findById(club.getClub_id()).isEmpty())
+                //TODO throw proper error message
+                return "Club not found";
             clubRepository.save(club);
             return "Club updated successfully";
         } catch (Exception e) {
             //TODO throw error
-            return null;
+            return "Unexpected error";
         }
     }
 
     @Override
     public String deleteClub(String clubId) {
         try {
+            if(clubRepository.findById(clubId).isEmpty())
+                // TODO throw proper error message
+                return "Club not found";
             clubRepository.deleteById(clubId);
             return "Club deleted successfully";
         } catch (Exception e) {

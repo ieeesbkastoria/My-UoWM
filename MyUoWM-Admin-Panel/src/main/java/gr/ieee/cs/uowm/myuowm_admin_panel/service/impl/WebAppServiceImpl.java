@@ -45,12 +45,12 @@ public class WebAppServiceImpl implements WebAppService {
     }
 
     @Override
-    public List<Personnel> getAllPersonal() {
+    public List<Personnel> getAllPersonnel() {
         return personnelRepository.findAll();
     }
 
     @Override
-    public Personnel getPersonal(String id) {
+    public Personnel getPersonnel(String id) {
         if(personnelRepository.findById(id).isEmpty())
             //change system.out to custom Exception
             System.out.println("Error");

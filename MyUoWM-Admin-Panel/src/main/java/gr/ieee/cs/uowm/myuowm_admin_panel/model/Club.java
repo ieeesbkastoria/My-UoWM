@@ -14,9 +14,12 @@ public class Club {
     private String clubName;
     private String link;
 
-    public Club(String clubName, String link) {
-        this.clubName = clubName;
-        this.link = link;
+    public String getClub_id() {
+        return club_id;
+    }
+
+    public void setClub_id(String club_id) {
+        this.club_id = club_id;
     }
 
     public Club() {}
