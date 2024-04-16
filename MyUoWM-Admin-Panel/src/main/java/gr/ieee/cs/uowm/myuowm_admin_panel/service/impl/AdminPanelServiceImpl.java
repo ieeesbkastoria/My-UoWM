@@ -49,7 +49,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
             return "Personal saved successfully";
         } catch (Exception e) {
             //TODO throw error
-            return null;
+            return "Couldnt save personnel";
         }
     }
 

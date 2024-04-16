@@ -5,49 +5,59 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
+import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin")
 public class AdminPanelController {
 
+    private final AdminPanelService adminPanelService;
+
+    public AdminPanelController(AdminPanelService adminPanelService) {
+        this.adminPanelService = adminPanelService;
+    }
+
     @PutMapping("/timetable")
     public String updateTimeTable(@RequestBody TimeTable timeTable) {
-        return "Time table updated successfully";
+        return adminPanelService.saveTimeTable(timeTable);
     }
 
     @PutMapping("/lesxi")
     public String updateDinnerPlan(@RequestBody DinnerPlan dinnerPlan) {
-        return "Dinner table updated successfully";
+        return adminPanelService.saveDinnerPlan(dinnerPlan);
     }
 
     @PostMapping("/personal")
     public String addPersonnel(@RequestBody Personnel personnel) {
-        return "Personal added successfully";
+        return adminPanelService.savePersonnel(personnel);
     }
 
-    @PutMapping("/personal/{personalId}")
-    public String updatePersonnel(@RequestBody Personnel personnel, @PathVariable("personalId") String personalId) {
-        return "Personal updated successfully";
+    @PutMapping("/personal")
+    public String updatePersonnel(@RequestBody Personnel personnel) {
+        return adminPanelService.updatePersonnel(personnel);
     }
 
     @DeleteMapping("personal/{personalId}")
-    public String deletePersonnel(@RequestBody Personnel personnel, @PathVariable("personalId") String personalId) {
-        return "Personal deleted successfully";
+    public String deletePersonnel(@PathVariable("personalId") String personalId) {
+        return adminPanelService.deletePersonnel(personalId);
     }
 
     @PostMapping("/clubs")
     public String addClub(@RequestBody Club club) {
+        adminPanelService.saveClub(club);
         return "Club added";
     }
 
-    @PutMapping("/club/{clubId}")
-    public String updateClub(@RequestBody Club club, @PathVariable("clubId") String clubId) {
+    @PutMapping("/club")
+    public String updateClub(@RequestBody Club club) {
+        adminPanelService.updateClub(club);
         return "Club updated";
     }
 
     @DeleteMapping("/club/{clubId}")
-    public String deleteClub(@RequestBody Club club, @PathVariable("{clubId") String clubId) {
+    public String deleteClub(@PathVariable("{clubId") String clubId) {
+        adminPanelService.deleteClub(clubId);
         return "Club deleted successfully";
     }
 }
