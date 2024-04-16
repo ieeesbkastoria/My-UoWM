@@ -45,19 +45,16 @@ public class AdminPanelController {
 
     @PostMapping("/clubs")
     public String addClub(@RequestBody Club club) {
-        adminPanelService.saveClub(club);
-        return "Club added";
+        return adminPanelService.saveClub(club);
     }
 
     @PutMapping("/club")
     public String updateClub(@RequestBody Club club) {
-        adminPanelService.updateClub(club);
-        return "Club updated";
+        return adminPanelService.updateClub(club);
     }
 
     @DeleteMapping("/club/{clubId}")
     public String deleteClub(@PathVariable("{clubId") String clubId) {
-        adminPanelService.deleteClub(clubId);
-        return "Club deleted successfully";
+        return adminPanelService.deleteClub(clubId);
     }
 }

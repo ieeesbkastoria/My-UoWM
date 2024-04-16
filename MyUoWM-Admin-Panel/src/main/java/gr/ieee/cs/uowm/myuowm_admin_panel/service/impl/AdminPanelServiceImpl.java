@@ -19,7 +19,14 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository;
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelClubRepository clubRepository;
-    
+
+    public AdminPanelServiceImpl(MyUoWmAdminPanelTimeTableRepository timeTableRepository, MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository, MyUoWmAdminPanelClubRepository clubRepository) {
+        this.timeTableRepository = timeTableRepository;
+        this.dinnerPlanRepository = dinnerPlanRepository;
+        this.personnelRepository = personnelRepository;
+        this.clubRepository = clubRepository;
+    }
+
     @Override
     public String saveTimeTable(TimeTable timeTable) {
         try {
@@ -27,7 +34,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
             return "TimeTable saved successfully";
         } catch (Exception e) {
             //TODO throw error
-            return null;
+            return "Couldnt save TimeTable";
         }
     }
 
@@ -38,7 +45,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
             return "DinnerPlan saved successfully";
         } catch (Exception e) {
             //TODO throw error
-            return null;
+            return "Couldnt save DinnerPlan";
         }
     }
 
@@ -46,7 +53,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     public String savePersonnel(Personnel personnel) {
         try {
             personnelRepository.save(personnel);
-            return "Personal saved successfully";
+            return "Personnel saved successfully";
         } catch (Exception e) {
             //TODO throw error
             return "Couldnt save personnel";

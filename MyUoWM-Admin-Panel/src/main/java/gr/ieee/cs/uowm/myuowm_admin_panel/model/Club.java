@@ -4,6 +4,7 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import org.hibernate.annotations.UuidGenerator;
 
 @Entity
 @Table(name = "club_info")
@@ -13,6 +14,12 @@ public class Club {
     private String club_id;
     private String clubName;
     private String link;
+
+    public Club(String club_id, String clubName, String link) {
+        this.club_id = club_id;
+        this.clubName = clubName;
+        this.link = link;
+    }
 
     public String getClub_id() {
         return club_id;

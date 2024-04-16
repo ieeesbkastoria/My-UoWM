@@ -22,6 +22,13 @@ public class WebAppServiceImpl implements WebAppService {
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelTimeTableRepository timeTableRepository;
 
+    public WebAppServiceImpl(MyUoWmAdminPanelClubRepository clubRepository, MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository, MyUoWmAdminPanelTimeTableRepository timeTableRepository) {
+        this.clubRepository = clubRepository;
+        this.dinnerPlanRepository = dinnerPlanRepository;
+        this.personnelRepository = personnelRepository;
+        this.timeTableRepository = timeTableRepository;
+    }
+
     @Override
     public String getTimeTable() {
         Optional<TimeTable> optionalTimeTable = timeTableRepository.findTopByOrderByIdDesc();
