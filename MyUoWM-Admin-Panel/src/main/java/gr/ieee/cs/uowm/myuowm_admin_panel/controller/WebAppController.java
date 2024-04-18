@@ -27,12 +27,12 @@ public class WebAppController {
         return webAppService.getDinnerPlan();
     }
 
-    @GetMapping("/personal")
+    @GetMapping("/personnel")
     public List<Personnel> getAllPersonnelInfo() {
         return webAppService.getAllPersonnel();
     }
 
-    @GetMapping("/personal/{personalId}")
+    @GetMapping("/personnel/{personalId}")
     public Personnel getPersonnel(@PathVariable("personalId") String personalID) {
         return webAppService.getPersonnel(personalID);
     }

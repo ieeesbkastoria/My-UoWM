@@ -28,19 +28,19 @@ public class AdminPanelController {
         return adminPanelService.saveDinnerPlan(dinnerPlan);
     }
 
-    @PostMapping("/personal")
+    @PostMapping("/personnel")
     public String addPersonnel(@RequestBody Personnel personnel) {
         return adminPanelService.savePersonnel(personnel);
     }
 
-    @PutMapping("/personal")
+    @PutMapping("/personnel")
     public String updatePersonnel(@RequestBody Personnel personnel) {
         return adminPanelService.updatePersonnel(personnel);
     }
 
-    @DeleteMapping("personal/{personalId}")
-    public String deletePersonnel(@PathVariable("personalId") String personalId) {
-        return adminPanelService.deletePersonnel(personalId);
+    @DeleteMapping("personnel/{personnelId}")
+    public String deletePersonnel(@PathVariable("personnelId") String personnelId) {
+        return adminPanelService.deletePersonnel(personnelId);
     }
 
     @PostMapping("/clubs")
