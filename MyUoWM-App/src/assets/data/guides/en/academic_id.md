@@ -24,4 +24,4 @@ You can request the academic ID, that also functions as a discount for public tr
 
 You should also swap your phone number for a student number.
 
-Lastly, you should choose the subjects you want to attend on the [StudentsWeb](https://services.uom.gr/unistudent/login.asp) service.
+Lastly, you should choose the subjects you want to attend on the [StudentsWeb](https://students.uowm.gr/login.asp) service.

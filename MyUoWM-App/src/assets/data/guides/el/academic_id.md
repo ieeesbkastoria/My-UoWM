@@ -24,4 +24,4 @@
 
 Επίσης να πάτε να αλλάξετε το τηλέφωνό σας σε φοιτητικό.
 
-Τέλος πρέπει να δηλώσετε τα μαθήματα στην υπηρεσία [StudentsWeb](https://services.uom.gr/unistudent/login.asp).
+Τέλος πρέπει να δηλώσετε τα μαθήματα στην υπηρεσία [StudentsWeb](https://students.uowm.gr/login.asp).
