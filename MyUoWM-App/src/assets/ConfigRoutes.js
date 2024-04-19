@@ -77,7 +77,7 @@ export const Categories = [
   {
     title: "Open eClass",
     iconSVG: <LaptopTextbookIcon />,
-    route: "https://openeclass.uom.gr/",
+    route: "https://eclass.uowm.gr/",
     span: 1,
     isExternal: true,
     requireSelection: false,
@@ -99,7 +99,7 @@ export const Categories = [
   {
     title: "Student Portal",
     iconSVG: <StudentInPCIcon />,
-    route: "https://sis-portal.uom.gr",
+    route: "https://students.uowm.gr/login.asp",
     span: 1,
     isExternal: true,
     requireSelection: false,
