@@ -27,7 +27,28 @@ const AddClub = () => {
       })
   }
 
-  return ();
+  return (
+    <div className="add_club">
+      <h1>Add a Club</h1>
+      <form onSubmit={handleSubmit}>
+        <label>Club name:</label>
+          <input
+              type = "text"
+              required
+              value = {name}
+              onChange = {(e) => setName(e.target.value)}
+          />
+        <label>Club link:</label>
+          <input
+              type = "text"
+              required
+              value = {link}
+              onChange = {(e) => setName(e.target.value)}
+          />
+        <button> Submit </button>
+      </form>
+  </div>
+  );
 }
 
 export default AddClub;

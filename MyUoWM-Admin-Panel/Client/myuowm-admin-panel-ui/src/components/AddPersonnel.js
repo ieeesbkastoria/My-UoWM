@@ -33,8 +33,8 @@ const AddPersonnel = () => {
   }
 
   return (
-    <div className="personnel">
-      <h1>Add and update Personnel</h1>
+    <div className="add_personnel">
+      <h1>Add Personnel</h1>
         <form onSubmit={handleSubmit}>
           <label>Personnel name:</label>
             <input
