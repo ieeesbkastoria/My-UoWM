@@ -1,5 +1,6 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.config;
 
+import gr.ieee.cs.uowm.myuowm_admin_panel.auditing.ApplicationAuditAware;
 import gr.ieee.cs.uowm.myuowm_admin_panel.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
