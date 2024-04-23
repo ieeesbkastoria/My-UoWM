@@ -12,6 +12,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 
 import static gr.ieee.cs.uowm.myuowm_admin_panel.user.Permission.*;
 import static gr.ieee.cs.uowm.myuowm_admin_panel.user.Role.ADMIN;
