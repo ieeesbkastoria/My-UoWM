@@ -15,7 +15,13 @@ public class AdminPanelController {
     private final AdminPanelService adminPanelService;
 
     public AdminPanelController(AdminPanelService adminPanelService) {
+
         this.adminPanelService = adminPanelService;
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "Success";
     }
 
     @PutMapping("/timetable")
