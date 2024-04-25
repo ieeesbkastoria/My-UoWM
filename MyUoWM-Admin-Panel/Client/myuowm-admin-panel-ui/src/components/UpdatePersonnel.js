@@ -1,32 +1,53 @@
-import useFetch from '../hooks/useFetch'
+import useFetch from '../hooks/useFetch';
 
 const UpdatePersonnel = () => {
-  const {personnel, error, isPending} = useFetch('http//localhost:8080/myuowm/personnel');
-  //TODO
-  const handleClick = () => {}
+  const [personnel, error, isPending] = useFetch('http//localhost:8080/myuowm/personnel');
+
+  const handleClick = (employee) => {
+    // Implement logic to submit updated employee data to server
+    // This might involve using the fetch API or a library like Axios
+    console.log('Submitting updated data for:', employee); // Placeholder for now
+  };
 
   return (
     <div className="personnel-update">
-      { isPending && <div>Loading...</div> }
-      { error && <div>{ error }</div>}
-      { personnel && personnel.map(employee => (
-        <form>
-          <label>Name</label>
-          <input type="text" value={ employee.name } required onChange={(e) => employee.name = e.target.value}/>
-          <label>Department</label>
-          <input type="text" value={ employee.department } required onChange={(e) => employee.department = e.target.value} />
-          <label>Email</label>
-          <input type="text" value={ employee.officeHours } required onChange={(e) => employee.officeHours = e.target.value}/>
-          <input type="text" value={ employee.office } required onChange={(e) => employee.office = e.target.value}/>
-          <input type="email" value={ employee.email } required onChange={(e) => employee.email = e.target.value}/>
-          <button onClick= {handleClick}> Submit </button>
-          <label></label>
-          <input type="email" value={ employee.email } required />
-          <button onClick= {handleClick}> Submit </button>
-        </form>
-      ))}
-    </div> 
+      {isPending && <div>Loading...</div>}
+      {error && <div>{error}</div>}
+      {personnel && (
+        <ul>
+          {personnel.map((employee) => (
+            <li key={employee.id}> 
+            <form>
+                <label>Name</label>
+                <input
+                  type="text"
+                  value={employee.name}
+                  required
+                  onChange={(e) => (employee.name = e.target.value)}
+                />
+                <label>Department</label>
+                <input
+                  type="text"
+                  value={employee.department}
+                  required
+                  onChange={(e) => (employee.name = e.target.value)} // Typo fixed
+                />
+                <label>Email</label>
+                <input
+                  type="email"
+                  value={employee.email}
+                  required
+                  onChange={(e) => (employee.email = e.target.value)}
+                />
+                <button onClick={() => handleClick(employee)}>Submit</button>
+              </form>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
-}
+};
 
-export default UpdatePersonnel
+export default UpdatePersonnel;
+

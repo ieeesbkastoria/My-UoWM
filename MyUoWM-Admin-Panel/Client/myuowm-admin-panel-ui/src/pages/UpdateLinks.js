@@ -8,16 +8,10 @@ const UpdateLinks = () => {
   const handleClick = (e) => {}
 
   return (
-    <div className="update-link">
-      <form>
-        <label>Chose Link:</label>
-        <select id="links" name="links">
-          <option value="1">Lesxi</option>
-          <option value="2">Other</option>
-        </select>
-        <input type="text" value="" required/>
-        <button onClick={ handleClick } >Submit</button>
-      </form>
+    <div className="links-update">
+      {isPending && <div>Loading...</div>}
+      {error && <div>{ error }</div>}
+        
     </div>
   )
 }
