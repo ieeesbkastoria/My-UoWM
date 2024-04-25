@@ -3,10 +3,10 @@ import useFetch from '../hooks/useFetch';
 const UpdatePersonnel = () => {
   const [personnel, error, isPending] = useFetch('http//localhost:8080/myuowm/personnel');
 
-  const handleClick = (employee) => {
+  const handleClick = (personnel) => {
     // Implement logic to submit updated employee data to server
     // This might involve using the fetch API or a library like Axios
-    console.log('Submitting updated data for:', employee); // Placeholder for now
+    console.log('Submitting updated data for:', personnel); // Placeholder for now
   };
 
   return (
@@ -39,7 +39,7 @@ const UpdatePersonnel = () => {
                   required
                   onChange={(e) => (employee.email = e.target.value)}
                 />
-                <button onClick={() => handleClick(employee)}>Submit</button>
+                <button onClick={() => handleClick(personnel)}>Submit</button>
               </form>
             </li>
           ))}
