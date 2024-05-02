@@ -1,10 +1,11 @@
-import Personnel from './pages/Personnel';
-import Clubs from "./pages/Clubs";
+import Login from './pages/Login';
+
 
 function App() {
   return (
     <div className="App">
-      <p>Hello myuowm</p>     
+      <p>Hello myuowm</p>
+      <Login />
     </div>
   );
 }
