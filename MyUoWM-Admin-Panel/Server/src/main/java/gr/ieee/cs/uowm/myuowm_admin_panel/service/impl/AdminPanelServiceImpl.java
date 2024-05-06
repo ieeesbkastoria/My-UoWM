@@ -1,12 +1,9 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelLinkRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.*;
 import org.springframework.stereotype.Service;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelClubRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelDinnerPlanRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 
 import java.util.List;
@@ -14,14 +11,14 @@ import java.util.List;
 @Service
 public class AdminPanelServiceImpl implements AdminPanelService {
 
-    MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository;
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelClubRepository clubRepository;
     MyUoWmAdminPanelLinkRepository linkRepository;
+    MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
 
-    public AdminPanelServiceImpl(MyUoWmAdminPanelLinkRepository linkRepository, MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository, MyUoWmAdminPanelClubRepository clubRepository) {
+    public AdminPanelServiceImpl(MyUoWmAdminPanelLinkRepository linkRepository, MyUoWmAdminPanelMealPlanRepository mealPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository, MyUoWmAdminPanelClubRepository clubRepository) {
         this.linkRepository = linkRepository;
-        this.dinnerPlanRepository = dinnerPlanRepository;
+        this.mealPlanRepository = mealPlanRepository;
         this.personnelRepository = personnelRepository;
         this.clubRepository = clubRepository;
     }
@@ -38,10 +35,10 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String saveDinnerPlan(DinnerPlan dinnerPlan) {
+    public String saveMealPlan(MealPlan mealPlan) {
         try {
-            dinnerPlan.setId(1L);
-            dinnerPlanRepository.save(dinnerPlan);
+            mealPlan.setId(1L);
+            mealPlanRepository.save(mealPlan);
             return "DinnerPlan saved successfully";
         } catch (Exception e) {
             //TODO throw error

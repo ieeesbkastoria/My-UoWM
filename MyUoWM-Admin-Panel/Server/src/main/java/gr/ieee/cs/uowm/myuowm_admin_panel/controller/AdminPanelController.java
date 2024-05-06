@@ -30,7 +30,7 @@ public class AdminPanelController {
     @PutMapping("/lesxi")
     @PreAuthorize("hasAuthority('admin:update')")
     public String updateDinnerPlan(@RequestBody MealPlan mealPlan) {
-        return adminPanelService.savemealPlan(mealPlan);
+        return adminPanelService.saveMealPlan(mealPlan);
     }
 
     @PostMapping("/personnel")

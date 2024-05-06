@@ -1,14 +1,11 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.service;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Link;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
 
 import java.util.List;
 
 public interface AdminPanelService {
-    public String saveDinnerPlan(DinnerPlan dinnerPlane);
+    public String saveMealPlan(MealPlan mealPlan);
     public String savePersonnel(Personnel personnel);
     public String updatePersonnel(Personnel personnel);
     public String deletePersonnel(String personalId);
