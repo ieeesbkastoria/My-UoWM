@@ -5,19 +5,17 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.model.Link;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/myuowm")
+@AllArgsConstructor
 public class WebAppController {
 
     private final WebAppService webAppService;
-
-    public WebAppController(WebAppService webAppService) {
-        this.webAppService = webAppService;
-    }
 
     @GetMapping("/lesxi")
     public MealPlan getLesxi() {

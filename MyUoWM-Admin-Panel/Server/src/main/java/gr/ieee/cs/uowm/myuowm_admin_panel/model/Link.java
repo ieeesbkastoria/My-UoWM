@@ -1,9 +1,17 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "links")
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class Link {
 
     @Id
@@ -14,27 +22,4 @@ public class Link {
     @Column(nullable = false)
     private String url;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsage() {
-        return usage;
-    }
-
-    public void setUsage(String usage) {
-        this.usage = usage;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
 }

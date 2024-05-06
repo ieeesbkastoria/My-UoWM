@@ -3,25 +3,20 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class WebAppServiceImpl implements WebAppService {
 
     MyUoWmAdminPanelClubRepository clubRepository;
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelLinkRepository linkRepository;
     MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
-
-    public WebAppServiceImpl(MyUoWmAdminPanelLinkRepository linkRepository, MyUoWmAdminPanelClubRepository clubRepository, MyUoWmAdminPanelMealPlanRepository mealPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository) {
-        this.clubRepository = clubRepository;
-        this.mealPlanRepository = mealPlanRepository;
-        this.personnelRepository = personnelRepository;
-        this.linkRepository = linkRepository;
-    }
 
     @Override
     public MealPlan getMealPlan() {

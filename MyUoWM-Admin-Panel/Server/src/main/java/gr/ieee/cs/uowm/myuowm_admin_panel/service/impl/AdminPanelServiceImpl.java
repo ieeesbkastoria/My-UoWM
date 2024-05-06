@@ -2,6 +2,7 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.*;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
@@ -9,19 +10,13 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class AdminPanelServiceImpl implements AdminPanelService {
 
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelClubRepository clubRepository;
     MyUoWmAdminPanelLinkRepository linkRepository;
     MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
-
-    public AdminPanelServiceImpl(MyUoWmAdminPanelLinkRepository linkRepository, MyUoWmAdminPanelMealPlanRepository mealPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository, MyUoWmAdminPanelClubRepository clubRepository) {
-        this.linkRepository = linkRepository;
-        this.mealPlanRepository = mealPlanRepository;
-        this.personnelRepository = personnelRepository;
-        this.clubRepository = clubRepository;
-    }
 
     @Override
     public String updateLinks(List<Link> links){

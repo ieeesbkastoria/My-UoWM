@@ -3,6 +3,8 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,14 +13,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/admin")
 @PreAuthorize("hasRole('ADMIN')")
+@AllArgsConstructor
 public class AdminPanelController {
 
     private final AdminPanelService adminPanelService;
-
-    public AdminPanelController(AdminPanelService adminPanelService) {
-
-        this.adminPanelService = adminPanelService;
-    }
 
 
     @PutMapping("/links")

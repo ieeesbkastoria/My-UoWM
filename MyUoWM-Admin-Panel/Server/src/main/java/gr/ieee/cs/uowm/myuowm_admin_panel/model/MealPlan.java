@@ -1,11 +1,15 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "meal_plan")
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class MealPlan {
