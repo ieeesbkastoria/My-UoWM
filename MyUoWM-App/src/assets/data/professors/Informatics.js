@@ -6,82 +6,73 @@ export const professors =
     professors:
         [
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2019/07/man.png',
-                fname: i18n.t('Μιχαήλ  '),
-                lname: i18n.t('Δόσης'),
-                title: i18n.t('Καθηγητής - Κοσμήτορας'),
+                fname: i18n.t('michail'),
+                lname: i18n.t('doshs'),
+                title: i18n.t('kosmitoras','kathigitis'),
                 email: 'mdossis@uowm.gr',
                 office: '114'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2019/07/man.png',
-                fname: i18n.t('Ιωάννης '),
-                lname: i18n.t('Σινάτκας'),
-                title: i18n.t('Καθηγητής'),
+                fname: i18n.t('ioannis'),
+                lname: i18n.t('sinatkas'),
+                title: i18n.t('kathigitis'),
                 email: 'isinatkas@uowm.gr',
                 office: '105'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2022/10/John-Vardakas.jpg',
-                fname: i18n.t('Ιωάννης'),
-                lname: i18n.t('Βαρδάκας'),
-                title: i18n.t('Αναπληρωτής Καθήγητης'),
+                fname: i18n.t('john'),
+                lname: i18n.t('vardakas'),
+                title: i18n.t('anaplirotisKathigitis'),
                 email: 'XXXXXX', //to be added later, its missing from the website
                 office: '001'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2019/07/djv2.jpg',
-                fname: i18n.t('Δημήτριος '),
-                lname: i18n.t('Ι. Βέργαδος'),
-                title: i18n.t('Αναπληρωτής Καθηγητής - Πρόεδρος του Τμήματος'),
+                fname: i18n.t('dimitros'),
+                lname: i18n.t('Ivergados'),
+                title: i18n.t('anaplirotisKathigitis','proedrosTmimatos'),
                 email: 'dvergados@uowm.gr',
                 office: '113'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2022/08/Nikos_Dimokas_photo_1-e1659974578807.jpg',
-                fname: i18n.t('Νίκος '),
-                lname: i18n.t('Δημόκας'),
-                title: i18n.t('Επίκουρος Καθηγητής'),
+                fname: i18n.t('nikos'),
+                lname: i18n.t('Dimokas'),
+                title: i18n.t('epikourosKathigitis'),
                 email: 'ndimokas@uowm.gr',
                 office: '133'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2019/07/man.png',
-                fname: i18n.t('Ιωάννης '),
-                lname: i18n.t('Τουλόπουλος'),
-                title: i18n.t('Επίκουρος Καθηγητής'),
+                fname: i18n.t('ioannis'),
+                lname: i18n.t('toylopoylos'),
+                title: i18n.t('epikourosKathigitis'),
                 email: 'itoulopoulos@uowm.gr ',
                 office: '001'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2019/07/191.jpg',
-                fname: i18n.t('Δημήτριος '),
-                lname: i18n.t('Φωτιάδης'),
-                title: i18n.t('Επίκουρος Καθηγητής'),
+                fname: i18n.t('dimitros'),
+                lname: i18n.t('fotiadis'),
+                title: i18n.t('epikourosKathigitis'),
                 email: 'dfotiadis@uowm.gr ',
                 office: '109'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2019/07/209.jpg',
-                fname: i18n.t('Σπυρίδων '),
-                lname: i18n.t('Νικολάου'),
-                title: i18n.t('Λέκτορας'),
+                fname: i18n.t('spyridon'),
+                lname: i18n.t('nikolaou'),
+                title: i18n.t('lectoras'),
                 email: 'snikolaou@uowm.gr',
                 office: '101'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2019/07/man.png',
-                fname: i18n.t('Μιχαήλ '),
-                lname: i18n.t('Σταμπουλτζής'),
-                title: i18n.t('Λέκτορας'),
+                fname: i18n.t('michail'),
+                lname: i18n.t('Stampoultzis'),
+                title: i18n.t('lectoras'),
                 email: 'mstampoultzis@uowm.gr',
                 office: '101'
             },
             {
-                imgUrl: 'https://cs.uowm.gr/wp-content/uploads/2019/07/man.png',
-                fname: i18n.t('Γεώργιος '),
-                lname: i18n.t('Τασκασαπλίδης'),
-                title: i18n.t('Ε.ΔΙ.Π.'),
+  
+                fname: i18n.t('georgios '),
+                lname: i18n.t('taskasaplodis'),
+                title: i18n.t('EDIP'),
                 email: 'gtaskasaplidis@uowm.gr ',
                 office: '-'
             }

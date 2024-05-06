@@ -1,13 +1,11 @@
-import Personnel from './pages/Personnel';
-import Clubs from "./pages/Clubs";
+import Login from './pages/Login';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <p>Hello myuowm</p>
-      
-      <Clubs />
-    </div>
+    <Routes>
+      <Route path="login" element={<Login />} />
+    </Routes>
   );
 }
 
