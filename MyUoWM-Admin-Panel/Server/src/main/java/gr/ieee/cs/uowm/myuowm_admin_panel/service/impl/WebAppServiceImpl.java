@@ -12,25 +12,25 @@ import java.util.Optional;
 public class WebAppServiceImpl implements WebAppService {
 
     MyUoWmAdminPanelClubRepository clubRepository;
-    MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository;
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelLinkRepository linkRepository;
+    MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
 
-    public WebAppServiceImpl(MyUoWmAdminPanelLinkRepository linkRepository, MyUoWmAdminPanelClubRepository clubRepository, MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository) {
+    public WebAppServiceImpl(MyUoWmAdminPanelLinkRepository linkRepository, MyUoWmAdminPanelClubRepository clubRepository, MyUoWmAdminPanelMealPlanRepository mealPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository) {
         this.clubRepository = clubRepository;
-        this.dinnerPlanRepository = dinnerPlanRepository;
+        this.mealPlanRepository = mealPlanRepository;
         this.personnelRepository = personnelRepository;
         this.linkRepository = linkRepository;
     }
 
     @Override
-    public String getDinnerPlan() {
-        Optional<DinnerPlan> optionalDinnerPlan = dinnerPlanRepository.findTopByOrderByIdDesc();
-        if(optionalDinnerPlan.isPresent()) {
-            return optionalDinnerPlan.get().getUrl();
+    public MealPlan getMealPlan() {
+        Optional<MealPlan> optionalMealPlan = mealPlanRepository.findTopByOrderByIdDesc();
+        if(optionalMealPlan.isPresent()) {
+            return optionalMealPlan.get();
         } else {
             //TODO throw error
-            return "Couldnt get DinnerPlan";
+            return null;
         }
 
 
