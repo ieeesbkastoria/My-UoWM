@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/api/admin")
 @PreAuthorize("hasRole('ADMIN')")
 public class AdminPanelController {
 
@@ -45,7 +45,7 @@ public class AdminPanelController {
         return adminPanelService.updatePersonnel(personnel);
     }
 
-    @DeleteMapping("personnel/{personnelId}")
+    @DeleteMapping("/personnel/{personnelId}")
     @PreAuthorize("hasAuthority('admin:delete')")
     public String deletePersonnel(@PathVariable("personnelId") String personnelId) {
         return adminPanelService.deletePersonnel(personnelId);

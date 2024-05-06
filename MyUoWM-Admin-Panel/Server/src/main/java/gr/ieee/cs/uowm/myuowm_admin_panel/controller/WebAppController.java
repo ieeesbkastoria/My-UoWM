@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/myuowm")
+@RequestMapping("/api/myuowm")
 public class WebAppController {
 
     private final WebAppService webAppService;
