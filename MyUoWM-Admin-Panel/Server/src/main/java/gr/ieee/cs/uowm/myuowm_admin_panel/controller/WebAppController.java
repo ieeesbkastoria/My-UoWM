@@ -2,6 +2,7 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Link;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +20,8 @@ public class WebAppController {
     }
 
     @GetMapping("/lesxi")
-    public String getLesxi() {
-        //TODO
-        return "DinnerPlan";
+    public MealPlan getLesxi() {
+        return webAppService.getMealPlan();
     }
 
     @GetMapping("/links")
