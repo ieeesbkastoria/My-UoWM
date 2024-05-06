@@ -1,6 +1,7 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.Link;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.springframework.web.bind.annotation.*;
@@ -17,14 +18,20 @@ public class WebAppController {
         this.webAppService = webAppService;
     }
 
-    @GetMapping("/timetable")
-    public String getTimeTable() {
-        return webAppService.getTimeTable();
+    @GetMapping("/lesxi")
+    public String getLesxi() {
+        //TODO
+        return "DinnerPlan";
     }
 
-    @GetMapping("/lesxi")
-    public String getMealPlan() {
-        return webAppService.getDinnerPlan();
+    @GetMapping("/links")
+    public List<Link> getAllLinks() {
+        return webAppService.getAllLinks();
+    }
+
+    @GetMapping("/links/{usage}")
+    public Link getSpecificLink(@PathVariable("usage")String usage) {
+        return webAppService.getSpecificLink(usage);
     }
 
     @GetMapping("/personnel")

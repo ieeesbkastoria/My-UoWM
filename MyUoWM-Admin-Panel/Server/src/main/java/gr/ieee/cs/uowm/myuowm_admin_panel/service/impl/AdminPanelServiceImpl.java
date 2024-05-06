@@ -1,41 +1,39 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelLinkRepository;
 import org.springframework.stereotype.Service;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelClubRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelDinnerPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonnelRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelTimeTableRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
+
+import java.util.List;
 
 @Service
 public class AdminPanelServiceImpl implements AdminPanelService {
 
-    MyUoWmAdminPanelTimeTableRepository timeTableRepository;
     MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository;
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelClubRepository clubRepository;
+    MyUoWmAdminPanelLinkRepository linkRepository;
 
-    public AdminPanelServiceImpl(MyUoWmAdminPanelTimeTableRepository timeTableRepository, MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository, MyUoWmAdminPanelClubRepository clubRepository) {
-        this.timeTableRepository = timeTableRepository;
+    public AdminPanelServiceImpl(MyUoWmAdminPanelLinkRepository linkRepository, MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository, MyUoWmAdminPanelClubRepository clubRepository) {
+        this.linkRepository = linkRepository;
         this.dinnerPlanRepository = dinnerPlanRepository;
         this.personnelRepository = personnelRepository;
         this.clubRepository = clubRepository;
     }
 
     @Override
-    public String saveTimeTable(TimeTable timeTable) {
+    public String updateLinks(List<Link> links){
         try {
-            timeTable.setId(1L);
-            timeTableRepository.save(timeTable);
-            return "TimeTable saved successfully";
+            linkRepository.saveAll(links);
+            return "Links saved successfully";
         } catch (Exception e) {
-            //TODO throw error
-            return "Couldnt save TimeTable";
+            //TODO Throw error
+            return "Couldn't save Links";
         }
     }
 

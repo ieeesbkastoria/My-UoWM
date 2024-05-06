@@ -1,13 +1,12 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
@@ -21,10 +20,11 @@ public class AdminPanelController {
         this.adminPanelService = adminPanelService;
     }
 
-    @PutMapping("/timetable")
+
+    @PutMapping("/links")
     @PreAuthorize("hasAuthority('admin:update')")
-    public String updateTimeTable(@RequestBody TimeTable timeTable) {
-        return adminPanelService.saveTimeTable(timeTable);
+    public String updateLinks(@RequestBody List<Link> links) {
+        return adminPanelService.updateLinks(links);
     }
 
     @PutMapping("/lesxi")

@@ -1,13 +1,7 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.DinnerPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.TimeTable;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelClubRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelDinnerPlanRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelPersonnelRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.MyUoWmAdminPanelTimeTableRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
+import gr.ieee.cs.uowm.myuowm_admin_panel.repository.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.springframework.stereotype.Service;
 
@@ -20,24 +14,13 @@ public class WebAppServiceImpl implements WebAppService {
     MyUoWmAdminPanelClubRepository clubRepository;
     MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository;
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
-    MyUoWmAdminPanelTimeTableRepository timeTableRepository;
+    MyUoWmAdminPanelLinkRepository linkRepository;
 
-    public WebAppServiceImpl(MyUoWmAdminPanelClubRepository clubRepository, MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository, MyUoWmAdminPanelTimeTableRepository timeTableRepository) {
+    public WebAppServiceImpl(MyUoWmAdminPanelLinkRepository linkRepository, MyUoWmAdminPanelClubRepository clubRepository, MyUoWmAdminPanelDinnerPlanRepository dinnerPlanRepository, MyUoWmAdminPanelPersonnelRepository personnelRepository) {
         this.clubRepository = clubRepository;
         this.dinnerPlanRepository = dinnerPlanRepository;
         this.personnelRepository = personnelRepository;
-        this.timeTableRepository = timeTableRepository;
-    }
-
-    @Override
-    public String getTimeTable() {
-        Optional<TimeTable> optionalTimeTable = timeTableRepository.findTopByOrderByIdDesc();
-        if(optionalTimeTable.isPresent()) {
-            return optionalTimeTable.get().getUrl();
-        } else {
-            //TODO throw error
-            return "Couldnt get TimeTable";
-        }
+        this.linkRepository = linkRepository;
     }
 
     @Override
@@ -77,5 +60,18 @@ public class WebAppServiceImpl implements WebAppService {
             //change system.out to custom Exception
             System.out.println("Error");
         return clubRepository.findById(id).get();
+    }
+
+    @Override
+    public List<Link> getAllLinks() {
+        return linkRepository.findAll();
+    }
+
+    @Override
+    public Link getSpecificLink(String usage) {
+        if(linkRepository.findByUsage(usage).isEmpty())
+            //change system.out to custom Exception
+            System.out.println("Error");
+        return linkRepository.findByUsage(usage).get();
     }
 }
