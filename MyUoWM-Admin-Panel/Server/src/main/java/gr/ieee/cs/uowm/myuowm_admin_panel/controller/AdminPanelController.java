@@ -29,8 +29,8 @@ public class AdminPanelController {
 
     @PutMapping("/lesxi")
     @PreAuthorize("hasAuthority('admin:update')")
-    public String updateDinnerPlan(@RequestBody DinnerPlan dinnerPlan) {
-        return adminPanelService.saveDinnerPlan(dinnerPlan);
+    public String updateDinnerPlan(@RequestBody MealPlan mealPlan) {
+        return adminPanelService.savemealPlan(mealPlan);
     }
 
     @PostMapping("/personnel")
