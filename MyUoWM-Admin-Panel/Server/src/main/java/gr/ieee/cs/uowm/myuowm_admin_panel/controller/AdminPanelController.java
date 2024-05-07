@@ -4,7 +4,6 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +26,7 @@ public class AdminPanelController {
 
     @PutMapping("/lesxi")
     @PreAuthorize("hasAuthority('admin:update')")
-    public String updateDinnerPlan(@RequestBody MealPlan mealPlan) {
+    public String updateDinnerPlan(@RequestBody List<MealPlan> mealPlan) {
         return adminPanelService.saveMealPlan(mealPlan);
     }
 

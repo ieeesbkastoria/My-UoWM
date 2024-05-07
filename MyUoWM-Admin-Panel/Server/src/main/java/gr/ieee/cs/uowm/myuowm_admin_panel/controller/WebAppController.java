@@ -18,7 +18,7 @@ public class WebAppController {
     private final WebAppService webAppService;
 
     @GetMapping("/lesxi")
-    public MealPlan getLesxi() {
+    public List<MealPlan> getLesxi() {
         return webAppService.getMealPlan();
     }
 
