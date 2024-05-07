@@ -11,9 +11,10 @@ import lombok.Setter;
 public class MealPlan {
 
     @Id
-    private Byte id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(nullable = false)
-    private Long meal_id;
+    private Byte meal_id;
     @Column(nullable = false)
     private int week_number;
     @Column(nullable = false)

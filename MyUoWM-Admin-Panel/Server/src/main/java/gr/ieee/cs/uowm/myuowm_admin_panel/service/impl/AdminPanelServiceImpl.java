@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,10 +31,10 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String saveMealPlan(MealPlan mealPlan) {
+    public String saveMealPlan(ArrayList<MealPlan> mealPlan) {
         try {
-            mealPlan.setId(1L);
-            mealPlanRepository.save(mealPlan);
+            mealPlan.forEach(meal -> meal.setMeal_id((byte) 1));
+            mealPlanRepository.saveAll(mealPlan);
             return "DinnerPlan saved successfully";
         } catch (Exception e) {
             //TODO throw error
