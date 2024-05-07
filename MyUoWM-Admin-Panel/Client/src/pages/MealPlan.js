@@ -16,3 +16,5 @@ const MealPlan = () => {
     </div>
   )
 };
+
+export default MealPlan;
