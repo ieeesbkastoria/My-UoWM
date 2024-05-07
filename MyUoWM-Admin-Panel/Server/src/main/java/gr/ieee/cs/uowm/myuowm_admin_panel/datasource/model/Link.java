@@ -1,4 +1,4 @@
-package gr.ieee.cs.uowm.myuowm_admin_panel.model;
+package gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

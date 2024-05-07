@@ -1,7 +1,7 @@
-package gr.ieee.cs.uowm.myuowm_admin_panel.repository;
+package gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
 
 public interface MyUoWmAdminPanelPersonnelRepository extends JpaRepository<Personnel, String>{
 

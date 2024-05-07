@@ -1,9 +1,9 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Link;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.MealPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
