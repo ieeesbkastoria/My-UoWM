@@ -14,7 +14,7 @@ public class MealPlan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private Byte meal_id;
+    private Byte MealId;
     @Column(nullable = false)
     private int week_number;
     @Column(nullable = false)

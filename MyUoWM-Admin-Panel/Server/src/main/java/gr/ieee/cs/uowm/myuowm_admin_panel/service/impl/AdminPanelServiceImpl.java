@@ -33,7 +33,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String saveMealPlan(ArrayList<MealPlan> mealPlan) {
         try {
-            mealPlan.forEach(meal -> meal.setMeal_id((byte) 1));
+            mealPlan.forEach(meal -> meal.setMealId((byte) 1));
             mealPlanRepository.saveAll(mealPlan);
             return "DinnerPlan saved successfully";
         } catch (Exception e) {
