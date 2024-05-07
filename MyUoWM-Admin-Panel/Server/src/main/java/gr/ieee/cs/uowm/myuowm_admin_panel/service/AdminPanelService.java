@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface AdminPanelService {
-    public String saveMealPlan(ArrayList<MealPlan> mealPlan);
+    public String saveMealPlan(List<MealPlan> mealPlan);
     public String savePersonnel(Personnel personnel);
     public String updatePersonnel(Personnel personnel);
     public String deletePersonnel(String personalId);

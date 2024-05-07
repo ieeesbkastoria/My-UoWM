@@ -4,10 +4,10 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.repository.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import lombok.AllArgsConstructor;
+import org.antlr.v4.runtime.atn.SemanticContext;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -19,16 +19,10 @@ public class WebAppServiceImpl implements WebAppService {
     MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
 
     @Override
-    public MealPlan getMealPlan() {
-        Optional<MealPlan> optionalMealPlan = mealPlanRepository.findTopByOrderByIdDesc();
-        if(optionalMealPlan.isPresent()) {
-            return optionalMealPlan.get();
-        } else {
-            //TODO throw error
-            return null;
-        }
-
-
+    public List<MealPlan> getMealPlan() {
+        if(!mealPlanRepository.findByMealId((byte) 1).isEmpty())
+            return mealPlanRepository.findByMealId((byte) 1);
+        return Collections.EMPTY_LIST;
     }
 
     @Override

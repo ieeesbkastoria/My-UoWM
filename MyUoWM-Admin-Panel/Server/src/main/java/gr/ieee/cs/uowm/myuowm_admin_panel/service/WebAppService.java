@@ -5,10 +5,11 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.model.Link;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.model.Personnel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface WebAppService {
-    public MealPlan getMealPlan();
+    public List<MealPlan> getMealPlan();
     public List<Personnel> getAllPersonnel();
     public Personnel getPersonnel(String id);
     public List<Club> getAllClubs();
