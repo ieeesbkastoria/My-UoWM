@@ -1,16 +1,37 @@
-import {useState} from "react";
+import {useState, useEffect } from "react";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import UseAxiosPrivate from '../hooks/useAxiosPrivate';
 
 const AddPersonnel = () => { 
-  const [name, setName] = useState('');
-  const [department, setDepartment]= useState('');
-  const [officeHours, setOfficeHours] = useState('');
-  const [office, setOffice] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [personnel_id, setId] = useState('22');
-  const [isPending, setIsPendign] = useState(false);
 
+  const [personnel, setPersonnel] = useState();
+  const axiosPrivate = useAxiosPrivate();
 
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+
+    const getPersonnel = async () => {
+      try {
+        const response = await axiosPrivate.get('/personnel', {
+          signal: controller.signal
+        });
+        console.log(response.data);
+        isMounted && setPersonnel(response.data);
+      } catch (err) {
+        console.error(err);
+        //TODO Redirect user to login if not loged in
+      }
+    }
+    
+    getUsers();
+    return () => {
+      isMounted = false;
+      controller.abort();
+    }
+  }, [])
+
+  //Out of date method
   const handleSubmit = (e) => {
     e.preventDefault();
     const personnel = {personnel_id, department, name, phone, office, officeHours, email};
