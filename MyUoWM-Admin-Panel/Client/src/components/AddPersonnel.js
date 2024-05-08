@@ -1,60 +1,43 @@
-import {useState, useEffect } from "react";
+import {useState } from "react";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import UseAxiosPrivate from '../hooks/useAxiosPrivate';
+
+const PERSONNEL_URL = '/api/admin/personnel'
 
 const AddPersonnel = () => { 
 
-  const [personnel, setPersonnel] = useState();
   const axiosPrivate = useAxiosPrivate();
 
-  useEffect(() => {
-    let isMounted = true;
-    const controller = new AbortController();
+  // TODO these need to be updated according to the project requirements
+  const [name, setName] = useState('');
+  const [office, setOffice] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [department, setDepartment] = useState('');
 
-    const getPersonnel = async () => {
-      try {
-        const response = await axiosPrivate.get('/personnel', {
-          signal: controller.signal
-        });
-        console.log(response.data);
-        isMounted && setPersonnel(response.data);
-      } catch (err) {
-        console.error(err);
-        //TODO Redirect user to login if not loged in
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axiosPrivate.post(PERSONNEL_URL,
+      JSON.stringify({ name, office, email, phone, department }));
+      console.log(JSON.stringify(response?.data));
+    } catch (err) {
+      if (!err?.response) {
+        console.log('No Server Response');
+      } else if (err.response?.status === 400) {
+        console.log('Missing element');
+      } else if (err.response?.status === 401) {
+        //TODO Redirect to login
+        console.log('Unauthorized');
+      } else {
+        console.log('Post Failed');
       }
     }
-    
-    getUsers();
-    return () => {
-      isMounted = false;
-      controller.abort();
-    }
-  }, [])
-
-  //Out of date method
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const personnel = {personnel_id, department, name, phone, office, officeHours, email};
-
-    setIsPendign(true);
-
-    fetch('http://localhost:8080/admin/personnel', {
-      method: 'POST',
-      headers: {"Content-Type": "application/json",},
-      body: JSON.stringify(personnel),
-    })
-      .then(() => {
-        console.log("new personnel added");
-        setIsPendign(false);
-      })
-      .catch((e) => {
-        console.log(JSON.stringify(personnel));
-        console.log("Couldn't add personnel" + e.message);
-      })
   }
 
+  //TODO Update form according to project requirements
   return (
-    <div className="add_personnel">
+    <div className="add-personnel">
       <h1>Add Personnel</h1>
         <form onSubmit={handleSubmit}>
           <label>Personnel name:</label>
@@ -99,7 +82,7 @@ const AddPersonnel = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
-          <button> Submit </button>
+          <button onSubmit={ handleSubmit } > Submit </button>
         </form>
     </div>
   );

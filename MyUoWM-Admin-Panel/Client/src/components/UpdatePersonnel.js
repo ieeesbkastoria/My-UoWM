@@ -30,6 +30,7 @@ const UpdatePersonnel = () => {
     }
   }, [])
 
+  //TODO Impement put request of personnel data
   return (
     <div className="update-personnel">
       <article>
