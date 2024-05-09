@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
 
+const GET_LINKS_URL = '/api/myuowm/links';
+const POST_LINKS_URL = '/api/admin/links';
 const ChangeLinks = () => {
   const [links, setLinks] = useState
 
@@ -12,7 +14,7 @@ const ChangeLinks = () => {
 
     const getLinks = async () => {
       try {
-        const response = await axiosPrivate.get(GET_PERSONNEL_URL, {
+        const response = await axiosPrivate.get(GET_LINKS_URL, {
           signal: controller.signal
         });
         console.log(response.data);
@@ -34,7 +36,7 @@ const ChangeLinks = () => {
     e.preventDefault();
 
     try {
-      const response = await axiosPrivate.post(POST_PERSONNEL_URL,
+      const response = await axiosPrivate.post(POST_LINKS_URL,
       JSON.stringify(personnel));
       console.log(JSON.stringify(response?.data));
     } catch (err) {
