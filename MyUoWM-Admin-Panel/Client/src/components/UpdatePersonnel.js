@@ -69,8 +69,8 @@ const UpdatePersonnel = () => {
                       required
                       value={ employee.name }
                       onChange={(e) => {
-                    employee.department = e.target.value;
-                    setPersonnel(personnel.splice(index, employee));
+                        employee.department = e.target.value;
+                        setPersonnel(personnel.splice(index, employee));
                   }}
                   />
                 <label>Personnel department:</label>
@@ -79,8 +79,8 @@ const UpdatePersonnel = () => {
                       required
                       value={ employee.department }
                       onChange={(e) => {
-                    employee.department = e.target.value;
-                    setPersonnel(personnel.splice(index, employee));
+                        employee.department = e.target.value;
+                        setPersonnel(personnel.splice(index, employee));
                   }}
                   />
                 <label>Personnel OfficeNumber:</label>
@@ -89,8 +89,8 @@ const UpdatePersonnel = () => {
                       required
                       value={ employee.officeNumber }
                       onChange={(e) => {
-                    employee.officeNumber = e.target.value;
-                    setPersonnel(personnel.splice(index, employee));
+                        employee.officeNumber = e.target.value;
+                        setPersonnel(personnel.splice(index, employee));
                   }}
                   />
                 <label>Personnel Phone number:</label>
@@ -99,8 +99,8 @@ const UpdatePersonnel = () => {
                       required
                       value={ employee.phone }
                       onChange={(e) => {
-                    employee.phone = e.target.value;
-                    setPersonnel(personnel.splice(index, employee));
+                        employee.phone = e.target.value;
+                        setPersonnel(personnel.splice(index, employee));
                   }}
                   />
                 <label>Personnel email:</label>
@@ -109,8 +109,8 @@ const UpdatePersonnel = () => {
                       required
                       value={ employee.email }
                       onChange={(e) => {
-                    employee.email = e.target.value;
-                    setPersonnel(personnel.splice(index, employee));
+                        employee.email = e.target.value;
+                        setPersonnel(personnel.splice(index, employee));
                   }}
                   />
                 <button onSubmit={ handleSubmit } > Submit </button>
