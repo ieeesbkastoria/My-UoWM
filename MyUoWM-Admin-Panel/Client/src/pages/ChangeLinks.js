@@ -8,6 +8,7 @@ const ChangeLinks = () => {
 
   const axiosPrivate = useAxiosPrivate();
 
+  //fetch links from server
   useEffect(() => {
     let isMounted = true;
     const controller = new AbortController();
@@ -28,10 +29,10 @@ const ChangeLinks = () => {
     getLinks();
     return () => {
       isMounted = false;
-      controller.abort();
-    }
+      controller.abort(); }
   }, [])
 
+  //send link information to server after form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -67,7 +68,7 @@ const ChangeLinks = () => {
                   onChange={(e) => {
                     link.usage = e.target.value;
                     setLinks(links.splice(index, link));
-              }}
+                  }}
               />
             </div>
             })}
