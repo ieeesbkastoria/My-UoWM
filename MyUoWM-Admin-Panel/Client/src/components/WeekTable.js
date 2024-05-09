@@ -1,10 +1,15 @@
 import { useState } from 'react'
 
-const WeekTable = () => {
+const WeekTable = (sendDataToParent, parentData) => {
   const [open, setOpen] = useState(false);
+  const [week, setWeek] = useState(parentData);
 
   const handleOpen = () => {
     setOpen(!open);
+  };
+
+  const onSubmit = () => {
+    sendDataToParent(week);
   };
 
   return (
