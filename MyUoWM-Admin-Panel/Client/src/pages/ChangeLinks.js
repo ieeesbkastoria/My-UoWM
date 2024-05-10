@@ -71,9 +71,10 @@ const ChangeLinks = () => {
                   }}
               />
             </div>
-            })}
-            <button onSubmit={ handleSubmit } > Submit </button>
-          </form>
+            }
+          )}
+          <button onSubmit={ handleSubmit } > Submit </button>
+        </form>
       </article>
     </div>
   )

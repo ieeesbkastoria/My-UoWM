@@ -1,4 +1,3 @@
-import WeekTable from '../components/WeekTable';
 import { useState } from "react";
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
 
@@ -7,7 +6,7 @@ const POST_MEAL_URL = '/api/admin/lesxi';
 
 const MealPlan = () => {
 
-  const [meals, setMeals] = useState();
+  const [plan, setPlan] = useState();
 
   const axiosPrivate = useAxiosPrivate();
 
@@ -22,7 +21,7 @@ const MealPlan = () => {
           signal: controller.signal
         });
         console.log(response.data);
-        isMounted && setMeals(response.data);
+        isMounted && setPlan(response.data);
       } catch (err) {
         console.error(err);
         //TODO Redirect user to login if not loged in if Unauthorized
@@ -42,7 +41,7 @@ const MealPlan = () => {
 
     try {
       const response = await axiosPrivate.post(POST_MEAL_URL,
-      JSON.stringify(meals));
+      JSON.stringify(plan));
       console.log(JSON.stringify(response?.data));
     } catch (err) {
       if (!err?.response) {
@@ -61,28 +60,88 @@ const MealPlan = () => {
     setMeals(data); //TODO only update specific week not whole Meals
   };
 
+  const handleEdit = (week, day, meal, field, value) => {
+    const updatedPlan = [...plan];
+    updatedPlan[week - 1].days[day - 1].meals[meal - 1][field] = value;
+    setPlan(updatedPlan);
+  };
+
+  const renderWeek = (week) => {
+    const days = plan[week - 1].days;
+    return (
+      <div key={week}>
+        <h2>Week {week}</h2>
+        {days.map((day, index) => (
+          <div key={index}>
+            <h3>{day.name}</h3>
+            {renderDay(day)}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  const renderDay = (day) => {
+    const meals = day.meals;
+    return (
+      <div>
+        {meals.map((meal, index) => (
+          <div key={index}>
+            <h4>{meal.type}</h4>
+            <ul>
+              <li>
+                Main Dish 1:
+                <input
+                  type="text"
+                  value={meal.mainDish1}
+                  onChange={(e) =>
+                    handleEdit(day.week, day.index + 1, index + 1, 'mainDish1', e.target.value)
+                  }
+                />
+              </li>
+              <li>
+                Main Dish 2:
+                <input
+                  type="text"
+                  value={meal.mainDish2}
+                  onChange={(e) =>
+                    handleEdit(day.week, day.index + 1, index + 1, 'mainDish2', e.target.value)
+                  }
+                />
+              </li>
+              <li>
+                Salad:
+                <input
+                  type="text"
+                  value={meal.salad}
+                  onChange={(e) =>
+                    handleEdit(day.week, day.index + 1, index + 1, 'salad', e.target.value)
+                  }
+                />
+              </li>
+              <li>
+                Dessert:
+                <input
+                  type="text"
+                  value={meal.dessert}
+                  onChange={(e) =>
+                    handleEdit(day.week, day.index + 1, index + 1, 'dessert', e.target.value)
+                  }
+                />
+              </li>
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
-    <div ClassName="meal-plan">
-      <h1>Create/Update meal plan</h1>
-    
-      <h2>Week 1</h2>
-      <WeekTable 
-        sendDataToParent={ handleDataFromChild }
-        parentData= { meals /* TODO only send specific week */}/>
-      <h2>Week 2</h2>
-      <WeekTable 
-        sendDataToParent={ handleDataFromChild }
-        parentData= { meals /* TODO only send specific week */}/>
-      <h2>Week 3</h2>
-      <WeekTable 
-        sendDataToParent={ handleDataFromChild }
-        parentData= { meals /* TODO only send specific week */}/>
-      <h2>Week 4</h2>
-      <WeekTable 
-        sendDataToParent={ handleDataFromChild }
-        parentData= { meals /* TODO only send specific week */}/>
-    </div>
-  )
+      <div clasName="meal-plan">
+        <h1>Meal Plan</h1>
+        {plan.map((week) => renderWeek(week.week))}
+      </div>
+    );
 };
 
 export default MealPlan;
