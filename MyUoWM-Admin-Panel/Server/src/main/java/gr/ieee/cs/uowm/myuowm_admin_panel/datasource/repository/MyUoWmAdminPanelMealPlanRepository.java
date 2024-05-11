@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface MyUoWmAdminPanelMealPlanRepository extends JpaRepository<MealPlan, Long> {
-    public List<MealPlan> findByMealId(Byte id);
+    List<MealPlan> findByMealId(Byte id);
 }
