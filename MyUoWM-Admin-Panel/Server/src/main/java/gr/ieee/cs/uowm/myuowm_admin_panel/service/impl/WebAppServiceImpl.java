@@ -8,8 +8,6 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanel
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,8 +25,8 @@ public class WebAppServiceImpl implements WebAppService {
 
     @Override
     public List<MealPlan> getMealPlan() {
-        if(!mealPlanRepository.findByMealId((byte) 1).isEmpty())
-            return mealPlanRepository.findByMealId((byte) 1);
+        if(!mealPlanRepository.findByMealId(1L).isEmpty())
+            return mealPlanRepository.findByMealId(1L);
         return Collections.EMPTY_LIST;
     }
 

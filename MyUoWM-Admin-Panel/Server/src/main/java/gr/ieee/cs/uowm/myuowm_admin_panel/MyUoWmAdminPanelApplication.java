@@ -16,20 +16,4 @@ public class MyUoWmAdminPanelApplication {
 		SpringApplication.run(MyUoWmAdminPanelApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(
-			AuthenticationService servicel
-	) {
-		return args -> {
-			var admin = RegisterRequest.builder()
-					.firstname("Adam")
-					.lastname("Admin")
-					.email("admin@mail.com")
-					.password("password")
-					.role(ADMIN)
-					.build();
-			System.out.println("Admin token:" + servicel.register(admin).getAccessToken());
-		};
-	}
-
 }

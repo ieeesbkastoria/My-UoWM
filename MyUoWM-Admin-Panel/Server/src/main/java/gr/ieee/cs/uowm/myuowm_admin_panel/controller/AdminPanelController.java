@@ -5,7 +5,6 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -10,8 +10,8 @@ import lombok.Setter;
 @Table(name = "links")
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
+@Setter
 public class Link {
 
     @Id

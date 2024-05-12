@@ -8,8 +8,6 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanel
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.model.*;
-import gr.ieee.cs.uowm.myuowm_admin_panel.repository.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +38,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String saveMealPlan(List<MealPlan> mealPlan) {
         try {
-            mealPlan.forEach(meal -> meal.setMealId((byte) 1));
+            mealPlan.forEach(meal -> meal.setMealId(1L));
             mealPlanRepository.saveAll(mealPlan);
             return "DinnerPlan saved successfully";
         } catch (Exception e) {
