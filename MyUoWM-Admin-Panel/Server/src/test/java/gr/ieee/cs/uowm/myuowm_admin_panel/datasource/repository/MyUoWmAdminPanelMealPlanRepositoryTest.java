@@ -7,12 +7,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
 @DataJpaTest
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 class MyUoWmAdminPanelMealPlanRepositoryTest {
 
     @Autowired
@@ -26,7 +28,7 @@ class MyUoWmAdminPanelMealPlanRepositoryTest {
         mealPlan = new MealPlan(1L, 2L, 1,
                 "Monday", "Soupa",
                 "Fasolia", mealType,
-                "salad", "dessrt");
+                "salad", "dessert");
 
         mealPlanRepository.save(mealPlan);
     }
@@ -43,7 +45,7 @@ class MyUoWmAdminPanelMealPlanRepositoryTest {
     void findByMealId_Found() {
         List<MealPlan> mealList = mealPlanRepository.findByMealId(2L);
 
-        mealList.stream().forEach(meal -> {
+        mealList.forEach(meal -> {
             assertThat(meal.getId().equals(mealPlan.getId())).isTrue();
             assertThat(meal.getMealId().equals(mealPlan.getMealId())).isTrue();
             assertThat(meal.getWeek_number().equals(mealPlan.getWeek_number())).isTrue();
@@ -52,7 +54,7 @@ class MyUoWmAdminPanelMealPlanRepositoryTest {
             assertThat(meal.getDish2().equals(mealPlan.getDish2())).isTrue();
             assertThat(meal.getMealType().equals(mealPlan.getMealType())).isTrue();
             assertThat(meal.getSalad().equals(mealPlan.getSalad())).isTrue();
-            assertThat(meal.getDessert().equals(mealPlan.getSalad())).isTrue();
+            assertThat(meal.getDessert().equals(mealPlan.getDessert())).isTrue();
         });
     }
 
@@ -61,7 +63,7 @@ class MyUoWmAdminPanelMealPlanRepositoryTest {
     void findByMealId_NotFound() {
         List<MealPlan> mealList = mealPlanRepository.findByMealId(3L);
 
-        mealList.stream().forEach(meal -> {
+        mealList.forEach(meal -> {
             assertThat(meal.getId().equals(mealPlan.getId())).isFalse();
             assertThat(meal.getMealId().equals(mealPlan.getMealId())).isFalse();
             assertThat(meal.getWeek_number().equals(mealPlan.getWeek_number())).isFalse();
