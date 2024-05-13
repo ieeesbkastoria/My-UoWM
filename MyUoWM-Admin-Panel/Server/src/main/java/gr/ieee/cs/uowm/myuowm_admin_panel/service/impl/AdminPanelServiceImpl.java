@@ -100,7 +100,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String updateClub(Club club) {
         try {
-            if(clubRepository.findById(club.getClub_id()).isEmpty())
+            if(clubRepository.findById(club.getClubName()).isEmpty())
                 //TODO throw proper error message
                 return "Club not found";
             clubRepository.save(club);

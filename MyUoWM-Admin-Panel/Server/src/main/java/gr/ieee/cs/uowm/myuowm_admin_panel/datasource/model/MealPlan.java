@@ -34,4 +34,19 @@ public class MealPlan {
     private String salad;
     @Column(nullable = false)
     private String dessert;
+
+    public boolean equals(MealPlan mealPlan) {
+        if(mealPlan == null)
+            return false;
+
+        return mealPlan.getId().equals(id)
+                && mealPlan.getMealId().equals(mealId)
+                && mealPlan.getWeek_number().equals(week_number)
+                && mealPlan.getDay_of_week().equals(day_of_week)
+                && mealPlan.getDish1().equals(dish1)
+                && mealPlan.getDish2().equals(dish2)
+                && mealPlan.getMealType().equals(mealType)
+                && mealPlan.getSalad().equals(salad)
+                && mealPlan.getDessert().equals(dessert);
+    }
 }

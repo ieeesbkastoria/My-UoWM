@@ -20,7 +20,17 @@ public class Personnel {
     private String name;
     private String phone;
     private String office;
-    private String officeHours;
     private String email;
+
+    public boolean equals(Personnel personnel) {
+        if(personnel == null )
+            return false;
+
+        return personnel.getPersonnel_id().equals(personnel_id)
+                && personnel.getDepartment().equals(department)
+                && personnel.getName().equals(name)
+                && personnel.getOffice().equals(office)
+                && personnel.getEmail().equals(email);
+    }
 
 }

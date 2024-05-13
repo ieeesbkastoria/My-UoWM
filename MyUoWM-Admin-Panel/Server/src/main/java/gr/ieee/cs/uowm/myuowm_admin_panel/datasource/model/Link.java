@@ -1,5 +1,6 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,4 +23,13 @@ public class Link {
     @Column(nullable = false)
     private String url;
 
+    public boolean equals(Link link) {
+        if(link == null)
+            return false;
+
+        return link.getId().equals(id)
+                && link.getUsage().equals(usage)
+                && link.getUrl().equals(url);
+
+    }
 }

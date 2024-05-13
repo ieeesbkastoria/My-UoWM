@@ -38,8 +38,8 @@ public class WebAppServiceImpl implements WebAppService {
     @Override
     public Personnel getPersonnel(String id) {
         if(personnelRepository.findById(id).isEmpty())
-            //change system.out to custom Exception
-            System.out.println("Error");
+            // TODO throw proper error
+            return null;
         return personnelRepository.findById(id).get();
     }
 
