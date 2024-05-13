@@ -20,6 +20,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+//TODO Update tests to get specific object when exceptions are implemented
+
 class WebAppServiceImplTest {
 
     @Mock
@@ -49,7 +51,6 @@ class WebAppServiceImplTest {
         mealPlan = new MealPlan(1L, 1L, 1, "Monday", "dish1", "dish2", MealType.DINNER, "salad", "cake");
         personnel = new Personnel("4444", "CS", "Kostas", "6999999", "22", "kostas@uowm.gr");
 
-        personnelRepository.save(personnel);
     }
 
     @AfterEach
@@ -101,6 +102,7 @@ class WebAppServiceImplTest {
         when(personnelRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
         assertThat(webAppService.getAllPersonnel().equals(staff)).isFalse();
     }
+
     // Test case Success
     @Test
     void testGetPersonnel_Found() {
@@ -108,7 +110,6 @@ class WebAppServiceImplTest {
         mock(MyUoWmAdminPanelPersonnelRepository.class);
 
         when(personnelRepository.findById(personnel.getPersonnel_id())).thenReturn(Optional.of(personnel));
-        when(personnelRepository.findById(personnel.getPersonnel_id()).get()).thenReturn(personnel);
 
         assertThat(webAppService.getPersonnel(personnel.getPersonnel_id()).equals(personnel)).isTrue();
     }
@@ -120,23 +121,61 @@ class WebAppServiceImplTest {
         mock(Personnel.class);
         mock(MyUoWmAdminPanelPersonnelRepository.class);
 
-        when(personnelRepository.findById(personnel.getPersonnel_id())).thenReturn(Optional.of(personnel));
-        when(personnelRepository.findById(personnel.getPersonnel_id()).get()).thenReturn(personnel);
+        when(personnelRepository.findById(personnel.getPersonnel_id())).thenReturn(Optional.empty());
 
-        assertThat(webAppService.getPersonnel(personnel.getPersonnel_id()).equals(personnel)).isTrue();
+        //TODO change to check for custom exception
+        assertThat(webAppService.getPersonnel(personnel.getPersonnel_id()).equals(personnel)).isFalse();
     }
+
+    // Test case Success
     @Test
-    void getAllClubs() {
+    void testGetAllClubs_Found() {
+        mock(Club.class);
+        mock(MyUoWmAdminPanelClubRepository.class);
+
+        List<Club> staff = List.of(club);
+        when(clubRepository.findAll()).thenReturn(staff);
+        assertThat(webAppService.getAllClubs().equals(staff)).isTrue();
+        assertThat(webAppService.getAllClubs().stream().allMatch(_club -> _club.equals(club))).isTrue();
+    }
+
+    // Test case Failure
+    @Test
+    void testGetAllClubs_NotFound() {
+        mock(Club.class);
+        mock(MyUoWmAdminPanelClubRepository.class);
+
+        List<Club> staff = List.of(club);
+        when(clubRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
+        assertThat(webAppService.getAllClubs().equals(staff)).isFalse();
     }
 
     @Test
     void getClub() {
     }
 
+    // Test case Success
     @Test
-    void getAllLinks() {
+    void testGetAllLinks_Found() {
+        mock(Link.class);
+        mock(MyUoWmAdminPanelLinkRepository.class);
+
+        List<Link> staff = List.of(link);
+        when(linkRepository.findAll()).thenReturn(staff);
+        assertThat(webAppService.getAllLinks().equals(staff)).isTrue();
+        assertThat(webAppService.getAllLinks().stream().allMatch(_link -> _link.equals(link))).isTrue();
     }
 
+    // Test case Failure
+    @Test
+    void testGetAllLinks_NotFound() {
+        mock(Link.class);
+        mock(MyUoWmAdminPanelLinkRepository.class);
+
+        List<Link> staff = List.of(link);
+        when(linkRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
+        assertThat(webAppService.getAllLinks().equals(staff)).isFalse();
+    }
     @Test
     void getSpecificLink() {
     }
