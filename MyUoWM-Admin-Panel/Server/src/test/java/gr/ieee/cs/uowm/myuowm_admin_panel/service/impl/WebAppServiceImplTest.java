@@ -75,8 +75,8 @@ class WebAppServiceImplTest {
         mock(MealPlan.class);
         mock(MyUoWmAdminPanelMealPlanRepository.class);
 
-        List<MealPlan> meals = List.of();
-        when(mealPlanRepository.findByMealId(1L)).thenReturn(meals);
+        List<MealPlan> meals = List.of(mealPlan);
+        when(mealPlanRepository.findByMealId(1L)).thenReturn(Collections.EMPTY_LIST);
         assertThat(webAppService.getMealPlan().equals(meals)).isFalse();
     }
 
