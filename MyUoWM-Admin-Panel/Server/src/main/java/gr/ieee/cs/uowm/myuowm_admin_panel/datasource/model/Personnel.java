@@ -1,6 +1,5 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,16 +22,30 @@ public class Personnel {
     private String office;
     private String email;
 
-    public boolean equals(@Nullable Personnel personnel) {
-        try {
-            return personnel.getPersonnel_id().equals(personnel_id)
-                    && personnel.getDepartment().equals(department)
-                    && personnel.getName().equals(name)
-                    && personnel.getOffice().equals(office)
-                    && personnel.getEmail().equals(email);
-        } catch (NullPointerException e) {
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null)
             return false;
-        }
+
+        if(obj.getClass() != this.getClass())
+            return false;
+
+        final Personnel other = (Personnel) obj;
+
+        if((this.personnel_id == null) ? (other.personnel_id != null) : !this.personnel_id.equals(other.personnel_id))
+            return false;
+        if((this.department == null) ? (other.department != null) : !this.department.equals(other.department))
+            return false;
+        if((this.name == null) ? (other.name != null) : !this.name.equals(other.name))
+            return false;
+        if((this.phone == null) ? (other.phone != null) : !this.phone.equals(other.phone))
+            return false;
+        if((this.office == null) ? (other.office != null) : !this.office.equals(other.office))
+            return false;
+        if((this.email == null) ? (other.email != null) : !this.email.equals(other.email))
+            return false;
+
+        return true;
     }
 
 }

@@ -1,7 +1,6 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model;
 
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -22,11 +21,21 @@ public class Club {
     private String clubName;
     private String link;
 
-    public boolean equals(Club club) {
-        if(club == null)
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null)
             return false;
 
-        return club.getClubName().equals(clubName)
-                && club.getLink().equals(link);
+        if(obj.getClass() != this.getClass())
+            return false;
+
+        final Club other = (Club) obj;
+
+        if((this.clubName == null) ? (other.clubName != null) : !this.clubName.equals(other.clubName))
+            return false;
+        if((this.link == null) ? (other.link != null) : !this.link.equals(other.link))
+            return false;
+
+        return true;
     }
 }

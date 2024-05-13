@@ -23,13 +23,23 @@ public class Link {
     @Column(nullable = false)
     private String url;
 
-    public boolean equals(Link link) {
-        if(link == null)
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null)
             return false;
 
-        return link.getId().equals(id)
-                && link.getUsage().equals(usage)
-                && link.getUrl().equals(url);
+        if(obj.getClass() != this.getClass())
+            return false;
 
+        final Link other = (Link) obj;
+
+        if((this.id == null) ? (other.id != null) : !this.id.equals(other.id))
+            return false;
+        if((this.usage == null) ? (other.usage != null) : !this.usage.equals(other.usage))
+            return false;
+        if((this.url == null) ? (other.url != null) : !this.url.equals(other.url))
+            return false;
+
+        return true;
     }
 }
