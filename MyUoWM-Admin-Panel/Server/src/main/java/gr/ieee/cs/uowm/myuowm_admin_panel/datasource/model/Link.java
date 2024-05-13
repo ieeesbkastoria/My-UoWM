@@ -1,6 +1,5 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
