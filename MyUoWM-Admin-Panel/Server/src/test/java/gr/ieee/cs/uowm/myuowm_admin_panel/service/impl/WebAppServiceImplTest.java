@@ -5,6 +5,9 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanel
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,6 +20,8 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -115,7 +120,6 @@ class WebAppServiceImplTest {
     }
 
     // Test case Failure
-    // TODO
     @Test
     void testGetPersonnel_NotFound() {
         mock(Personnel.class);
@@ -123,8 +127,10 @@ class WebAppServiceImplTest {
 
         when(personnelRepository.findById(personnel.getPersonnel_id())).thenReturn(Optional.empty());
 
-        //TODO change to check for custom exception
-        assertThat(webAppService.getPersonnel(personnel.getPersonnel_id()).equals(personnel)).isFalse();
+        PersonnelNotFoundException exception = assertThrows(PersonnelNotFoundException.class,
+                () -> webAppService.getPersonnel(personnel.getPersonnel_id()));
+
+        assertEquals(exception.getMessage(), "Given id does not match any personnel entity in the data base");
     }
 
     // Test case Success
@@ -150,10 +156,30 @@ class WebAppServiceImplTest {
         assertThat(webAppService.getAllClubs().equals(staff)).isFalse();
     }
 
+    // Test case Success
     @Test
-    void getClub() {
+    void testGetClub_Found() {
+        mock(Club.class);
+        mock(MyUoWmAdminPanelClubRepository.class);
+
+        when(clubRepository.findById(club.getClubName())).thenReturn(Optional.of(club));
+
+        assertThat(webAppService.getClub(club.getClubName()).equals(club)).isTrue();
     }
 
+    //Test case Failure
+    @Test
+    void testGetClub_NotFound() {
+        mock(Club.class);
+        mock(MyUoWmAdminPanelClubRepository.class);
+
+        when(clubRepository.findById(club.getClubName())).thenReturn(Optional.empty());
+
+        ClubNotFoundException exception = assertThrows(ClubNotFoundException.class,
+                () -> webAppService.getClub(club.getClubName()));
+
+        assertEquals(exception.getMessage(), "Given id does not match any club in the data base");
+    }
     // Test case Success
     @Test
     void testGetAllLinks_Found() {
@@ -176,7 +202,28 @@ class WebAppServiceImplTest {
         when(linkRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
         assertThat(webAppService.getAllLinks().equals(staff)).isFalse();
     }
+    // Test case Success
     @Test
-    void getSpecificLink() {
+    void testGetLink_Found() {
+        mock(Link.class);
+        mock(MyUoWmAdminPanelLinkRepository.class);
+
+        when(linkRepository.findByUsage(link.getUsage())).thenReturn(Optional.of(link));
+
+        assertThat(webAppService.getLink(link.getUsage()).equals(link)).isTrue();
+    }
+
+    //Test case Failure
+    @Test
+    void testGetLink_NotFound() {
+        mock(Link.class);
+        mock(MyUoWmAdminPanelLinkRepository.class);
+
+        when(linkRepository.findByUsage(link.getUsage())).thenReturn(Optional.empty());
+
+        LinkNotFoundException exception = assertThrows(LinkNotFoundException.class,
+                () -> webAppService.getLink(link.getUsage()));
+
+        assertEquals(exception.getMessage(), "Given usage does not match any link in the data base");
     }
 }

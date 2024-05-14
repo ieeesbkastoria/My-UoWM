@@ -65,7 +65,7 @@ public class WebAppServiceImpl implements WebAppService {
     }
 
     @Override
-    public Link getSpecificLink(String usage) {
+    public Link getLink(String usage) {
         if(linkRepository.findByUsage(usage).isPresent())
             return linkRepository.findByUsage(usage).get();
 

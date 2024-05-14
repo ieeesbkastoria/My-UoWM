@@ -14,6 +14,6 @@ public interface WebAppService {
     public List<Club> getAllClubs();
     public Club getClub(String id);
     public List<Link> getAllLinks();
-    public Link getSpecificLink(String url);
+    public Link getLink(String url);
 
 }

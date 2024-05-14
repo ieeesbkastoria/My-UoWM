@@ -29,7 +29,7 @@ public class WebAppController {
 
     @GetMapping("/links/{usage}")
     public Link getSpecificLink(@PathVariable("usage")String usage) {
-        return webAppService.getSpecificLink(usage);
+        return webAppService.getLink(usage);
     }
 
     @GetMapping("/personnel")
