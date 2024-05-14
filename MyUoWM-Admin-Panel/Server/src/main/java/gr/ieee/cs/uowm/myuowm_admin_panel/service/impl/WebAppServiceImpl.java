@@ -8,6 +8,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanel
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -37,10 +38,10 @@ public class WebAppServiceImpl implements WebAppService {
 
     @Override
     public Personnel getPersonnel(String id) {
-        if(personnelRepository.findById(id).isEmpty())
-            // TODO throw proper error
-            return null;
-        return personnelRepository.findById(id).get();
+        if(!personnelRepository.findById(id).isEmpty())
+            return personnelRepository.findById(id).get();
+
+        throw new PersonnelNotFoundException("Given id does not match any personnel entity in the data base");
     }
 
     @Override
