@@ -8,6 +8,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanel
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import lombok.AllArgsConstructor;
@@ -38,7 +39,7 @@ public class WebAppServiceImpl implements WebAppService {
 
     @Override
     public Personnel getPersonnel(String id) {
-        if(!personnelRepository.findById(id).isEmpty())
+        if(personnelRepository.findById(id).isPresent())
             return personnelRepository.findById(id).get();
 
         throw new PersonnelNotFoundException("Given id does not match any personnel entity in the data base");
@@ -51,10 +52,10 @@ public class WebAppServiceImpl implements WebAppService {
 
     @Override
     public Club getClub(String id) {
-        if(clubRepository.findById(id).isEmpty())
-            //change system.out to custom Exception
-            System.out.println("Error");
-        return clubRepository.findById(id).get();
+        if(clubRepository.findById(id).isPresent())
+            return clubRepository.findById(id).get();
+
+        throw new ClubNotFoundException("Given id does not match any club in the data base");
     }
 
     @Override
