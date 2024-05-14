@@ -9,6 +9,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanel
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import lombok.AllArgsConstructor;
@@ -65,9 +66,9 @@ public class WebAppServiceImpl implements WebAppService {
 
     @Override
     public Link getSpecificLink(String usage) {
-        if(linkRepository.findByUsage(usage).isEmpty())
-            //change system.out to custom Exception
-            System.out.println("Error");
-        return linkRepository.findByUsage(usage).get();
+        if(linkRepository.findByUsage(usage).isPresent())
+            return linkRepository.findByUsage(usage).get();
+
+        throw new LinkNotFoundException("Given usage does not match any link in the data base");
     }
 }
