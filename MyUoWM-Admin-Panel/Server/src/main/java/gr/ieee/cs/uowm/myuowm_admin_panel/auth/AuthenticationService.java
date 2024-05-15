@@ -33,7 +33,7 @@ public class AuthenticationService {
         var user = User.builder()
                 .password(passwordEncoder.encode(request.getPwd()))
                 .username(request.getUser())
-                .role(Role.ADMIN)
+                .role(Role.ADMIN) // TODO Update both this method to read Role from client request. First the React app needs to implement the admin json field
                 .build();
         var savedUser = repository.save(user);
         var jwtToken = jwtService.generateToken(user);
@@ -48,11 +48,11 @@ public class AuthenticationService {
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
+                        request.getUsername(),
+                        request.getPwd()
                 )
         );
-        var user = repository.findByUsername(request.getEmail())
+        var user = repository.findByUsername(request.getUsername())
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         var refreshToken = jwtService.generateRefreshToken(user);
