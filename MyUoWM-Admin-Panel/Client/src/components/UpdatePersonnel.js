@@ -28,6 +28,7 @@ const UpdatePersonnel = () => {
     }
     
     getPersonnel();
+
     return () => {
       isMounted = false;
       controller.abort();
