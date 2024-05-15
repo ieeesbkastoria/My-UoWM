@@ -1,4 +1,4 @@
-import axios from '../api.axios';
+import axios from '../api/axios';
 import useAuth from './useAuth';
 
 const useRefreshToken = () => {
@@ -10,8 +10,8 @@ const useRefreshToken = () => {
     });
 
     setAuth(prev => {
-      constole.log(JSON.stringify(prev));
-      constole.log(JSON.stringify(respone));
+      console.log(JSON.stringify(prev));
+      console.log(JSON.stringify(respone));
       
       return {... prev, accessToken: respone.data.accessToken };
     });

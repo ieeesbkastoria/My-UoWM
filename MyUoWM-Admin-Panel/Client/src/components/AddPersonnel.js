@@ -1,5 +1,5 @@
 import {useState } from "react";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import useAxiosPrivate from '../hooks/useAxiosPrivate';
 
 const PERSONNEL_URL = '/api/admin/personnel'
 
@@ -8,6 +8,7 @@ const AddPersonnel = () => {
   const axiosPrivate = useAxiosPrivate();
 
   // TODO these need to be updated according to the project requirements
+  const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [office, setOffice] = useState('');
   const [email, setEmail] = useState('');
@@ -19,7 +20,7 @@ const AddPersonnel = () => {
 
     try {
       const response = await axiosPrivate.post(PERSONNEL_URL,
-      JSON.stringify({ name, office, email, phone, department }));
+      JSON.stringify({ id, name, office, email, phone, department }));
       console.log(JSON.stringify(response?.data));
     } catch (err) {
       if (!err?.response) {
@@ -40,6 +41,13 @@ const AddPersonnel = () => {
     <div className="add-personnel">
       <h1>Add Personnel</h1>
         <form onSubmit={handleSubmit}>
+          <label>Personnel Id:</label>
+            <input
+                type="text"
+                required
+                value={id}
+                onChange={(e) => setId(e.target.value)}
+            />
           <label>Personnel name:</label>
             <input
                 type="text"
@@ -53,13 +61,6 @@ const AddPersonnel = () => {
                 required
                 value={department}
                 onChange={(e) => setDepartment(e.target.value)}
-            />
-          <label>Personnel OfficeHours:</label>
-            <input
-                type="text"
-                required
-                value={officeHours}
-                onChange={(e) => setOfficeHours(e.target.value)}
             />
           <label>Personnel OfficeNumber:</label>
             <input

@@ -1,5 +1,5 @@
 import {useState, useEffect } from "react";
-import { useAxiosPrivate } from '../hooks/useAxiosPrivate';
+import useAxiosPrivate from '../hooks/useAxiosPrivate';
 
 const POST_PERSONNEL_URL = '/api/admin/personnel';
 const GET_PERSONNEL_URL = '/api/myuowm/personnel';
@@ -60,7 +60,7 @@ const UpdatePersonnel = () => {
     <div className="update-personnel">
       <article>
         <ul>
-          { personnel.map((employee, index) => {
+          { personnel?.map((employee, index) => {
             <li>
               <form onSubmit={handleSubmit}>
                 <label>Personnel name:</label>
