@@ -8,82 +8,80 @@ const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/api/auth/register';
 
-const SignUp = () => {
-  const userRef = useRef();
-  const errRef = useRef();
+const Register = () => {
+    const userRef = useRef();
+    const errRef = useRef();
 
-  const [user, setUser] = useState('');
-  const [validName, setValidName] = useState(false);
-  const [userFocus, setUserFocus] = useState(false);
+    const [user, setUser] = useState('');
+    const [validName, setValidName] = useState(false);
+    const [userFocus, setUserFocus] = useState(false);
 
-  const [pwd, setPwd] = useState('');
-  const [validPwd, setValidPwd] = useState(false);
-  const [pwdFocus, setPwdFocus] = useState(false);
+    const [pwd, setPwd] = useState('');
+    const [validPwd, setValidPwd] = useState(false);
+    const [pwdFocus, setPwdFocus] = useState(false);
 
-  const [matchPwd, setMatchPwd] = useState('');
-  const [validMatch, setValidMath] = useState(false)
-  const [matchFocus, setMatchFocus] = useState(false);
+    const [matchPwd, setMatchPwd] = useState('');
+    const [validMatch, setValidMatch] = useState(false);
+    const [matchFocus, setMatchFocus] = useState(false);
 
-  const [errMsg, setErrMsg] = useState('');
-  const [success, setSuccess] = useState(false);
+    const [errMsg, setErrMsg] = useState('');
+    const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    useRef.current.focus();
-  }, [])
+    useEffect(() => {
+        userRef.current.focus();
+    }, [])
 
-  useEffect(() => {
-    setValidName(USER_REGEX.test(user));
-  }, [user])
+    useEffect(() => {
+        setValidName(USER_REGEX.test(user));
+    }, [user])
 
-  useEffect(() => {
-    setValidPwd(PWD_REGEX.test(pwd));
-    setValidMath(pwd == matchPwd);
-  }, [pwd, matchPwd])
+    useEffect(() => {
+        setValidPwd(PWD_REGEX.test(pwd));
+        setValidMatch(pwd === matchPwd);
+    }, [pwd, matchPwd])
 
-  useEffect(() => {
-    setErrMsg('');
-  }, [user, pwd, matchPwd])
+    useEffect(() => {
+        setErrMsg('');
+    }, [user, pwd, matchPwd])
 
-  const handleSubmit = async (e) => {
-    e.preventDefaults()
-
-    const userValid = USER_REGEX.test(user);
-    const pwdValid = PWD_REGEX.test(pwd);
-    if(!userValid || !pwdValid) {
-      setErrMsg('Invalid Entry')
-      return;
-    }
-
-    try {
-      const response = await axios.post(REGISTER_URL,
-        JSON.stringify({ user, pwd }),
-        {
-          headers: { 'Content-Type': 'applicatoin/json' },
-          withCredentials: true
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // if button enabled with JS hack
+        const v1 = USER_REGEX.test(user);
+        const v2 = PWD_REGEX.test(pwd);
+        if (!v1 || !v2) {
+            setErrMsg("Invalid Entry");
+            return;
         }
-      );
-
-      //TODO remove console.logs before deployemnt
-      console.log(JSON.stringify(response?.data));
-      setSuccess(true);
-      setUser('');
-      setPwd('');
-      setMatchPwd('');
-
-    } catch (err) {
-      if(!err?.response){
-        setErrMsg('No Server Error')
-      } else if(err?.response.status === 409) {
-        setErrMsg('Username Taken');
-      } else {
-        setErrMsg('Registration Failed');
-      }
-      errRef.current.focus();
+        try {
+            const response = await axios.post(REGISTER_URL,
+                JSON.stringify({ user, pwd }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
+            // TODO: remove console.logs before deployment
+            console.log(JSON.stringify(response?.data));
+            //console.log(JSON.stringify(response))
+            setSuccess(true);
+            //clear state and controlled inputs
+            setUser('');
+            setPwd('');
+            setMatchPwd('');
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if (err.response?.status === 409) {
+                setErrMsg('Username Taken');
+            } else {
+                setErrMsg('Registration Failed')
+            }
+            errRef.current.focus();
+        }
     }
 
-  }
-
-  return (
+    return (
         <>
             {success ? (
                 <section>
@@ -173,15 +171,13 @@ const SignUp = () => {
                     <p>
                         Already registered?<br />
                         <span className="line">
-                            <Link to="login">Sign In</Link>
+                            <Link to="/">Sign In</Link>
                         </span>
                     </p>
                 </section>
             )}
         </>
     )
-
 }
 
-
-export default SignUp
+export default Register

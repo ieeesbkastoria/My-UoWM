@@ -25,7 +25,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-//TODO Update tests to get specific object when exceptions are implemented
 
 class WebAppServiceImplTest {
 

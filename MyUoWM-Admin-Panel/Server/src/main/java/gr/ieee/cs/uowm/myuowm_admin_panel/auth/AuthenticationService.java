@@ -5,6 +5,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.config.JwtService;
 import gr.ieee.cs.uowm.myuowm_admin_panel.token.Token;
 import gr.ieee.cs.uowm.myuowm_admin_panel.token.TokenRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.token.TokenType;
+import gr.ieee.cs.uowm.myuowm_admin_panel.user.Role;
 import gr.ieee.cs.uowm.myuowm_admin_panel.user.User;
 import gr.ieee.cs.uowm.myuowm_admin_panel.user.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,11 +31,9 @@ public class AuthenticationService {
 
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder()
-                .firstname(request.getFirstname())
-                .lastname(request.getLastname())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .role(request.getRole())
+                .password(passwordEncoder.encode(request.getPwd()))
+                .username(request.getUser())
+                .role(Role.ADMIN)
                 .build();
         var savedUser = repository.save(user);
         var jwtToken = jwtService.generateToken(user);
@@ -53,7 +52,7 @@ public class AuthenticationService {
                         request.getPassword()
                 )
         );
-        var user = repository.findByEmail(request.getEmail())
+        var user = repository.findByUsername(request.getEmail())
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         var refreshToken = jwtService.generateRefreshToken(user);
@@ -100,7 +99,7 @@ public class AuthenticationService {
         refreshToken = authHeader.substring(7);
         userEmail = jwtService.extractUsername(refreshToken);
         if (userEmail != null) {
-            var user = this.repository.findByEmail(userEmail)
+            var user = this.repository.findByUsername(userEmail)
                     .orElseThrow();
             if (jwtService.isTokenValid(refreshToken, user)) {
                 var accessToken = jwtService.generateToken(user);
