@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/myuowm")
 @AllArgsConstructor
+@CrossOrigin
 public class WebAppController {
 
     private final WebAppService webAppService;

@@ -16,6 +16,7 @@ import java.util.List;
 @RequestMapping("/api/admin")
 @PreAuthorize("hasRole('ADMIN')")
 @AllArgsConstructor
+@CrossOrigin
 public class AdminPanelController {
 
     private final AdminPanelService adminPanelService;
