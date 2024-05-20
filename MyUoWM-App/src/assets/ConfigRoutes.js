@@ -99,7 +99,7 @@ export const Categories = [
   {
     title: "Student Portal",
     iconSVG: <StudentInPCIcon />,
-    route: "https://students.uowm.gr/login.asp",
+    route: "https://students.uowm.gr",
     span: 1,
     isExternal: true,
     requireSelection: false,

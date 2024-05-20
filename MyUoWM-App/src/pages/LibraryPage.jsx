@@ -80,7 +80,7 @@ export default function LibraryPage() {
             alignItems="flex-start"
             h="fit-content"
             fontFamily="Syne"
-            w="100%"
+            w="1rem%"
             fontSize={{ base: "md", lg: "xl" }}
             color={useColorModeValue("#f3f3f3", "black")}
           >
@@ -106,20 +106,11 @@ export default function LibraryPage() {
               </Box>
               <Box mx="1rem">
                 <Text as="span" fontWeight={"bold"}>
-                  {i18n.t("savvato")}
+                  {i18n.t("on_weekend")}
                 </Text>{" "}
                 <br />
-                {LIBRARY_OPENING_HOURS.on_saturday.start
-                  ? `${LIBRARY_OPENING_HOURS.on_saturday.start}-${LIBRARY_OPENING_HOURS.on_saturday.end}`
-                  : i18n.t("kleista")}
-              </Box>
-              <Box mx="1rem">
-                <Text as="span" fontWeight={"bold"}>
-                  {i18n.t("kyriaki")}
-                </Text>{" "}
-                <br />
-                {LIBRARY_OPENING_HOURS.on_sunday.start
-                  ? `${LIBRARY_OPENING_HOURS.on_sunday.start}-${LIBRARY_OPENING_HOURS.on_sunday.end}`
+                {LIBRARY_OPENING_HOURS.on_weekend.start
+                  ? `${LIBRARY_OPENING_HOURS.on_on_weekend.start}-${LIBRARY_OPENING_HOURS.on_on_weekend.end}`
                   : i18n.t("kleista")}
               </Box>
             </Flex>
@@ -174,13 +165,9 @@ export default function LibraryPage() {
             >
               <Text>
                 {LIBRARY_PHONE_LIST[0]} <br />
+                <br />
                 {LIBRARY_PHONE_LIST[1]}
               </Text>
-              <Text>
-                {" "}
-                {LIBRARY_PHONE_LIST[2]} <br /> {LIBRARY_PHONE_LIST[3]}{" "}
-              </Text>
-              <Text fontWeight="bold"> {i18n.t("imiorofos")} </Text>
             </Flex>
           </Flex>
         </Box>
@@ -217,7 +204,7 @@ export default function LibraryPage() {
           </Box>
         }
         onClick={(e) => {
-          window.open("https://www.lib.uom.gr/index.php/el/");
+          window.open("https://library.uowm.gr/?page_id=854");
         }}
         justifyContent="center"
       >

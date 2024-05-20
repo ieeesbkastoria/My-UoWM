@@ -60,7 +60,8 @@ const resources = {
       error_title: "No Department selected",
       error_description: "Please select Department from Settings",
       graduation_redirection_message:"Redirecting to section",
-      graduation_description:"Please select Department from Settings"
+      graduation_description:"Please select Department from Settings",
+      on_weekend:"On Weekend"
       // //constants.js --> offices
       // // offices: "Offices",
       // // liaison_office: "Liason Office",
@@ -118,7 +119,8 @@ const resources = {
       error_title: "Δεν έχει επιλεγεί τμήμα",
       error_description: "Παρακαλώ επιλέξτε τμήμα από τις ρυθμίσεις",
       graduation_redirection_message:"Ανακατεύθυνση στο τμήμα",
-      graduation_description:"Παρακαλώ επιλέξτε τμήμα από τις ρυθμίσεις."
+      graduation_description:"Παρακαλώ επιλέξτε τμήμα από τις ρυθμίσεις.",
+      on_weekend:"Σάββατο - Κυριακή"
       //constants.js
       // offices: "Γραφεία",
       // liaison_office: "Γραφείο Διασύνδεσης",
