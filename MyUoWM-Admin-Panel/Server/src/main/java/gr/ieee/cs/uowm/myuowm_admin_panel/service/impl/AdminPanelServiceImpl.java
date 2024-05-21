@@ -25,10 +25,10 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
 
     @Override
-    public String updateLinks(List<Link> links){
+    public List<Link> updateLinks(List<Link> links){
         try {
             linkRepository.saveAll(links);
-            return "Links saved successfully";
+            return links;
         } catch (Exception e) {
             //TODO Throw error
             return "Couldn't save Links";
@@ -36,11 +36,11 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String saveMealPlan(List<MealPlan> mealPlan) {
+    public List<MealPlan> saveMealPlan(List<MealPlan> mealPlan) {
         try {
             mealPlan.forEach(meal -> meal.setMealId(1L));
             mealPlanRepository.saveAll(mealPlan);
-            return "DinnerPlan saved successfully";
+            return mealPlan;
         } catch (Exception e) {
             //TODO throw error
             return "Couldnt save DinnerPlan";
@@ -48,10 +48,10 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String savePersonnel(Personnel personnel) {
+    public Personnel savePersonnel(Personnel personnel) {
         try {
             personnelRepository.save(personnel);
-            return "Personnel saved successfully";
+            return personnel;
         } catch (Exception e) {
             //TODO throw error
             return "Couldnt save personnel";
@@ -59,13 +59,13 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String updatePersonnel(Personnel personnel) {
+    public Personnel updatePersonnel(Personnel personnel) {
         try {
             if(personnelRepository.findById(personnel.getPersonnel_id()).isEmpty())
                 //TODO throw proper error message1
-                return "Couldnt find personnel";
+                return personnel;
             personnelRepository.save(personnel);
-            return "Personal updated successfully";
+            return personnel;
         } catch (Exception e) {
             //TODO throw error
             return null;
@@ -87,10 +87,10 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String saveClub(Club club) {
+    public Club saveClub(Club club) {
         try {
             clubRepository.save(club);
-            return "Club saved successfully";
+            return Club;
         } catch (Exception e) {
             //TODO throw error
             return null;
@@ -98,13 +98,13 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public String updateClub(Club club) {
+    public Club updateClub(Club club) {
         try {
             if(clubRepository.findById(club.getClubName()).isEmpty())
                 //TODO throw proper error message
-                return "Club not found";
+                return club;
             clubRepository.save(club);
-            return "Club updated successfully";
+            return club;
         } catch (Exception e) {
             //TODO throw error
             return "Unexpected error";

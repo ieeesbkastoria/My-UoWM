@@ -5,8 +5,11 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
+import gr.ieee.cs.uowm.myuowm_admin_panel.response.ResponseHandler;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,49 +27,65 @@ public class AdminPanelController {
 
     @PutMapping("/links")
     @PreAuthorize("hasAuthority('admin:update')")
-    public String updateLinks(@RequestBody List<Link> links) {
-        return adminPanelService.updateLinks(links);
+    public ResponseEntity<Object> updateLinks(@RequestBody List<Link> links) {
+        var response = adminPanelService.updateLinks(links);
+
+        return ResponseHandler.responseBuilder("The links have been updated successfully", HttpStatus.OK, response);
     }
 
     @PutMapping("/lesxi")
     @PreAuthorize("hasAuthority('admin:update')")
-    public String updateDinnerPlan(@RequestBody List<MealPlan> mealPlan) {
-        return adminPanelService.saveMealPlan(mealPlan);
+    public ResponseEntity<Object> updateDinnerPlan(@RequestBody List<MealPlan> mealPlan) {
+        var response = adminPanelService.saveMealPlan(mealPlan);
+
+        return ResponseHandler.responseBuilder("The meal plan has been successfully updated", HttpStatus.OK, response);
     }
 
     @PostMapping("/personnel")
     @PreAuthorize("hasAuthority('admin:create')")
-    public String addPersonnel(@RequestBody Personnel personnel) {
-        return adminPanelService.savePersonnel(personnel);
+    public ResponseEntity<Object> addPersonnel(@RequestBody Personnel personnel) {
+        var response = adminPanelService.savePersonnel(personnel);
+
+        return ResponseHandler.responseBuilder("The provided employee has been added successfully", HttpStatus.OK, response);
     }
 
     @PutMapping("/personnel")
     @PreAuthorize("hasAuthority('admin:update')")
-    public String updatePersonnel(@RequestBody Personnel personnel) {
-        return adminPanelService.updatePersonnel(personnel);
+    public ResponseEntity<Object> updatePersonnel(@RequestBody Personnel personnel) { //TODO change to list of personnel
+        var response = adminPanelService.updatePersonnel(personnel);
+
+        return ResponseHandler.responseBuilder("The provided personnel list has been updated successfully", HttpStatus.OK, response);
     }
 
     @DeleteMapping("/personnel/{personnelId}")
     @PreAuthorize("hasAuthority('admin:delete')")
-    public String deletePersonnel(@PathVariable("personnelId") String personnelId) {
-        return adminPanelService.deletePersonnel(personnelId);
+    public ResponseEntity<Object> deletePersonnel(@PathVariable("personnelId") String personnelId) {
+        var response = adminPanelService.deletePersonnel(personnelId);
+
+        return ResponseHandler.responseBuilder("The personnel with the provided id has been deleted successfully", HttpStatus.OK, response);
     }
 
     @PostMapping("/clubs")
     @PreAuthorize("hasAuthority('admin:create')")
-    public String addClub(@RequestBody Club club) {
-        return adminPanelService.saveClub(club);
+    public ResponseEntity<Object> addClub(@RequestBody Club club) {
+        var response = adminPanelService.saveClub(club);
+
+        return ResponseHandler.responseBuilder("The the provided club has been added successfully", HttpStatus.OK, response);
     }
 
     @PutMapping("/club")
     @PreAuthorize("hasAuthority('admin:update')")
-    public String updateClub(@RequestBody Club club) {
-        return adminPanelService.updateClub(club);
+    public ResponseEntity<Object> updateClub(@RequestBody Club club) { //TODO change to list of clubs
+        var response = adminPanelService.updateClub(club);
+
+        return ResponseHandler.responseBuilder("The the provided list of clubs has been updated successfully", HttpStatus.OK, response);
     }
 
     @DeleteMapping("/club/{clubId}")
     @PreAuthorize("hasAuthority('admin:delete')")
-    public String deleteClub(@PathVariable("{clubId") String clubId) {
-        return adminPanelService.deleteClub(clubId);
+    public ResponseEntity<Object> deleteClub(@PathVariable("{clubId") String clubId) {
+        var response = adminPanelService.deleteClub(clubId);
+
+        return ResponseHandler.responseBuilder("The club with the provided id has been deleted successfully", HttpStatus.OK, response);
     }
 }
