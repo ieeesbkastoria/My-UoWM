@@ -31,7 +31,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     public List<Link> updateLinks(List<Link> links){
         links.forEach(link -> {
             if(linkRepository.findByUsage(link.getUsage()).isEmpty())
-                throw new LinkNotFoundException("The link with the usage: " + link.getUsage() + "could not be found");
+                throw new LinkNotFoundException("The list of links contains a non valid link usage");
         });
 
         linkRepository.saveAll(links);
@@ -55,7 +55,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     public List<Personnel> updatePersonnel(List<Personnel> personnel) {
         personnel.forEach(employee -> {
             if(personnelRepository.findById(employee.getPersonnel_id()).isEmpty())
-                throw new PersonnelNotFoundException("The employee with the id: " + employee.getPersonnel_id() + "could not be found");
+                throw new PersonnelNotFoundException("The provided list contains an employee with an unknown id");
         });
 
         personnelRepository.saveAll(personnel);
@@ -65,10 +65,10 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String deletePersonnel(String personnelId) {
         if(personnelRepository.findById(personnelId).isEmpty())
-            throw new PersonnelNotFoundException("The employee with the id: " + personnelId + "could not be found");
+            throw new PersonnelNotFoundException("The employee with the id: " + personnelId + " could not be found");
 
         personnelRepository.deleteById(personnelId);
-        return "Personal with id: " + personnelId + " deleted successfully";
+        return "Personnel with id: " + personnelId + " deleted successfully";
 
     }
 
@@ -82,7 +82,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     public List<Club> updateClub(List<Club> clubs) {
         clubs.forEach(club -> {
             if(clubRepository.findById(club.getClubName()).isEmpty())
-                throw new ClubNotFoundException("The club with the name: " + club.getClubName() + " could not be found");
+                throw new ClubNotFoundException("The list of clubs contains a non valid club name");
         });
 
         clubRepository.saveAll(clubs);
@@ -92,7 +92,7 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     @Override
     public String deleteClub(String clubId) {
             if(clubRepository.findById(clubId).isEmpty())
-                throw new ClubNotFoundException("The club with the name: " + clubId + " could not be found");
+                throw new ClubNotFoundException("The provided clubs name does not match any club in the database");
 
             clubRepository.deleteById(clubId);
             return "Club deleted successfully";

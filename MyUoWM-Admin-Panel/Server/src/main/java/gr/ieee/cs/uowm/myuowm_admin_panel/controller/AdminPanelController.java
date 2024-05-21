@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//TODO add comments to each method(error handling information)
 @RestController
 @RequestMapping("/api/admin")
 @PreAuthorize("hasRole('ADMIN')")
