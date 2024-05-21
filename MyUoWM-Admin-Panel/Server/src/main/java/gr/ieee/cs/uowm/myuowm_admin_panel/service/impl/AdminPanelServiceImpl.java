@@ -8,6 +8,9 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanel
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,102 +29,68 @@ public class AdminPanelServiceImpl implements AdminPanelService {
 
     @Override
     public List<Link> updateLinks(List<Link> links){
-        try {
-            linkRepository.saveAll(links);
-            return links;
-        } catch (Exception e) {
-            //TODO Throw error
-            return "Couldn't save Links";
-        }
+        links.forEach(link -> {
+            if(linkRepository.findByUsage(link.getUsage()).isEmpty())
+                throw new LinkNotFoundException("The link with the usage: " + link.getUsage() + "could not be found");
+        });
+
+        linkRepository.saveAll(links);
+        return links;
     }
 
     @Override
     public List<MealPlan> saveMealPlan(List<MealPlan> mealPlan) {
-        try {
-            mealPlan.forEach(meal -> meal.setMealId(1L));
-            mealPlanRepository.saveAll(mealPlan);
-            return mealPlan;
-        } catch (Exception e) {
-            //TODO throw error
-            return "Couldnt save DinnerPlan";
-        }
+        mealPlan.forEach(meal -> meal.setMealId(1L));
+        mealPlanRepository.saveAll(mealPlan);
+        return mealPlan;
     }
 
     @Override
     public Personnel savePersonnel(Personnel personnel) {
-        try {
-            personnelRepository.save(personnel);
-            return personnel;
-        } catch (Exception e) {
-            //TODO throw error
-            return "Couldnt save personnel";
-        }
+        personnelRepository.save(personnel);
+        return personnel;
     }
 
     @Override
     public Personnel updatePersonnel(Personnel personnel) {
-        try {
-            if(personnelRepository.findById(personnel.getPersonnel_id()).isEmpty())
-                //TODO throw proper error message1
-                return personnel;
-            personnelRepository.save(personnel);
-            return personnel;
-        } catch (Exception e) {
-            //TODO throw error
-            return null;
-        }
+        if(personnelRepository.findById(personnel.getPersonnel_id()).isEmpty())
+            throw new PersonnelNotFoundException("The employee with the id: " + personnel.getPersonnel_id() + "could not be found");
+
+        personnelRepository.save(personnel);
+        return personnel;
     }
 
     @Override
     public String deletePersonnel(String personnelId) {
-        try {
-            if(personnelRepository.findById(personnelId).isEmpty())
-                // TODO throw proper error message
-                return "Couldnt find personnel";
-            personnelRepository.deleteById(personnelId);
-            return "Personal deleted successfully";
-        } catch (Exception e) {
-            //TODO throw error
-            return null;
-        }
+        if(personnelRepository.findById(personnelId).isEmpty())
+            throw new PersonnelNotFoundException("The employee with the id: " + personnelId + "could not be found");
+
+        personnelRepository.deleteById(personnelId);
+        return "Personal with id: " + personnelId + " deleted successfully";
+
     }
 
     @Override
     public Club saveClub(Club club) {
-        try {
-            clubRepository.save(club);
-            return Club;
-        } catch (Exception e) {
-            //TODO throw error
-            return null;
-        }
+        clubRepository.save(club);
+        return club;
     }
 
     @Override
     public Club updateClub(Club club) {
-        try {
-            if(clubRepository.findById(club.getClubName()).isEmpty())
-                //TODO throw proper error message
-                return club;
-            clubRepository.save(club);
-            return club;
-        } catch (Exception e) {
-            //TODO throw error
-            return "Unexpected error";
-        }
+        if(clubRepository.findById(club.getClubName()).isEmpty())
+            throw new ClubNotFoundException("The club with the name: " + club.getClubName() + " could not be found");
+
+        clubRepository.save(club);
+        return club;
     }
 
     @Override
     public String deleteClub(String clubId) {
-        try {
             if(clubRepository.findById(clubId).isEmpty())
-                // TODO throw proper error message
-                return "Club not found";
+                throw new ClubNotFoundException("The club with the name: " + clubId + " could not be found");
+
             clubRepository.deleteById(clubId);
             return "Club deleted successfully";
-        } catch (Exception e) {
-            //TODO throw error
-            return null;
-        }
     }
 }
