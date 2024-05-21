@@ -52,11 +52,13 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public Personnel updatePersonnel(Personnel personnel) {
-        if(personnelRepository.findById(personnel.getPersonnel_id()).isEmpty())
-            throw new PersonnelNotFoundException("The employee with the id: " + personnel.getPersonnel_id() + "could not be found");
+    public List<Personnel> updatePersonnel(List<Personnel> personnel) {
+        personnel.forEach(employee -> {
+            if(personnelRepository.findById(employee.getPersonnel_id()).isEmpty())
+                throw new PersonnelNotFoundException("The employee with the id: " + employee.getPersonnel_id() + "could not be found");
+        });
 
-        personnelRepository.save(personnel);
+        personnelRepository.saveAll(personnel);
         return personnel;
     }
 
@@ -77,12 +79,14 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     }
 
     @Override
-    public Club updateClub(Club club) {
-        if(clubRepository.findById(club.getClubName()).isEmpty())
-            throw new ClubNotFoundException("The club with the name: " + club.getClubName() + " could not be found");
+    public List<Club> updateClub(List<Club> clubs) {
+        clubs.forEach(club -> {
+            if(clubRepository.findById(club.getClubName()).isEmpty())
+                throw new ClubNotFoundException("The club with the name: " + club.getClubName() + " could not be found");
+        });
 
-        clubRepository.save(club);
-        return club;
+        clubRepository.saveAll(clubs);
+        return clubs;
     }
 
     @Override

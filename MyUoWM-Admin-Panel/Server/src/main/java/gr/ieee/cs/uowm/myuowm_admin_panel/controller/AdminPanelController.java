@@ -51,7 +51,7 @@ public class AdminPanelController {
 
     @PutMapping("/personnel")
     @PreAuthorize("hasAuthority('admin:update')")
-    public ResponseEntity<Object> updatePersonnel(@RequestBody Personnel personnel) { //TODO change to list of personnel
+    public ResponseEntity<Object> updatePersonnel(@RequestBody List<Personnel> personnel) { //TODO change to list of personnel
         var response = adminPanelService.updatePersonnel(personnel);
 
         return ResponseHandler.responseBuilder("The provided personnel list has been updated successfully", HttpStatus.OK, response);
@@ -75,8 +75,8 @@ public class AdminPanelController {
 
     @PutMapping("/club")
     @PreAuthorize("hasAuthority('admin:update')")
-    public ResponseEntity<Object> updateClub(@RequestBody Club club) { //TODO change to list of clubs
-        var response = adminPanelService.updateClub(club);
+    public ResponseEntity<Object> updateClub(@RequestBody List<Club> clubs) { //TODO change to list of clubs
+        var response = adminPanelService.updateClub(clubs);
 
         return ResponseHandler.responseBuilder("The the provided list of clubs has been updated successfully", HttpStatus.OK, response);
     }
