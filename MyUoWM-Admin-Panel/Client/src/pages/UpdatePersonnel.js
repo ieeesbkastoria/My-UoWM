@@ -1,7 +1,8 @@
 import {useState, useEffect } from "react";
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
+import UsePatch from '../hooks/UsePatch'
 
-const POST_PERSONNEL_URL = '/api/admin/personnel';
+const POST_PERSONNEL_URL = 'http://localhost:8080/api/admin/personnel';
 const GET_PERSONNEL_URL = '/api/myuowm/personnel';
 
 const UpdatePersonnel = () => {
@@ -35,25 +36,12 @@ const UpdatePersonnel = () => {
     }
   }, [])
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axiosPrivate.post(POST_PERSONNEL_URL,
-      JSON.stringify(personnel));
-      console.log(JSON.stringify(response?.data));
-    } catch (err) {
-      if (!err?.response) {
-        console.log('No Server Response');
-      } else if (err.response?.status === 400) {
-        console.log('Missing element');
-      } else if (err.response?.status === 401) {
-        //TODO Redirect to login
-        console.log('Unauthorized');
-      } else {
-        console.log('Post Failed');
-      }
-    }
+    console.log(JSON.stringify(personnel));
+    UsePatch(POST_PERSONNEL_URL, personnel); 
   }
 
   //TODO Impement put request of personnel data
@@ -63,6 +51,7 @@ const UpdatePersonnel = () => {
     <ul>
       {personnel?.map((employee, index) => (
         <li key={index} className="mb-6">
+          <h1>Updating { employee.name }</h1>
           <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-sm">
             <div className="mb-4">
               <label className="block text-gray-700 mb-2">Personnel name:</label>
@@ -95,7 +84,7 @@ const UpdatePersonnel = () => {
               <input
                 type="text"
                 required
-                value={employee.officeNumber}
+                value={employee.office}
                 onChange={(e) => {
                   const updatedEmployee = { ...employee, officeNumber: e.target.value };
                   setPersonnel([...personnel.slice(0, index), updatedEmployee, ...personnel.slice(index + 1)]);
@@ -132,7 +121,7 @@ const UpdatePersonnel = () => {
             <button
               type="submit"
               className="w-full bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            >
+            onSubmit={handleSubmit}>
               Submit
             </button>
           </form>

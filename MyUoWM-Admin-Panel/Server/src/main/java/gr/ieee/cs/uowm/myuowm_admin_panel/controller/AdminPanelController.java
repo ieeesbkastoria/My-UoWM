@@ -49,7 +49,7 @@ public class AdminPanelController {
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @PutMapping("/personnel")
+    @PatchMapping("/personnel")
     public ResponseEntity<Object> updatePersonnel(@RequestBody List<Personnel> personnel) { //TODO change to list of personnel
         var response = adminPanelService.updatePersonnel(personnel);
 
