@@ -4,7 +4,7 @@ import useAxiosPrivate from '../hooks/useAxiosPrivate';
 const GET_LINKS_URL = '/api/myuowm/links';
 const POST_LINKS_URL = '/api/admin/links';
 const ChangeLinks = () => {
-  const [links, setLinks] = useState
+  const [links, setLinks] = useState();
 
   const axiosPrivate = useAxiosPrivate();
 
@@ -55,28 +55,36 @@ const ChangeLinks = () => {
   }
 
   return (
-    <div className="change-links">
-      <article>
-        <form onSubmit={handleSubmit}>
-          { links.map((link, index) => {
-            <div>
-            <label>Change { link.usage }</label>
-              <input
-                  type="url"
-                  required
-                  value={ link.url }
-                  onChange={(e) => {
-                    link.usage = e.target.value;
-                    setLinks(links.splice(index, link));
-                  }}
-              />
-            </div>
-            }
-          )}
-          <button onSubmit={ handleSubmit } > Submit </button>
-        </form>
-      </article>
-    </div>
+    <div className="change-links bg-gray-100 p-8 rounded-lg shadow-md">
+  <article>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      {links?.map((link, index) => (
+        <div key={index} className="bg-white p-4 rounded shadow-sm">
+          <label className="block text-gray-700 mb-2">
+            Change {link.usage}
+          </label>
+          <input
+            type="url"
+            required
+            value={link.url}
+            onChange={(e) => {
+              const updatedLink = { ...link, url: e.target.value };
+              setLinks([...links.slice(0, index), updatedLink, ...links.slice(index + 1)]);
+            }}
+            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+      ))}
+      <button
+        type="submit"
+        className="w-full bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      >
+        Submit
+      </button>
+    </form>
+  </article>
+</div>
+
   )
 };
 
