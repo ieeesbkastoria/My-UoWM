@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
 
 const GET_LINKS_URL = '/api/myuowm/links';
