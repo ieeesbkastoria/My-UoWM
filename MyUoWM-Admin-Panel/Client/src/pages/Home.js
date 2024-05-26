@@ -13,12 +13,14 @@ const Home = () => {
 
   return (
     <section>
-      <h1>Home</h1>
-      <br />
-      <Link to="/personnel">Edit Personnel</Link>
-      <Link to="/clubs">Edit clubs</Link>
-      <Link to="/meals">Edit meal plan</Link>
-      <Link to="/links">Edit change hyper-links</Link>
+      <div className="font-bold underline">
+        <h1>Home</h1>
+        <br />
+        <Link to="/personnel">Edit Personnel</Link>
+        <Link to="/clubs">Edit clubs</Link>
+        <Link to="/meals">Edit meal plan</Link>
+        <Link to="/links">Edit change hyper-links</Link>
+      </div>
     </section>
   )
 }

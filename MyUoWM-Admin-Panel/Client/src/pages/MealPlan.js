@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
 
 const GET_MEAL_URL = '/api/myuowm/lesxi';
@@ -56,9 +56,6 @@ const MealPlan = () => {
       }
     }
   }
-  const handleDataFromChild = (data) => {
-    setMeals(data); //TODO only update specific week not whole Meals
-  };
 
   const handleEdit = (week, day, meal, field, value) => {
     const updatedPlan = [...plan];
