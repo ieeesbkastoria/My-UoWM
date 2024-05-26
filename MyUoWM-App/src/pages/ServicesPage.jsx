@@ -56,7 +56,7 @@ export default function ServicesPage() {
       <Tabs
         fontFamily="Syne"
         variant="enclosed"
-        colorScheme={useColorModeValue("#0050e0", "#f3f3f3")}
+        colorScheme={useColorModeValue("#00ABC1", "#f3f3f3")}
       >
         <TabList flex="1">
           {services.map((service) => {

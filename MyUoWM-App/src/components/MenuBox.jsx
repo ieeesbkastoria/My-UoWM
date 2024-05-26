@@ -124,8 +124,8 @@ export default function MenuBox({ category }) {
           flexDirection="column"
           alignItems="center"
           justifyContent="space-between"
-          borderColor={useColorModeValue("#0050e0", "#f3f3f3")}
-          backgroundColor={useColorModeValue("#0050e0", "transparent")}
+          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
+          backgroundColor={useColorModeValue("#00ABC1", "transparent")}
           className={`menu-box span-${span}`}
           rounded="0.75rem"
           p={{ sm: 2, md: 4, lg: 6 }}>

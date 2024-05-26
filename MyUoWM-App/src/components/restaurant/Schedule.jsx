@@ -149,7 +149,7 @@ function Schedule() {
         borderRadius="20"
         overflow="hidden"
         border="2px"
-        borderColor={useColorModeValue("#0050e0", "#f3f3f3")}
+        borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
       >
         <Flex
           justifyContent="center"

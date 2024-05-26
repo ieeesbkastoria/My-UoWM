@@ -9,7 +9,7 @@ const Guide = ({ guideContent, onClick }) => {
   return (
     <Flex direction="column" paddingX={4} align="center">
       <Divider
-        borderColor={useColorModeValue("#0050e0", "#f3f3f3")}
+        borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
         w={{ sm: "100%", md: "90%", lg: "80%", "2xl": "60%", "3xl": "50%" }}
         borderBottomWidth={2}
         opacity={1}
@@ -39,7 +39,7 @@ const Guide = ({ guideContent, onClick }) => {
         </Heading>
       </Flex>
       <Divider
-        borderColor={useColorModeValue("#0050e0", "#f3f3f3")}
+        borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
         w={{ sm: "100%", md: "90%", lg: "80%", "2xl": "60%", "3xl": "50%" }}
         borderBottomWidth={2}
         opacity={1}

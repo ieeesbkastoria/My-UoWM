@@ -34,7 +34,7 @@ export default function SelectOfficeDropdown({
         transition="all 0.2s"
         style={{ WebkitTapHighlightColor: "transparent" }}
         _hover={{ borderColor: "gray.300", bg: "transparent" }}
-        _expanded={{ borderColor: "#0050e0", bg: "transparent" }}
+        _expanded={{ borderColor: "#00ABC1", bg: "transparent" }}
         _focus={{ bg: "transparent" }}
         fontWeight={100}
       >

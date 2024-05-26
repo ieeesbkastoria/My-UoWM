@@ -59,7 +59,7 @@ export default function FAQCard({ data }) {
           color={useColorModeValue("black", "white")}
           border={"solid 2px"}
           borderRadius="1rem"
-          borderColor={useColorModeValue("#0050e0", "#f3f3f3")}
+          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
           bgColor="transparent"
         >
           <Box flex="1" textAlign="center">

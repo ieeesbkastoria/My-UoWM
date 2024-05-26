@@ -58,7 +58,7 @@ function Menu({ dailyFoodMenu }) {
       borderRadius="24px"
       overflow="hidden"
       border="2px"
-      borderColor={useColorModeValue("#0050e0", "#f3f3f3")}>
+      borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}>
       <AccordionItem border="none" w="100%">
         <AccordionButton
           // display="flex"
@@ -99,7 +99,7 @@ function Menu({ dailyFoodMenu }) {
               borderRadius="16px"
               overflow="hidden"
               border="2px"
-              borderColor={useColorModeValue("#0050e0", "#f3f3f3")}>
+              borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}>
               <AccordionItem border="none">
                 <AccordionButton
                   display="flex"
@@ -166,7 +166,7 @@ function Menu({ dailyFoodMenu }) {
               borderRadius="16px"
               overflow="hidden"
               border="2px"
-              borderColor={useColorModeValue("#0050e0", "#f3f3f3")}>
+              borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}>
               <AccordionItem border="none">
                 <AccordionButton
                   display="flex"
