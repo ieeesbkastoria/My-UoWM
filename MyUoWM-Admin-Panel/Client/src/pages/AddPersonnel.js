@@ -1,14 +1,12 @@
 import {useState } from "react";
-import useAxiosPrivate from '../hooks/useAxiosPrivate';
+import axiosPrivate from '../api/axios';
 
 const PERSONNEL_URL = '/api/admin/personnel'
 
 const AddPersonnel = () => { 
 
-  const axiosPrivate = useAxiosPrivate();
-
   // TODO these need to be updated according to the project requirements
-  const [id, setId] = useState('');
+  const [personnel_id, setId] = useState('');
   const [name, setName] = useState('');
   const [office, setOffice] = useState('');
   const [email, setEmail] = useState('');
@@ -18,9 +16,11 @@ const AddPersonnel = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log(JSON.stringify({ personnel_id, department, name, phone, office, email }));
+
     try {
       const response = await axiosPrivate.post(PERSONNEL_URL,
-      JSON.stringify({ id, name, office, email, phone, department }));
+      JSON.stringify({ personnel_id, department, name, phone, office, email }));
       console.log(JSON.stringify(response?.data));
     } catch (err) {
       if (!err?.response) {
@@ -46,7 +46,7 @@ const AddPersonnel = () => {
       <input
         type="text"
         required
-        value={id}
+        value={personnel_id}
         onChange={(e) => setId(e.target.value)}
         className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
