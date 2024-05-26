@@ -1,7 +1,8 @@
 import {useState } from "react";
 import axiosPrivate from '../api/axios';
+import UsePost from "../hooks/UsePost";
 
-const PERSONNEL_URL = '/api/admin/personnel'
+const PERSONNEL_URL = 'http://localhost:8080/api/admin/personnel'
 
 const AddPersonnel = () => { 
 
@@ -17,23 +18,7 @@ const AddPersonnel = () => {
     e.preventDefault();
 
     console.log(JSON.stringify({ personnel_id, department, name, phone, office, email }));
-
-    try {
-      const response = await axiosPrivate.post(PERSONNEL_URL,
-      JSON.stringify({ personnel_id, department, name, phone, office, email }));
-      console.log(JSON.stringify(response?.data));
-    } catch (err) {
-      if (!err?.response) {
-        console.log('No Server Response');
-      } else if (err.response?.status === 400) {
-        console.log('Missing element');
-      } else if (err.response?.status === 401) {
-        //TODO Redirect to login
-        console.log('Unauthorized');
-      } else {
-        console.log('Post Failed');
-      }
-    }
+    UsePost(PERSONNEL_URL, { personnel_id, department, name, office, email}) 
   }
 
   //TODO Update form according to project requirements
