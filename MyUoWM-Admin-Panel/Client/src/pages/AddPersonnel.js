@@ -18,7 +18,7 @@ const AddPersonnel = () => {
     e.preventDefault();
 
     console.log(JSON.stringify({ personnel_id, department, name, phone, office, email }));
-    UsePost(PERSONNEL_URL, { personnel_id, department, name, office, email}) 
+    UsePost(PERSONNEL_URL, { personnel_id, department, name, phone, office, email}) 
   }
 
   //TODO Update form according to project requirements

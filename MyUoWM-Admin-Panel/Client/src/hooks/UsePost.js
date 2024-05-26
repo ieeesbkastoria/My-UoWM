@@ -5,7 +5,7 @@ const UsePost = (url, data) => {
     headers: {
       'Content-Type': 'application/json', // Ensure this is correct
     },
-    body: JSON.stringify({ data }),
+    body: JSON.stringify(data),
   })
   .then(response => response.json())
   .then(data => console.log(data))
