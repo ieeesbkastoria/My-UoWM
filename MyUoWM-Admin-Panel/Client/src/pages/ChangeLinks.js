@@ -38,7 +38,7 @@ const ChangeLinks = () => {
 
     try {
       const response = await axiosPrivate.post(POST_LINKS_URL,
-      JSON.stringify(personnel));
+      JSON.stringify(links));
       console.log(JSON.stringify(response?.data));
     } catch (err) {
       if (!err?.response) {
