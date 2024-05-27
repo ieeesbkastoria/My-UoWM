@@ -64,81 +64,85 @@ const MealPlan = () => {
   };
 
   const renderWeek = (week) => {
-    const days = plan[week - 1].days;
-    return (
-      <div key={week}>
-        <h2>Week {week}</h2>
-        {days.map((day, index) => (
-          <div key={index}>
-            <h3>{day.name}</h3>
-            {renderDay(day)}
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  const renderDay = (day) => {
-    const meals = day.meals;
-    return (
-      <div>
-        {meals.map((meal, index) => (
-          <div key={index}>
-            <h4>{meal.type}</h4>
-            <ul>
-              <li>
-                Main Dish 1:
-                <input
-                  type="text"
-                  value={meal.mainDish1}
-                  onChange={(e) =>
-                    handleEdit(day.week, day.index + 1, index + 1, 'mainDish1', e.target.value)
-                  }
-                />
-              </li>
-              <li>
-                Main Dish 2:
-                <input
-                  type="text"
-                  value={meal.mainDish2}
-                  onChange={(e) =>
-                    handleEdit(day.week, day.index + 1, index + 1, 'mainDish2', e.target.value)
-                  }
-                />
-              </li>
-              <li>
-                Salad:
-                <input
-                  type="text"
-                  value={meal.salad}
-                  onChange={(e) =>
-                    handleEdit(day.week, day.index + 1, index + 1, 'salad', e.target.value)
-                  }
-                />
-              </li>
-              <li>
-                Dessert:
-                <input
-                  type="text"
-                  value={meal.dessert}
-                  onChange={(e) =>
-                    handleEdit(day.week, day.index + 1, index + 1, 'dessert', e.target.value)
-                  }
-                />
-              </li>
-            </ul>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
+  const days = plan[week - 1].days;
   return (
-      <div clasName="meal-plan">
-        <h1>Meal Plan</h1>
-        {plan.map((week) => renderWeek(week.week))}
-      </div>
-    );
+    <div key={week} className="mb-6 p-4 bg-gray-100 rounded shadow">
+      <h2 className="text-xl font-bold text-blue-500 mb-2">Week {week}</h2>
+      {days.map((day, index) => (
+        <div key={index} className="mb-4">
+          <h3 className="text-lg font-semibold text-red-500 mb-2">{day.name}</h3>
+          {renderDay(day)}
+        </div>
+      ))}
+    </div>
+  );
 };
+
+const renderDay = (day) => {
+  const meals = day.meals;
+  return (
+    <div className="ml-4">
+      {meals.map((meal, index) => (
+        <div key={index} className="mb-4">
+          <h4 className="text-md font-semibold text-yellow-500 mb-2">{meal.type}</h4>
+          <ul className="list-disc list-inside">
+            <li className="mb-2">
+              <label className="block mb-1 text-gray-700">Main Dish 1:</label>
+              <input
+                className="w-full p-2 border border-gray-300 rounded"
+                type="text"
+                value={meal.mainDish1}
+                onChange={(e) =>
+                  handleEdit(day.week, day.index + 1, index + 1, 'mainDish1', e.target.value)
+                }
+              />
+            </li>
+            <li className="mb-2">
+              <label className="block mb-1 text-gray-700">Main Dish 2:</label>
+              <input
+                className="w-full p-2 border border-gray-300 rounded"
+                type="text"
+                value={meal.mainDish2}
+                onChange={(e) =>
+                  handleEdit(day.week, day.index + 1, index + 1, 'mainDish2', e.target.value)
+                }
+              />
+            </li>
+            <li className="mb-2">
+              <label className="block mb-1 text-gray-700">Salad:</label>
+              <input
+                className="w-full p-2 border border-gray-300 rounded"
+                type="text"
+                value={meal.salad}
+                onChange={(e) =>
+                  handleEdit(day.week, day.index + 1, index + 1, 'salad', e.target.value)
+                }
+              />
+            </li>
+            <li className="mb-2">
+              <label className="block mb-1 text-gray-700">Dessert:</label>
+              <input
+                className="w-full p-2 border border-gray-300 rounded"
+                type="text"
+                value={meal.dessert}
+                onChange={(e) =>
+                  handleEdit(day.week, day.index + 1, index + 1, 'dessert', e.target.value)
+                }
+              />
+            </li>
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+return (
+  <div className="meal-plan p-6 bg-gray-50">
+    <h1 className="text-2xl font-bold text-blue-700 mb-6">Meal Plan</h1>
+    {plan.map((week) => renderWeek(week.week))}
+  </div>
+);
+}
 
 export default MealPlan;
