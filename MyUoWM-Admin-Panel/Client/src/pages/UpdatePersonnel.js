@@ -44,7 +44,7 @@ const UpdatePersonnel = () => {
     UsePatch(POST_PERSONNEL_URL, personnel); 
   }
 
-  //TODO Impement put request of personnel data
+  //TODO Impement put request of personnel data, and handle case of personnel being null
   return (
     <div className="update-personnel bg-gray-100 p-8 rounded-lg shadow-md">
   <article>
