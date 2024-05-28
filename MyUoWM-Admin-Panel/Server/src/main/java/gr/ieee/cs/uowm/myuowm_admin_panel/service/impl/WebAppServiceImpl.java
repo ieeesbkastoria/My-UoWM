@@ -1,9 +1,6 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.ClubRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.LinkRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MealPlanRepository;
@@ -28,9 +25,28 @@ public class WebAppServiceImpl implements WebAppService {
 
     @Override
     public List<MealPlan> getMealPlan() {
-        if(!mealPlanRepository.findByMealId(1L).isEmpty())
+        if (!mealPlanRepository.findByMealId(1L).isEmpty())
             return mealPlanRepository.findByMealId(1L);
-        return Collections.EMPTY_LIST;
+
+        List<MealPlan> mealPlan = new ArrayList<>(List.of());
+        var day = 1L;
+        int week = 1;
+        while (day <= 31) {
+            var numberOfDaylyMeal = 1L;
+            while (numberOfDaylyMeal <= 3) {
+
+                mealPlan.add(
+                        new MealPlan(1L, day + numberOfDaylyMeal, week,
+                                "", "", "",
+                                MealType.DINNER, "", ""));
+                numberOfDaylyMeal++;
+            }
+
+            day++;
+            if(day == 7 || day == 14 || day == 21)
+                week++;
+        }
+        return mealPlan;
     }
 
     @Override
