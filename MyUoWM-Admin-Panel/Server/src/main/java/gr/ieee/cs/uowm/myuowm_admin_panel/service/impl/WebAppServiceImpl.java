@@ -7,6 +7,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MealPlanReposito
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.PersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.mealplan.MealPlanReturnDefaultException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import lombok.AllArgsConstructor;
@@ -28,25 +29,8 @@ public class WebAppServiceImpl implements WebAppService {
         if (!mealPlanRepository.findByMealId(1L).isEmpty())
             return mealPlanRepository.findByMealId(1L);
 
-        List<MealPlan> mealPlan = new ArrayList<>(List.of());
-        var day = 1L;
-        int week = 1;
-        while (day <= 31) {
-            var numberOfDaylyMeal = 1L;
-            while (numberOfDaylyMeal <= 3) {
-
-                mealPlan.add(
-                        new MealPlan(1L, day + numberOfDaylyMeal, week,
-                                "", "", "",
-                                MealType.DINNER, "", ""));
-                numberOfDaylyMeal++;
-            }
-
-            day++;
-            if(day == 7 || day == 14 || day == 21)
-                week++;
-        }
-        return mealPlan;
+        // if there is no meal plan in the databases return a default meal plan
+        throw new MealPlanReturnDefaultException("A default meal plan is return");
     }
 
     @Override
@@ -75,6 +59,7 @@ public class WebAppServiceImpl implements WebAppService {
         throw new ClubNotFoundException("Given id does not match any club in the data base");
     }
 
+    //TODO like the meal plan one
     @Override
     public List<Link> getAllLinks() {
         return linkRepository.findAll();
