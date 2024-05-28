@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
+import UsePatch from '../hooks/UsePatch';
 
 const GET_MEAL_URL = '/api/myuowm/lesxi';
-const POST_MEAL_URL = '/api/admin/lesxi';
+const POST_MEAL_URL = '/http://localhost:8080/api/admin/lesxi';
 
 const MealPlan = () => {
 
-  const [plan, setPlan] = useState();
+  const [plan, setPlan] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const axiosPrivate = useAxiosPrivate();
 
@@ -29,6 +31,8 @@ const MealPlan = () => {
     }
     
     getMeals();
+    setIsLoading(false);
+
     return () => {
       isMounted = false;
       controller.abort();
@@ -39,22 +43,8 @@ const MealPlan = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axiosPrivate.post(POST_MEAL_URL,
-      JSON.stringify(plan));
-      console.log(JSON.stringify(response?.data));
-    } catch (err) {
-      if (!err?.response) {
-        console.log('No Server Response');
-      } else if (err.response?.status === 400) {
-        console.log('Missing element');
-      } else if (err.response?.status === 401) {
-        //TODO Redirect to login
-        console.log('Unauthorized');
-      } else {
-        console.log('Post Failed');
-      }
-    }
+    console.log(JSON.stringify(plan))
+    UsePatch(POST_MEAL_URL, plan); 
   }
 
   const handleEdit = (week, day, meal, field, value) => {
@@ -64,9 +54,10 @@ const MealPlan = () => {
   };
 
   const renderWeek = (week) => {
-  const days = plan[week - 1].days;
+  const days = plan?.[week - 1]?.days;
   return (
     <div key={week} className="mb-6 p-4 bg-gray-100 rounded shadow">
+      <button onclick={ handleSubmit }> Sumbit </button>
       <h2 className="text-xl font-bold text-blue-500 mb-2">Week {week}</h2>
       {days.map((day, index) => (
         <div key={index} className="mb-4">
@@ -91,7 +82,7 @@ const renderDay = (day) => {
               <input
                 className="w-full p-2 border border-gray-300 rounded"
                 type="text"
-                value={meal.mainDish1}
+                value={meal.mainDish1 ? meal.mainDish1 : ''}
                 onChange={(e) =>
                   handleEdit(day.week, day.index + 1, index + 1, 'mainDish1', e.target.value)
                 }
@@ -102,7 +93,7 @@ const renderDay = (day) => {
               <input
                 className="w-full p-2 border border-gray-300 rounded"
                 type="text"
-                value={meal.mainDish2}
+                value={meal.mainDish2 ? meal.mainDish2 : ''}
                 onChange={(e) =>
                   handleEdit(day.week, day.index + 1, index + 1, 'mainDish2', e.target.value)
                 }
@@ -113,7 +104,7 @@ const renderDay = (day) => {
               <input
                 className="w-full p-2 border border-gray-300 rounded"
                 type="text"
-                value={meal.salad}
+                value={meal.salad ? meal.salad : ''}
                 onChange={(e) =>
                   handleEdit(day.week, day.index + 1, index + 1, 'salad', e.target.value)
                 }
@@ -124,7 +115,7 @@ const renderDay = (day) => {
               <input
                 className="w-full p-2 border border-gray-300 rounded"
                 type="text"
-                value={meal.dessert}
+                value={meal.dessert ? meal.dessert : ''}
                 onChange={(e) =>
                   handleEdit(day.week, day.index + 1, index + 1, 'dessert', e.target.value)
                 }
@@ -139,8 +130,14 @@ const renderDay = (day) => {
 
 return (
   <div className="meal-plan p-6 bg-gray-50">
-    <h1 className="text-2xl font-bold text-blue-700 mb-6">Meal Plan</h1>
-    {plan.map((week) => renderWeek(week.week))}
+    {isLoading ? (
+      <p>Loading meal plan...</p>
+    ) : (
+      <>
+      <h1 className="text-2xl font-bold text-blue-700 mb-6">Meal Plan</h1>
+      {plan.map((week) => renderWeek(week.week))}
+      </>
+    )}
   </div>
 );
 }
