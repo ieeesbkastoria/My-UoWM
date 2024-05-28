@@ -25,12 +25,12 @@ public class MealPlanExceptionHandler {
     public ResponseEntity<Object> mealPlanExceptionHandler
             (MealPlanReturnDefaultException mealPlanReturnDefaultException)
     {
-        LinkException linkException = new LinkException(
+        MealPlanException mealPlanException = new MealPlanException(
                 mealPlanReturnDefaultException.getMessage(),
                 mealPlanReturnDefaultException.getCause(),
                 HttpStatus.OK
         );
 
-        return ResponseHandler.responseBuilder(linkException.getMessage(), HttpStatus.NOT_FOUND, defaultMealPlan);
+        return ResponseHandler.responseBuilder(mealPlanException.getMessage(), HttpStatus.NOT_FOUND, defaultMealPlan);
     }
 }

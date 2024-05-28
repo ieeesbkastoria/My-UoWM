@@ -7,6 +7,7 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MealPlanReposito
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.PersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
+import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkReturnDefaultException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.mealplan.MealPlanReturnDefaultException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
@@ -59,10 +60,13 @@ public class WebAppServiceImpl implements WebAppService {
         throw new ClubNotFoundException("Given id does not match any club in the data base");
     }
 
-    //TODO like the meal plan one
     @Override
     public List<Link> getAllLinks() {
-        return linkRepository.findAll();
+        if (linkRepository.findAll().isEmpty())
+            return linkRepository.findAll();
+
+        // if there is no link in the databases return a default set of links
+        throw new LinkReturnDefaultException("A default set of links is returned");
     }
 
     @Override
