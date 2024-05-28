@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface MyUoWmAdminPanelMealPlanRepository extends JpaRepository<MealPlan, Long> {
+public interface MealPlanRepository extends JpaRepository<MealPlan, Long> {
     List<MealPlan> findByMealId(Long id);
 }

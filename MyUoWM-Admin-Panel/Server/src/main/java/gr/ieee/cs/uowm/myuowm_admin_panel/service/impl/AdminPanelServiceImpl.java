@@ -4,10 +4,10 @@ import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelClubRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.ClubRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.LinkRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MealPlanRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.PersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
@@ -22,10 +22,10 @@ import java.util.List;
 @AllArgsConstructor
 public class AdminPanelServiceImpl implements AdminPanelService {
 
-    MyUoWmAdminPanelPersonnelRepository personnelRepository;
-    MyUoWmAdminPanelClubRepository clubRepository;
-    MyUoWmAdminPanelLinkRepository linkRepository;
-    MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
+    PersonnelRepository personnelRepository;
+    ClubRepository clubRepository;
+    LinkRepository linkRepository;
+    MealPlanRepository mealPlanRepository;
 
     @Override
     public List<Link> updateLinks(List<Link> links){

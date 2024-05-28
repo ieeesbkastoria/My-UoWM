@@ -1,10 +1,10 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.*;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelClubRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.ClubRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.LinkRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MealPlanRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.PersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
@@ -25,13 +25,13 @@ import static org.mockito.Mockito.when;
 class AdminPanelServiceImplTest {
 
     @Mock
-    private MyUoWmAdminPanelClubRepository clubRepository;
+    private ClubRepository clubRepository;
     @Mock
-    private MyUoWmAdminPanelPersonnelRepository personnelRepository;
+    private PersonnelRepository personnelRepository;
     @Mock
-    private MyUoWmAdminPanelLinkRepository linkRepository;
+    private LinkRepository linkRepository;
     @Mock
-    private MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
+    private MealPlanRepository mealPlanRepository;
     private AdminPanelServiceImpl adminService;
 
     AutoCloseable autoCloseable;
@@ -68,7 +68,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testUpdateLinks_Found() {
         mock(Link.class);
-        mock(MyUoWmAdminPanelLinkRepository.class);
+        mock(LinkRepository.class);
 
         List<Link> linkList = List.of(link1, link2, link3);
 
@@ -83,7 +83,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testUpdateLinks_UsageNotFound() {
         mock(Link.class);
-        mock(MyUoWmAdminPanelLinkRepository.class);
+        mock(LinkRepository.class);
 
         var linkList = List.of(link1, link2, link3);
 
@@ -101,7 +101,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testSaveMealPlan_Success() {
         mock(MealPlan.class);
-        mock(MyUoWmAdminPanelMealPlanRepository.class);
+        mock(MealPlanRepository.class);
 
         var mealPlanList = List.of(mealPlan);
 
@@ -112,7 +112,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testSavePersonnel_Success() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         assertThat(adminService.savePersonnel(personnel).equals(personnel)).isTrue();
     }
@@ -121,7 +121,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testUpdatePersonnel_Success() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         var personnelList = List.of(personnel);
 
@@ -136,7 +136,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testUpdatePersonnel_IdNotFound() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         var personnelList = List.of(personnel);
 
@@ -154,7 +154,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testDeletePersonnel_Success() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         var personnelId = personnel.getPersonnel_id();
 
@@ -168,7 +168,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testDeletePersonnel_IdNotFound() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         var personnelId = personnel.getPersonnel_id();
 
@@ -183,7 +183,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testSaveClub_Success() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         assertThat(adminService.saveClub(club).equals(club)).isTrue();
     }
@@ -192,7 +192,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testUpdateClub_Success() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         var clubList = List.of(club);
 
@@ -207,7 +207,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testUpdateClub_IdNotFound() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         var clubList = List.of(club);
 
@@ -225,7 +225,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testDeleteClub_Success() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         var clubId = club.getClubName();
 
@@ -238,7 +238,7 @@ class AdminPanelServiceImplTest {
     @Test
     void testDeleteClub_IdNotFound() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         var clubId = club.getClubName();
 

@@ -14,10 +14,10 @@ import static org.assertj.core.api.Assertions.*;
 
 @DataJpaTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-class MyUoWmAdminPanelLinkRepositoryTest {
+class LinkRepositoryTest {
 
     @Autowired
-    private MyUoWmAdminPanelLinkRepository linkRepository;
+    private LinkRepository linkRepository;
     Link link;
 
     @BeforeEach

@@ -1,10 +1,10 @@
 package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.*;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelClubRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.ClubRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.LinkRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MealPlanRepository;
+import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.PersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.personnel.PersonnelNotFoundException;
@@ -29,13 +29,13 @@ import static org.mockito.Mockito.when;
 class WebAppServiceImplTest {
 
     @Mock
-    private MyUoWmAdminPanelClubRepository clubRepository;
+    private ClubRepository clubRepository;
     @Mock
-    private MyUoWmAdminPanelPersonnelRepository personnelRepository;
+    private PersonnelRepository personnelRepository;
     @Mock
-    private MyUoWmAdminPanelLinkRepository linkRepository;
+    private LinkRepository linkRepository;
     @Mock
-    private MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
+    private MealPlanRepository mealPlanRepository;
     private WebAppService webAppService;
 
     AutoCloseable autoCloseable;
@@ -66,7 +66,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetMealPlan_Found() {
         mock(MealPlan.class);
-        mock(MyUoWmAdminPanelMealPlanRepository.class);
+        mock(MealPlanRepository.class);
 
         List<MealPlan> meals = List.of(mealPlan);
         when(mealPlanRepository.findByMealId(1L)).thenReturn(meals);
@@ -77,7 +77,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetMealPlan_NotFound() {
         mock(MealPlan.class);
-        mock(MyUoWmAdminPanelMealPlanRepository.class);
+        mock(MealPlanRepository.class);
 
         List<MealPlan> meals = List.of(mealPlan);
         when(mealPlanRepository.findByMealId(1L)).thenReturn(Collections.EMPTY_LIST);
@@ -88,7 +88,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetAllPersonnel_Found() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         List<Personnel> staff = List.of(personnel);
         when(personnelRepository.findAll()).thenReturn(staff);
@@ -100,7 +100,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetAllPersonnel_NotFound() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         List<Personnel> staff = List.of(personnel);
         when(personnelRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
@@ -111,7 +111,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetPersonnel_Found() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         when(personnelRepository.findById(personnel.getPersonnel_id())).thenReturn(Optional.of(personnel));
 
@@ -122,7 +122,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetPersonnel_NotFound() {
         mock(Personnel.class);
-        mock(MyUoWmAdminPanelPersonnelRepository.class);
+        mock(PersonnelRepository.class);
 
         when(personnelRepository.findById(personnel.getPersonnel_id())).thenReturn(Optional.empty());
 
@@ -136,7 +136,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetAllClubs_Found() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         List<Club> staff = List.of(club);
         when(clubRepository.findAll()).thenReturn(staff);
@@ -148,7 +148,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetAllClubs_NotFound() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         List<Club> staff = List.of(club);
         when(clubRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
@@ -159,7 +159,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetClub_Found() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         when(clubRepository.findById(club.getClubName())).thenReturn(Optional.of(club));
 
@@ -170,7 +170,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetClub_NotFound() {
         mock(Club.class);
-        mock(MyUoWmAdminPanelClubRepository.class);
+        mock(ClubRepository.class);
 
         when(clubRepository.findById(club.getClubName())).thenReturn(Optional.empty());
 
@@ -183,7 +183,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetAllLinks_Found() {
         mock(Link.class);
-        mock(MyUoWmAdminPanelLinkRepository.class);
+        mock(LinkRepository.class);
 
         List<Link> staff = List.of(link);
         when(linkRepository.findAll()).thenReturn(staff);
@@ -195,7 +195,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetAllLinks_NotFound() {
         mock(Link.class);
-        mock(MyUoWmAdminPanelLinkRepository.class);
+        mock(LinkRepository.class);
 
         List<Link> staff = List.of(link);
         when(linkRepository.findAll()).thenReturn(Collections.EMPTY_LIST);
@@ -205,7 +205,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetLink_Found() {
         mock(Link.class);
-        mock(MyUoWmAdminPanelLinkRepository.class);
+        mock(LinkRepository.class);
 
         when(linkRepository.findByUsage(link.getUsage())).thenReturn(Optional.of(link));
 
@@ -216,7 +216,7 @@ class WebAppServiceImplTest {
     @Test
     void testGetLink_NotFound() {
         mock(Link.class);
-        mock(MyUoWmAdminPanelLinkRepository.class);
+        mock(LinkRepository.class);
 
         when(linkRepository.findByUsage(link.getUsage())).thenReturn(Optional.empty());
 

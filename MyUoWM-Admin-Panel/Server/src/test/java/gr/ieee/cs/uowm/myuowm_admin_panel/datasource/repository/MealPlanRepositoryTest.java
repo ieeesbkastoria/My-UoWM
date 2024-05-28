@@ -15,10 +15,10 @@ import static org.assertj.core.api.Assertions.*;
 
 @DataJpaTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-class MyUoWmAdminPanelMealPlanRepositoryTest {
+class MealPlanRepositoryTest {
 
     @Autowired
-    private MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
+    private MealPlanRepository mealPlanRepository;
     MealPlan mealPlan;
     MealType mealType;
 
