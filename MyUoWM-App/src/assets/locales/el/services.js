@@ -14,7 +14,7 @@ export default {
   cybersecurity_student_club: "Λέσχη Κυβερνοασφάλειας Πανεπιστημίου Μακεδονίας",
   open_source_club: "Λέσχη Ανοιχτού Λογισμικού",
   //constants.js --> Online Services
-  online_services: "Ηλεκτρονικές Υπηρεσίες"
+  online_services: "Ηλεκτρονικές Υπηρεσίες",
   e_mail:
     "Ηλεκτρονική Αλληλογραφία",
   vpn_service: "Υπηρεσία VPN",
