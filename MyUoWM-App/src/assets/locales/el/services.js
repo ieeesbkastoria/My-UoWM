@@ -13,14 +13,15 @@ export default {
   erasmus_student_club: "Σύλλογος Φοιτητών Erasmus",
   cybersecurity_student_club: "Λέσχη Κυβερνοασφάλειας Πανεπιστημίου Μακεδονίας",
   open_source_club: "Λέσχη Ανοιχτού Λογισμικού",
-  //constants.js --> Other Services
-  ethics_research_committee:
-    "Επιτροπή Ηθικής και Δεοντολογίας της Έρευνας(Ε.Η.Δ.Ε.) του Πανεπιστημίου Μακεδονίας",
-  student_advocate: "Συνήγορος του Φοιτητή",
-  gender_eq_committee: "Επιτροπή Ισότητας Φύλων",
-  student_consulting_support_center:
-    "Κέντρο Συμβουλευτικής και Στήριξης Φοιτητών",
-  accessibility_unit: "Μονάδα Προσβασιμότητας ΠΑΜΑΚ",
-  theater_workshop: "",
-  uni_publications: "Εκδόσεις Πανεπιστημίου Μακεδονίας",
+  //constants.js --> Online Services
+  online_services: "Ηλεκτρονικές Υπηρεσίες"
+  e_mail:
+    "Ηλεκτρονική Αλληλογραφία",
+  vpn_service: "Υπηρεσία VPN",
+  wireless_access: "Ασύρματη Πρόσβαση",
+  free_software:
+    "Δωρεάν Λογισμικό",
+  g_suite_for_education: "Υπηρεσία G Suite for Education",
+  office_365: "Δήλος 365",
+  azure_dev_tools_for_teaching: "Azure Dev Tools for Teaching",
 };
