@@ -23,6 +23,7 @@ import elProjectMembers from "./assets/locales/el/project_members.js";
 import elSettingsPage from "./assets/locales/el/settings_page.js";
 import elAboutPage from "./assets/locales/el/about_page.js";
 import elError404 from "./assets/locales/el/error404.js"
+import studentCare from "./assets/locales/el/studentCare.js";
 
 const resources = {
   en: {
@@ -38,6 +39,7 @@ const resources = {
       ...enSettingsPage,
       ...enAboutPage,
       ...enError404,
+      ...studentCare,
       //categories.js
       current_department: "Current Department: ",
       close: "Close",
@@ -96,6 +98,7 @@ const resources = {
       ...elSettingsPage,
       ...elAboutPage,
       ...elError404,
+      ...studentCare,
 
       //categories.js
       current_department: "Έχεις επιλέξει: ",

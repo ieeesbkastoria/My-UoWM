@@ -21,4 +21,6 @@ export default {
   accessibility_unit: "UoM Accessibility Committee",
   theater_workshop: "",
   uni_publications: "University of Macedonia Publications",
+  
+   
 };

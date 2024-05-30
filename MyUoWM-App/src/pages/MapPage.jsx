@@ -96,7 +96,7 @@ function MapPage() {
         </Box>
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1xjlab_NeXx0zko8xr77Garj0bVh7p-A&ehbc=2E312F&noprof=1" 
       width="80%" 
-      height="1000vh"
+      height="900vh"
       ></iframe>
     </div>
   );

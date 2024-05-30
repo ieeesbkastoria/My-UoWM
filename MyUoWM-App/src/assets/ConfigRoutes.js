@@ -60,6 +60,7 @@ import LibraryPage from "../pages/LibraryPage";
 import FirstYearInfoPage from "../pages/FirstYearInfoPage";
 import SchedulePage from "../pages/SchedulePage";
 import MapPage from "../pages/MapPage";
+import StudentCare from "../pages/StudentCare";
 import { FaUniversity } from "react-icons/fa";
 import i18n from "../i18n";
 export const Categories = [
@@ -166,13 +167,13 @@ export const Categories = [
   {
     title: i18n.t("foititiki_merimna"),
     iconSVG: <ManyPeopleIcon />,
-    route: "https://www.uom.gr/student-care",
+    route: "/StudentCare",
     span: 1,
-    isExternal: true,
+    isExternal: false,
     requireSelection: false,
     position: 10,
     hide: false,
-    pageToDisplay: null,
+    pageToDisplay: <StudentCare />,
   },
   {
     title: i18n.t("freshmen_guides"),
