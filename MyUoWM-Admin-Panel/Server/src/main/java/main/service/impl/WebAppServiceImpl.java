@@ -1,20 +1,16 @@
 package main.service.impl;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.*;
 import main.datasource.repository.ClubRepository;
 import main.datasource.repository.LinkRepository;
-import main.datasource.repository.MealPlanRepository;
 import main.datasource.repository.PersonnelRepository;
 import main.exception.club.ClubNotFoundException;
 import main.exception.link.LinkNotFoundException;
 import main.exception.link.LinkReturnDefaultException;
-import main.exception.mealplan.MealPlanReturnDefaultException;
 import main.exception.personnel.PersonnelNotFoundException;
 import main.service.WebAppService;
 import lombok.AllArgsConstructor;
 import main.datasource.model.Club;
 import main.datasource.model.Link;
-import main.datasource.model.MealPlan;
 import main.datasource.model.Personnel;
 import org.springframework.stereotype.Service;
 
@@ -27,16 +23,6 @@ public class WebAppServiceImpl implements WebAppService {
     ClubRepository clubRepository;
     PersonnelRepository personnelRepository;
     LinkRepository linkRepository;
-    MealPlanRepository mealPlanRepository;
-
-    @Override
-    public List<MealPlan> getMealPlan() {
-        if (!mealPlanRepository.findByMealId(1L).isEmpty())
-            return mealPlanRepository.findByMealId(1L);
-
-        // if there is no meal plan in the databases return a default meal plan
-        throw new MealPlanReturnDefaultException("A default meal plan is return");
-    }
 
     @Override
     public List<Personnel> getAllPersonnel() {

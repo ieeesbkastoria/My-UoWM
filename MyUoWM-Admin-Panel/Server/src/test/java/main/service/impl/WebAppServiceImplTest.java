@@ -1,9 +1,7 @@
 package main.service.impl;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.*;
 import main.datasource.repository.ClubRepository;
 import main.datasource.repository.LinkRepository;
-import main.datasource.repository.MealPlanRepository;
 import main.datasource.repository.PersonnelRepository;
 import main.exception.club.ClubNotFoundException;
 import main.exception.link.LinkNotFoundException;
@@ -36,25 +34,21 @@ class WebAppServiceImplTest {
     private PersonnelRepository personnelRepository;
     @Mock
     private LinkRepository linkRepository;
-    @Mock
-    private MealPlanRepository mealPlanRepository;
     private WebAppService webAppService;
 
     AutoCloseable autoCloseable;
     Club club;
     Link link;
-    MealPlan mealPlan;
     Personnel personnel;
 
     @BeforeEach
     void setUp() {
         autoCloseable = MockitoAnnotations.openMocks(this);
         webAppService = new WebAppServiceImpl(clubRepository, personnelRepository,
-                linkRepository, mealPlanRepository);
+                linkRepository);
 
         club = new Club("IEEE SB", "url.com");
         link = new Link(1L, "usage", "url.com");
-        mealPlan = new MealPlan(1L, 1L, 1, "Monday", "dish1", "dish2", MealType.DINNER, "salad", "cake");
         personnel = new Personnel("4444", "CS", "Kostas", "6999999", "22", "kostas@uowm.gr");
 
     }
@@ -62,28 +56,6 @@ class WebAppServiceImplTest {
     @AfterEach
     void tearDown() throws Exception {
         autoCloseable.close();
-    }
-
-    // Test case Success
-    @Test
-    void testGetMealPlan_Found() {
-        mock(MealPlan.class);
-        mock(MealPlanRepository.class);
-
-        List<MealPlan> meals = List.of(mealPlan);
-        when(mealPlanRepository.findByMealId(1L)).thenReturn(meals);
-        assertThat(webAppService.getMealPlan().equals(meals)).isTrue();
-    }
-
-    // Test case Failure
-    @Test
-    void testGetMealPlan_NotFound() {
-        mock(MealPlan.class);
-        mock(MealPlanRepository.class);
-
-        List<MealPlan> meals = List.of(mealPlan);
-        when(mealPlanRepository.findByMealId(1L)).thenReturn(Collections.EMPTY_LIST);
-        assertThat(webAppService.getMealPlan().equals(meals)).isFalse();
     }
 
     // Test case Success

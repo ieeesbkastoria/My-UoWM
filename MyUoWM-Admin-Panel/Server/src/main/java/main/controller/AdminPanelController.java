@@ -3,7 +3,6 @@ package main.controller;
 
 import main.datasource.model.Club;
 import main.datasource.model.Link;
-import main.datasource.model.MealPlan;
 import main.datasource.model.Personnel;
 import main.response.ResponseHandler;
 import main.service.AdminPanelService;
@@ -30,14 +29,6 @@ public class AdminPanelController {
         var response = adminPanelService.updateLinks(links);
 
         return ResponseHandler.responseBuilder("The links have been updated successfully", HttpStatus.OK, response);
-    }
-
-    @CrossOrigin(origins = "http://localhost:3000")
-    @PutMapping("/lesxi")
-    public ResponseEntity<Object> updateDinnerPlan(@RequestBody List<MealPlan> mealPlan) {
-        var response = adminPanelService.saveMealPlan(mealPlan);
-
-        return ResponseHandler.responseBuilder("The meal plan has been successfully updated", HttpStatus.OK, response);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")

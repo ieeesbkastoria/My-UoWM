@@ -2,11 +2,9 @@ package main.service.impl;
 
 import main.datasource.model.Club;
 import main.datasource.model.Link;
-import main.datasource.model.MealPlan;
 import main.datasource.model.Personnel;
 import main.datasource.repository.ClubRepository;
 import main.datasource.repository.LinkRepository;
-import main.datasource.repository.MealPlanRepository;
 import main.datasource.repository.PersonnelRepository;
 import main.exception.club.ClubNotFoundException;
 import main.exception.link.LinkNotFoundException;
@@ -24,7 +22,6 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     PersonnelRepository personnelRepository;
     ClubRepository clubRepository;
     LinkRepository linkRepository;
-    MealPlanRepository mealPlanRepository;
 
     @Override
     public List<Link> updateLinks(List<Link> links){
@@ -35,13 +32,6 @@ public class AdminPanelServiceImpl implements AdminPanelService {
 
         linkRepository.saveAll(links);
         return links;
-    }
-
-    @Override
-    public List<MealPlan> saveMealPlan(List<MealPlan> mealPlan) {
-        mealPlan.forEach(meal -> meal.setMealId(1L));
-        mealPlanRepository.saveAll(mealPlan);
-        return mealPlan;
     }
 
     @Override

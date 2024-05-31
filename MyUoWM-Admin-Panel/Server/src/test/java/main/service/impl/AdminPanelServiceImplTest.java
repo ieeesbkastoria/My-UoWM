@@ -1,9 +1,7 @@
 package main.service.impl;
 
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.*;
 import main.datasource.repository.ClubRepository;
 import main.datasource.repository.LinkRepository;
-import main.datasource.repository.MealPlanRepository;
 import main.datasource.repository.PersonnelRepository;
 import main.exception.club.ClubNotFoundException;
 import main.exception.link.LinkNotFoundException;
@@ -31,30 +29,23 @@ class AdminPanelServiceImplTest {
     private PersonnelRepository personnelRepository;
     @Mock
     private LinkRepository linkRepository;
-    @Mock
-    private MealPlanRepository mealPlanRepository;
     private AdminPanelServiceImpl adminService;
 
     AutoCloseable autoCloseable;
     Club club;
     Link link1, link2, link3;
-    MealPlan mealPlan;
     Personnel personnel;
 
     @BeforeEach
     void setUp() {
         autoCloseable = MockitoAnnotations.openMocks(this);
         adminService = new AdminPanelServiceImpl(personnelRepository,clubRepository,
-                linkRepository, mealPlanRepository);
+                linkRepository);
 
         club = new Club("IEEE SB", "url.com");
         link1 = new Link(1L, "link4", "url.com");
         link2 = new Link(1L, "link2", "url.com");
         link3 = new Link(1L, "link3", "url.com");
-
-        mealPlan = new MealPlan(1L, 1L, 1,
-                "Monday", "dish1", "dish2",
-                MealType.DINNER, "salad", "cake");
 
         personnel = new Personnel("4444", "CS", "Kostas",
                 "6999999", "22", "kostas@uowm.gr");
@@ -96,17 +87,6 @@ class AdminPanelServiceImplTest {
                 () -> adminService.updateLinks(linkList));
 
         assertEquals(exception.getMessage(), "The list of links contains a non valid link usage");
-    }
-
-    // Test case Success
-    @Test
-    void testSaveMealPlan_Success() {
-        mock(MealPlan.class);
-        mock(MealPlanRepository.class);
-
-        var mealPlanList = List.of(mealPlan);
-
-        assertThat(adminService.saveMealPlan(mealPlanList).equals(mealPlanList)).isTrue();
     }
 
     // Test case Success

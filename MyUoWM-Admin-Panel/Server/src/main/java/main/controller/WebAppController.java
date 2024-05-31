@@ -2,7 +2,6 @@ package main.controller;
 
 import main.datasource.model.Club;
 import main.datasource.model.Link;
-import main.datasource.model.MealPlan;
 import main.datasource.model.Personnel;
 import main.service.WebAppService;
 import lombok.AllArgsConstructor;
@@ -18,13 +17,6 @@ import java.util.List;
 public class WebAppController {
 
     private final WebAppService webAppService;
-
-    // throws exception if not meal plan is found and send a default meal plan to the user
-    @GetMapping("/lesxi")
-    @ResponseStatus(HttpStatus.OK)
-    public List<MealPlan> getLesxi() {
-        return webAppService.getMealPlan();
-    }
 
     // throws exception if link is found and sends a default set of links to the user
     @GetMapping("/links")
