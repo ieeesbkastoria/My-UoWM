@@ -15,13 +15,21 @@ const Home = () => {
   return (
   <>
     <Nav />
-    <div className="my-1 flex justify-center items-center h-screen">
-      <div className="bg-slate-800 p-8 rounded shadow border border-gray-200 max-w-md">
-          <p className="text-gray-50">The user-friendly CMS Edit Suite empowers authorized university personnel to manage key website aspects. Effortlessly update hyperlinks, maintain a dynamic cafeteria meal plan, and keep faculty and staff profiles current – all through an intuitive interface, improving website accuracy, user experience, and communication efficiency.</p>
+    <div className="my-2 py-1 flex justify-center items-center">
+      <div className="space-y-4">
+        <div className="bg-slate-800 p-8 rounded shadow-lg border border-gray-700 max-w-md mx-auto">
+          <p className="text-gray-50">
+            The MyUoWM-Admin-Panel empowers authorized university personnel and authorized students to manage key website aspects. Effortlessly update hyperlinks, maintain a dynamic cafeteria meal plan, and keep faculty and staff profiles current – all through an intuitive interface, improving website accuracy, user experience, and communication efficiency.
+          </p>
+        </div>
+        <div className="flex flex-col items-center space-y-2">
+          <img src="https://ieee.cs.uowm.gr/wp-content/uploads/2023/02/logo-ieee.png" className="w-96 h-auto" alt="IEEE Logo"/>
+        </div>
       </div>
     </div>
   </>
 );
+
 
 }
 
