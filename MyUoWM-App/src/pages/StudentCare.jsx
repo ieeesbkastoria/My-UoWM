@@ -1,6 +1,9 @@
-import React from 'react';
-import { Flex, Box, Text, Button, useColorModeValue } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import ServicesCard from "../components/ServicesCard";
 import i18n from "../i18n";
+
+
 
 function StudentCarePage() {
   const containerStyle = {
@@ -11,25 +14,6 @@ function StudentCarePage() {
     // height: '100vh',
     width: '100%',
   };
-
-  const boxStyle = {
-    backgroundColor: 'white',
-    border: '1px solid #ccc',
-    padding: '20px',
-    marginBottom: '20px',
-    zIndex: 10,
-  };
-
-  const categories = [
-    "Myfeo",
-    "OlistikhMerimna",
-    "MedicalCare",
-    "Sitish",
-    "Stegash",
-    "FoithtikoEpidoma",
-    "EuroCardAsfalish",
-  ];
-
 
   return (
     <div style={containerStyle}>
@@ -58,15 +42,65 @@ function StudentCarePage() {
             fontFamily="Syne"
             w="100%"
             fontSize={{ base: "md", lg: "2xl" }}
-          > {i18n.t("StudentCare")}
-          <br></br>
+          > 
+            {i18n.t("StudentCare")}
+            <br></br>
             {i18n.t("StudentCare2")}
           </Flex>
-
-        </Box>
-        
+      </Box>
+      <br></br>
+      <div style={{width:'80%', margin:'auto'}}>
+          <ServicesCard
+                srv={{
+                url: "https://myfeo.uowm.gr/en/archiki-english/", 
+                title: i18n.t("Myfeo"),
+                imgUrl: "UoWM.png",
+                }}
+              />
+              <ServicesCard
+                srv={{ 
+                url: "https://holistic.uowm.gr/",
+                title: i18n.t("OlistikhMerimna"), 
+                imgUrl: "UoWM.png" }}
+              />
+              <ServicesCard
+                srv={{ 
+                url: "https://www.uowm.gr/dioikisi/dioikitikes-ypiresies/dieythynsi-akadimaikon-thematon-kai-foititikis-merimnas/tmima-foititikis-spoydastikis-merimnas/iatrofarmakeytiki-perithalpsi/",
+                title: i18n.t("MedicalCare"), 
+                imgUrl: "UoWM.png" }}
+              />
+              <ServicesCard
+                srv={{
+                url: "https://www.uowm.gr/dioikisi/dioikitikes-ypiresies/dieythynsi-akadimaikon-thematon-kai-foititikis-merimnas/tmima-foititikis-spoydastikis-merimnas/sitisi/", 
+                title: i18n.t("Sitish"), 
+                imgUrl:"UoWM.png",
+                }}
+              />
+              <ServicesCard
+                srv={{
+                url: "https://www.uowm.gr/dioikisi/dioikitikes-ypiresies/dieythynsi-akadimaikon-thematon-kai-foititikis-merimnas/tmima-foititikis-spoydastikis-merimnas/stegasi/", 
+                title: i18n.t("Stegash"), 
+                imgUrl: "UoWM.png",
+                }}
+              />
+              <ServicesCard
+                srv={{
+                url: "https://www.uowm.gr/dioikisi/dioikitikes-ypiresies/dieythynsi-akadimaikon-thematon-kai-foititikis-merimnas/tmima-foititikis-spoydastikis-merimnas/foititiko-stegastiko-epidoma/", 
+                title: i18n.t("FoithtikoEpidoma"), 
+                imgUrl: "UoWM.png",
+                }}
+              />
+              <ServicesCard
+                srv={{
+                url: "https://www.uowm.gr/dioikisi/dioikitikes-ypiresies/dieythynsi-akadimaikon-thematon-kai-foititikis-merimnas/tmima-foititikis-spoydastikis-merimnas/eyropaiki-karta-asfalisis/", 
+                title: i18n.t("EuroCardAsfalish"), 
+                imgUrl: "UoWM.png",
+                }}
+              />
+        </div>
+      
+      
     </div>
-    
   );
 }
 
