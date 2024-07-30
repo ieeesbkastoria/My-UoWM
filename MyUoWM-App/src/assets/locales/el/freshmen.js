@@ -24,7 +24,6 @@ export default {
   healthcare_guide: healthcare,
   return_to_guides_list: "Επιστροφή στη λίστα οδηγών",
   registration_application_title: "Αίτηση εγγραφής επιτυχόντα/ούσας",
-  uom_register_title: "Είσοδος στη σελίδα UoM Register",
   institutional_account_title: "Ιδρυματικός λογαριασμός",
   academic_email_activation_title: "Ενεργοποίηση ακαδημαϊκού email",
   academic_id_title: "Ακαδημαϊκή ταυτότητα",

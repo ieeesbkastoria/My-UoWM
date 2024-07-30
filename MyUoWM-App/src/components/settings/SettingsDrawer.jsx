@@ -57,7 +57,7 @@ export function SettingsDrawer({ isOpen, onClose }) {
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerHeader
-                    color={useColorModeValue("#0050e0", "#f3f3f3")}
+                    color={useColorModeValue("#00ABC1", "#f3f3f3")}
                     backgroundColor={useColorModeValue("#f3f3f3", "black")}
                     borderBottomWidth="1px"
                     fontFamily="Syne"
@@ -72,7 +72,7 @@ export function SettingsDrawer({ isOpen, onClose }) {
                         direction="column"
                         fontFamily="Syne"
                         justifyItems={"center"}
-                        color={useColorModeValue("#0050e0", "#f3f3f3")}
+                        color={useColorModeValue("#00ABC1", "#f3f3f3")}
                         borderRadius="0.5rem"
                         my={"2rem"}
                     >
@@ -85,14 +85,14 @@ export function SettingsDrawer({ isOpen, onClose }) {
                             display="flex"
                             alignItems="flex-start"
                             justifyContent={"space-between"}
-                            color={useColorModeValue("#0050e0", "#f3f3f3")}
+                            color={useColorModeValue("#00ABC1", "#f3f3f3")}
                             my={"2rem"}
                         >
                             <ThemeToggle />
                         </FormControl>
 
                         <Box
-                            color={useColorModeValue("#0050e0", "#f3f3f3")}
+                            color={useColorModeValue("#00ABC1", "#f3f3f3")}
                             alignItems="flex-start"
                             justifyContent={"space-between"}
                         >
@@ -140,7 +140,7 @@ export function SettingsDrawer({ isOpen, onClose }) {
 
                 <DrawerFooter
                     backgroundColor={useColorModeValue("#f3f3f3", "black")}
-                    color={useColorModeValue("#0050e0", "#f3f3f3")}
+                    color={useColorModeValue("#00ABC1", "#f3f3f3")}
                     justifyContent={"center"}
                 >
                     <Button

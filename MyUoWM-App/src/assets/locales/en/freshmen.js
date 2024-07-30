@@ -25,7 +25,6 @@ export default {
   return_to_guides_list: "Return to guides list",
   registration_application_title:
     "Registration application for successful candidates",
-  uom_register_title: "Login to the UoM Register page",
   institutional_account_title: "Institutional account",
   academic_email_activation_title: "Activate academic email",
   academic_id_title: "Academic ID",

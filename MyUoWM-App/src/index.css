@@ -6,17 +6,17 @@
 @font-face {
   font-family: "Syne";
   font-weight: 500;
-  src: local("Syne"), url(./assets/fonts/Syne-Medium.woff2) format("woff2");
+  src: local("Syne"), url(./assets/fonts/Syne-Regular.woff2) format("woff2");
 }
 @font-face {
   font-family: "Syne";
   font-weight: 600;
-  src: local("Syne"), url(./assets/fonts/Syne-SemiBold.woff2) format("woff2");
+  src: local("Syne"), url(./assets/fonts/Syne-Regular.woff2) format("woff2");
 }
 @font-face {
   font-family: "Syne";
   font-weight: 700;
-  src: local("Syne"), url(./assets/fonts/Syne-Bold.woff2) format("woff2");
+  src: local("Syne"), url(./assets/fonts/Syne-Regular.woff2) format("woff2");
 }
 
 body {
@@ -77,16 +77,16 @@ body.chakra-ui-light {
 }
 
 #myUOMLogo .b {
-  fill: #5e5f5f;
+  fill: #6D6F71;
 }
 #myUOMLogo .c {
   fill: #fafcfe;
 }
 #myUOMLogo .d {
-  fill: #0050e0;
+  fill: #00ABC1;
 }
 #myUOMLogo .e {
-  fill: #eaae4e;
+  fill: #FBB040;
 }
 
 .back-btn-svg {
@@ -108,7 +108,7 @@ body.chakra-ui-light {
 }
 
 .markdown-body a {
-  color: #0050e0;
+  color: #00ABC1;
   text-decoration: underline;
 }
 
@@ -116,7 +116,7 @@ body.chakra-ui-light {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  color: #0050e0;
+  color: #00ABC1;
 }
 
 .markdown-body p {
@@ -130,12 +130,12 @@ body.chakra-ui-light {
 }
 
 .markdown-body blockquote {
-  border-left: 6px solid #0050e0;
+  border-left: 6px solid #00ABC1;
   background-color: #e0ebff;
   padding: 15px;
   margin: 15px 0;
   font-style: italic;
-  color: #0044bf;
+  color: #00ABC1;
 }
 
 .markdown-body blockquote p {

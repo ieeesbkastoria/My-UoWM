@@ -13,12 +13,18 @@ export default {
   erasmus_student_club: "Erasmus Student Club",
   cybersecurity_student_club: "Cybersecurity Club of University of Macedonia",
   open_source_club: "Open Source UoM",
-  //constants.js --> Other Services
-  ethics_research_committee: "Committee on Research Ethics and Integrity",
-  student_advocate: "Student Advocate",
-  gender_eq_committee: "Gender Equality Committee",
-  student_consulting_support_center: "Student Consulting and Support Center",
-  accessibility_unit: "UoM Accessibility Committee",
-  theater_workshop: "",
-  uni_publications: "University of Macedonia Publications",
+ 
+
+  //constants.js --> Online Services
+  online_services: "Online Services",
+  e_mail:
+    "E-Mail",
+  vpn_service: "VPN Service",
+  wireless_access: "Wireless Access",
+  free_software:
+    "Free Software",
+  g_suite_for_education: "G Suite for Education Service",
+  office_365: "Office 365",
+  azure_dev_tools_for_teaching: "Azure Dev Tools for Teaching",
+
 };

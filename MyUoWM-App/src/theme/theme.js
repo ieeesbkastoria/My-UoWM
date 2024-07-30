@@ -43,7 +43,7 @@ export const customTheme = extendTheme({
     brand: {
       light: {
         text: "black",
-        primary: "#0050e0",
+        primary: "#00ABC1",
         secondary: "#f3f3f3"
       },
       dark: {

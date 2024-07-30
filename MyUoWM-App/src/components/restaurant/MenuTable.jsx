@@ -12,7 +12,7 @@ function MenuTable({ title, foodMenu, isActive }) {
       <Flex
         flexDir="column"
         borderRadius="16px"
-        borderColor={isActive ? "#0050E0" : "black"}
+        borderColor={isActive ? "#00ABC1" : "black"}
         _dark={{ borderColor: "#f3f3f3" }}
         borderWidth="2px"
         overflow="hidden"
@@ -26,7 +26,7 @@ function MenuTable({ title, foodMenu, isActive }) {
             flexDir="column"
             alignItems="center"
             borderTop={index === 0 ? "" : "2px"}
-            borderColor={isActive ? "#0050E0" : "black"}
+            borderColor={isActive ? "#00ABC1" : "black"}
             _dark={{
               borderColor: "#f3f3f3",
             }}
@@ -35,7 +35,7 @@ function MenuTable({ title, foodMenu, isActive }) {
               py="8px"
               px="10px"
               w="100%"
-              bg={isActive ? "#0050E00F" : "#0000000F"}
+              bg={isActive ? "#00ABC10F" : "#0000000F"}
               _dark={{ bg: "#f3f3f30F" }}
               fontSize={{ sm: 18, md: 20, lg: 22 }}
               fontWeight="semibold"
@@ -62,7 +62,7 @@ function MenuTable({ title, foodMenu, isActive }) {
       <Flex
         fontFamily="Syne"
         justifyContent="center"
-        color={useColorModeValue(isActive ? "#0050E0" : "black", "#f3f3f3")}
+        color={useColorModeValue(isActive ? "#00ABC1" : "black", "#f3f3f3")}
         py={2}
         fontWeight="semibold"
         fontSize="22px"

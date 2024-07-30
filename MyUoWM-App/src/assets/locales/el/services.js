@@ -23,4 +23,6 @@ export default {
   accessibility_unit: "Μονάδα Προσβασιμότητας ΠΑΜΑΚ",
   theater_workshop: "",
   uni_publications: "Εκδόσεις Πανεπιστημίου Μακεδονίας",
+
+ 
 };

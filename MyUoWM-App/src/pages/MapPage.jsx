@@ -35,91 +35,67 @@
     -Fakidis
 
 */
-import {
-  Box,
-  Button,
-  Stack,
-  Text,
-  useBreakpointValue,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import React from 'react';
+import { Flex, Box, Text, Button, useColorModeValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import MapCords from "../components/maps/MapCords";
-import SelectBuildingDropdown from "../components/maps/SelectBuildingDropdown.jsx";
-import SelectOfficeDropdown from "../components/maps/SelectOfficeDropdown.jsx";
 import { useDepName, useMapData } from "../hooks";
 import i18n from "../i18n";
 
 function MapPage() {
-  const { depName } = useDepName();
-  const {
-    isSpecificForDepartment,
-    categoryOptions,
-    locations,
-    setSelectedLocation,
-    setSelectedLocationCategory,
-    locationData,
-    selectedLocation,
-    selectedLocationCategory,
-  } = useMapData();
-
-  const departmentHint = useBreakpointValue({
-    base: i18n.t(depName),
-    md: i18n.t("current_department") + i18n.t(depName),
-  });
-
-  useEffect(() => {
-    if (isSpecificForDepartment) {
-      resetSelectedLocation();
-    }
-  }, [depName]);
-
-  function resetSelectedLocation() {
-    setSelectedLocation("");
-    setSelectedText(i18n.t("select_location"));
-  }
-
-  const handleLocationCategoryChange = (selection) => {
-    setSelectedLocationCategory(selection);
-    resetSelectedLocation();
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+    width: '100%',
   };
 
-  const [selectedText, setSelectedText] = useState(i18n.t("select_location"));
+  const boxStyle = {
+    backgroundColor: 'white',
+    border: '1px solid #ccc',
+    padding: '20px',
+    marginBottom: '20px',
+    zIndex: 10,
+  };
+
+
 
   return (
-    <Box align="center" marginTop="1em" fontFamily="Syne">
-      <Stack align="center">
-        <SelectBuildingDropdown
-          handleChange={handleLocationCategoryChange}
-          newOptions={categoryOptions}
-        />
-        {isSpecificForDepartment && depName ? (
-          <Text color={"#bcb6c4"} fontSize={"sm"}>
-            {departmentHint}
-          </Text>
-        ) : null}
-        <SelectOfficeDropdown
-          locations={locations}
-          handleChange={(selection) => setSelectedLocation(selection)}
-          selectedText={selectedText}
-          setSelectedText={setSelectedText}
-        />
-      </Stack>
-      {selectedLocation ? <MapCords {...locationData} /> : null}
-      <Button
-        _hover={false}
-        bgColor={useColorModeValue("#0050e0", "#f3f3f3")}
-        color={useColorModeValue("#f3f3f3", "black")}
-        variant="outline"
-        margin="1rem"
-        onClick={(e) => {
-          window.open(
-            "https://www.uom.gr/about/eikonikh-perihghsh-360-sup-o-sup-sto-panepisthmio-makedonias"
-          );
-        }}>
-        {i18n.t("virtual_tour")} 360°
-      </Button>
-    </Box>
+    <div style={containerStyle}>
+      <Box
+          border="2px"
+          borderRadius="1rem"
+          borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
+          bg={useColorModeValue("#00ABC1", "#f3f3f3")}
+          marginBottom={{ base: "1rem", lg: "0" }}
+          marginTop="1rem"
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          py="1rem"
+          px="0.75rem"
+          width="100%"
+          height="10%"
+        >
+          <Flex
+            mx="1rem"
+            alignItems="center"
+            rowGap={"0.75rem"}
+            justifyContent={"center"}
+            columnGap={"1rem"}
+            color={useColorModeValue("#f3f3f3", "black")}
+            fontFamily="Syne"
+            w="100%"
+            fontSize={{ base: "md", lg: "2xl" }}
+          > {i18n.t("MapInfo")}
+          </Flex>
+        </Box>
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1xjlab_NeXx0zko8xr77Garj0bVh7p-A&ehbc=2E312F&noprof=1" 
+      width="80%" 
+      height="900vh"
+      ></iframe>
+    </div>
   );
 }
 

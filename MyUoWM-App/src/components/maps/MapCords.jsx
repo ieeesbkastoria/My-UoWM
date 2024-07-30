@@ -86,7 +86,7 @@ export default function App({
           disabled={shouldDisableFindBuildingBtn}
           margin="1rem"
           color={useColorModeValue("#f3f3f3", "black")}
-          bgColor={useColorModeValue("#0050e0", "#f3f3f3")}
+          bgColor={useColorModeValue("#00ABC1", "#f3f3f3")}
           _hover={false}>
           {!showGroundFloorImg
             ? i18n.t("cant_find_building_prompt")

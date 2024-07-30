@@ -10,7 +10,7 @@ function TimeTable({ title, entries, activeCategory, activeMeal }) {
     <Flex
       flexDir="column"
       borderRadius="16px"
-      borderColor="#0050E0"
+      borderColor="#00ABC1"
       _dark={{ borderColor: "#f3f3f3" }}
       borderWidth="2px"
       overflow="hidden"
@@ -18,10 +18,10 @@ function TimeTable({ title, entries, activeCategory, activeMeal }) {
       <Flex
         justifyContent="center"
         borderBottom="2px"
-        borderColor="#0050E0"
+        borderColor="#00ABC1"
         _dark={{ borderColor: "#f3f3f3" }}
         py="12px"
-        bg="#0050E00F"
+        bg="#00ABC10F"
         fontWeight="500"
         fontSize="18px"
       >
@@ -35,8 +35,8 @@ function TimeTable({ title, entries, activeCategory, activeMeal }) {
           alignItems="center"
           px="18px"
           borderBottom={index === Object.keys(entries).length - 1 ? "" : "2px"}
-          borderColor="#0050E0"
-          bg={isTableRowActive(key) ? "#0050E0" : ""}
+          borderColor="#00ABC1"
+          bg={isTableRowActive(key) ? "#00ABC1" : ""}
           color={isTableRowActive(key) ? "white" : ""}
           fontWeight={isTableRowActive(key) ? "bold" : ""}
           _dark={{
