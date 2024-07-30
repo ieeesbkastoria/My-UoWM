@@ -1,6 +1,6 @@
 # Login to the UoM Register page
 
-On the page [www.uom.gr/register](https://www.uom.gr/register) you will use the information:
+On the page [www.uom.gr/register](https://web.uowm.gr/register/) you will use the information:
 
 - **Candidate Code** (you will find it on the card with which you took the exams but also in the registration form of the ministry)
 - **Candidate Initials** - the 4 capital letters of your personal details in order:

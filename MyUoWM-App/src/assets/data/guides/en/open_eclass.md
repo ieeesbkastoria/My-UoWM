@@ -1,6 +1,6 @@
 # Open eClass registration
 
-Visit the [Open eClass](https://openeclass.uom.gr/) page.
+Visit the [Open eClass](https://eclass.uowm.gr/) page.
 
 Click on **'User Registration'** on the left.
 
@@ -12,7 +12,7 @@ On the next page, select your department and any other information that is requi
 
 You will receive a confirmation email.
 
-Click on **'Subjects'** on the left, select the **'Undergraduate'** tab and then **'Department of Applied Informatics'**.
+Click on **'Subjects'** on the left, select the **'Undergraduate'** tab and then **'Department of Informatics'**.
 
 Select the subjects of the semester you are enrolled in.
 
