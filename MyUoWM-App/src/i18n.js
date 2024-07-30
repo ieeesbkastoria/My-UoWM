@@ -24,6 +24,7 @@ import elSettingsPage from "./assets/locales/el/settings_page.js";
 import elAboutPage from "./assets/locales/el/about_page.js";
 import elError404 from "./assets/locales/el/error404.js"
 import studentCare from "./assets/locales/el/studentCare.js";
+import services from "./assets/locales/en/services.js";
 
 const resources = {
   en: {
@@ -75,6 +76,16 @@ const resources = {
       Stegash: "Housing",
       FoithtikoEpidoma: "Student Housing Benefit",
       EuroCardAsfalish: "European insurance card",
+      online_services: "Online Services",
+
+       // online services
+      emaill: "Email",
+      vpn: "VPN Service",
+      wifi: "Wireless Access",
+      software: "Free Software",
+      gsuite: "G Suite for education",
+      delos365: "Office 365", 
+      azure: "Microsoft Azure Dev Tools",
     },
   },
   el: {
@@ -127,7 +138,16 @@ const resources = {
     Stegash: "Στέγαση",
     FoithtikoEpidoma: "Φοιτητικό Στεγαστικό Επίδομα",
     EuroCardAsfalish: "Ευρωπαική κάρτα ασφάλισης",
-     
+    online_services: "Hλεκτρονικές Υπηρεσίες", 
+
+    // online services
+    emaill: "Ηλεκτρονικό Ταχυδρομείο",
+    vpn: "Υπηρεσία VPN",
+    wifi: "Ασύρματη Πρόσβαση",
+    software: "Δωρεάν Λογισμικό",
+    gsuite: "G Suite for education",
+    delos365: "Office 365", 
+    azure: "Microsoft Azure Dev Tools",
     },
   },
   de: {

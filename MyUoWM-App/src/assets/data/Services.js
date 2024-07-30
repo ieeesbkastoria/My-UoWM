@@ -1,7 +1,7 @@
 import i18n from "../../i18n";
 export const servicesData = [
     {
-        tabName: i18n.t("offices"),
+        tabName: i18n.t("online_services"),
         index: 1,
         services: [
             {
