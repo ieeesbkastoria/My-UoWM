@@ -86,7 +86,17 @@ const resources = {
       gsuite: "G Suite for education",
       delos365: "Office 365", 
       azure: "Microsoft Azure Dev Tools",
-    },
+
+      //services & offices
+      Liaison_office: "Liaison Office",
+      practice_office:  "Practice Office",
+      graduate_office: "Graduate Network",
+      erasmus_office: "Erasmus Office",
+      Student_Advocate: "Student Advocate",
+      Academic_Advisor: "Academic Advisor",
+      Complaints_Management: "Complaints Management",
+
+      },
   },
   el: {
     translation: {
@@ -148,6 +158,15 @@ const resources = {
     gsuite: "G Suite for education",
     delos365: "Office 365", 
     azure: "Microsoft Azure Dev Tools",
+
+    //Υπηρεσίες & Γραφεία
+    Liaison_office: "Γραφείο Διασύνδεσης",
+    practice_office: "Γραφείο Πρακτικής Άσκησης",
+    graduate_office: "Δίκτυο Αποφοίτων",
+    erasmus_office: "Γραφείο Erasmus",
+    Student_Advocate: "Συνήγορος του Φοιτητή",
+    Academic_Advisor: "Ακαδημαϊκός Σύμβουλος",
+    Complaints_Management: "Διαχείριση Παραπόνων",
     },
   },
   de: {
