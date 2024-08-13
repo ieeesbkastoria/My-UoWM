@@ -89,7 +89,7 @@ export const Categories = [
   {
     title: i18n.t("restaurant"),
     iconSVG: <MealIcon />,
-    route: "/restaurant",
+    route: "/RestaurantUniversity",
     span: 1,
     isExternal: false,
     requireSelection: false,
