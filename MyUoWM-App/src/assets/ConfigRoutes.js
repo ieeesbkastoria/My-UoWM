@@ -61,6 +61,7 @@ import FirstYearInfoPage from "../pages/FirstYearInfoPage";
 import SchedulePage from "../pages/SchedulePage";
 import MapPage from "../pages/MapPage";
 import StudentCare from "../pages/StudentCare";
+import RestaurantUniversity from "../pages/RestaurantUniversity";
 import { FaUniversity } from "react-icons/fa";
 import i18n from "../i18n";
 export const Categories = [
@@ -89,13 +90,13 @@ export const Categories = [
   {
     title: i18n.t("restaurant"),
     iconSVG: <MealIcon />,
-    route: "/LibraryPage",
+    route: "/RestaurantUniversity",
     span: 1,
     isExternal: false,
     requireSelection: false,
     position: 3,
     hide: false,
-    pageToDisplay: <LibraryPage/>,
+    pageToDisplay: <RestaurantUniversity/>,
   },
   {
     title: "Student Portal",

@@ -6,7 +6,6 @@ export default function RestaurantUniversity() {
   return (
     <div>
         <h1>PDF Viewer</h1>
-        <PdfViewer fileUrl="" />
     </div>
 );
 }
