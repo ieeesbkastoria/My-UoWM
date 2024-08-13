@@ -95,7 +95,7 @@ export const Categories = [
     requireSelection: false,
     position: 3,
     hide: false,
-    pageToDisplay: <RestaurantPage />,
+    pageToDisplay: <RestaurantUniversity />,
   },
   {
     title: "Student Portal",
