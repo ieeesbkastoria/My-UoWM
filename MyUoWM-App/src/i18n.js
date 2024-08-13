@@ -96,6 +96,15 @@ const resources = {
       Academic_Advisor: "Academic Advisor",
       Complaints_Management: "Complaints Management",
 
+      //Clubs
+      IEEEStydentBranch: "IEEE Student Branch",
+      ErasmusStudentClub: "Erasmus Student Club",
+      KastoriaLinuxSociaty: "Kastoria Linux Society",
+      SyllogosPontiwnKastorias: "Pontian Association of Kastoria",
+      SyllogosKritikwnKastorias: "Cretan Association of Kastoria",
+      DMCTeam: "DMC Team",
+      MousikhOmada: "Music Team",
+      TheatrikhOmada: "Theatre Team",
       },
   },
   el: {
@@ -167,6 +176,16 @@ const resources = {
     Student_Advocate: "Συνήγορος του Φοιτητή",
     Academic_Advisor: "Ακαδημαϊκός Σύμβουλος",
     Complaints_Management: "Διαχείριση Παραπόνων",
+
+    //Σύλλογοι
+    IEEEStydentBranch: "Φοιτητικό Παράρτημα IEEE ",
+    ErasmusStudentClub: "Σύλλογος Φοιτητών Erasmus",
+    KastoriaLinuxSociaty: "Καστοριά Linux Society",
+    SyllogosPontiwnKastorias: "Σύλλογος Ποντίων Καστοριάς",
+    SyllogosKritikwnKastorias: "Σύλλογος Κρητικών Καστοριάς",
+    DMCTeam: "DMC Team",
+    MousikhOmada: "Μουσική Ομάδα",
+    TheatrikhOmada: "Θεατρική Ομάδα",
     },
   },
   de: {

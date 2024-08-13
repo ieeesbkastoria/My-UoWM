@@ -8,47 +8,47 @@ export const servicesData = [
                 title: i18n.t("emaill"),
                 url: "https://noc.uowm.gr/www/services/email/",
                 imgUrl:
-                    "https://www.uom.gr/assets/site/public/nodes/11869/13503-GrafeioDiasyndesis-2.jpg",
+                    "UoWM.png",
             },
             {
                 title: i18n.t("vpn"),
                 url: "https://noc.uowm.gr/www/services/vpn/",
 
                 imgUrl:
-                    "https://www.uom.gr/assets/site/public/nodes/8621/7799-praktikiaskisikyriafoto-4.jpg",
+                    "UoWM.png",
             },
             {
                 title: i18n.t("wifi"),
                 url: "https://noc.uowm.gr/www/services/wifi/",
 
                 imgUrl:
-                    "https://www.uom.gr/assets/site/content/alumni/ALUMNI_LOGO_GR.PNG",
+                    "UoWM.png",
             },
             {
                 title: i18n.t("software"),
                 url: "https://noc.uowm.gr/www/services/software/",
                 imgUrl:
-                    "https://www.uom.gr/assets/site/public/nodes/4228/2644-erasmus-header-2.jpg",
+                    "UoWM.png",
             },
             {
                 title: i18n.t("gsuite"),
                 url: "https://noc.uowm.gr/www/services/gsuite/",
 
-                imgUrl: "https://pbs.twimg.com/media/C5WlRPKWcAIJ90T.jpg",
+                imgUrl: "UoWM.png",
             },
             {
                 title: i18n.t("delos365"),
                 url: "https://noc.uowm.gr/www/services/delos365/",
 
                 imgUrl:
-                    "uowm.png",
+                    "UoWM.png",
             },
             {
                 title: i18n.t("azure"),
                 url: "uowm.png",
 
                 imgUrl:
-                    "uowm.png",
+                    "UoWM.png",
             },
         ],
     },
@@ -57,44 +57,50 @@ export const servicesData = [
         index: 2,
         services: [
             {
-                title: i18n.t("erasmus_student_club"),
-                url: "https://uom.esngreece.gr/",
-                imgUrl: "https://accounts.esn.org/sites/default/files/styles/medium/module/esn_accounts_groups/images/logos/GR/GR-THES-ESN.png?itok=fyU5fSlY",
+                title: i18n.t("IEEEStydentBranch"),
+                url: "https://google.com",
+                imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQukwUoTZ9s227DbAgGLkuuxv9I5G7uYHRvhg&s",
             },
             {
-                title: i18n.t("uom_students_club"),
-                url: "https://www.facebook.com/sfpamak/",
+                title: i18n.t("ErasmusStudentClub"),
+                url: "https://google.com",
                 imgUrl:
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiD8KP64gxKFvyW4kbF-NK5Ao--9oSq9Fziw&usqp=CAU",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKzQeBx8Zga6TlFdUP-PYbjcq4U2BlKjvnyg&s",
             },
             {
-                title: "TedxUniversityofMacedonia",
-                url: "https://tedxuniversityofmacedonia.com/",
+                title: i18n.t("KastoriaLinuxSociaty"),
+                url: "https://google.com",
                 imgUrl:
-                    "https://yt3.googleusercontent.com/ytc/AOPolaSlS3zxQGiE3VqoN39ylXWldVLBujRdFij3z0G8-Q=s900-c-k-c0x00ffffff-no-rj",
+                    "UoWM.png",
             },
             {
-                title: "AIESEC",
-                url: "https://www.uom.gr/aiesec",
+                title: i18n.t("SyllogosPontiwnKastorias"),
+                url: "https://google.com",
                 imgUrl:
-                    "https://uploads-ssl.webflow.com/62f0bdedd19c8b20eba9f328/63566cd4cb91f39322013938_OG%20image.png",
+                    "UoWM.png",
             },
             {
-                title: "Finance Club",
-                url: "https://www.financeclubuom.org/",
+                title: i18n.t("SyllogosKritikwnKastorias"),
+                url: "https://google.com",
                 imgUrl:
-                    "https://yt3.ggpht.com/ytc/AKedOLQ86pDFLPNZTJulIeWRCJajirV5WYsCiapFivo0=s900-c-k-c0x00ffffff-no-rj",
+                    "UoWM.png",
             },
             {
-                title: "Open Source UoM",
-                url: "https://opensource.uom.gr/",
-                imgUrl: "https://opensourceuom.gitlab.io/assets/img/team/avatar.png",
+                title: i18n.t("DMCTeam"),
+                url: "https://google.com",
+                imgUrl: "UoWM.png",
             },
             {
-                title: i18n.t("cybersecurity_student_club"),
-                url: "https://csc.uom.gr/",
+                title: i18n.t("MousikhOmada"),
+                url: "https://google.com",
                 imgUrl:
-                    "https://csc.uom.gr/wp-content/uploads/2021/02/Myrmidones_02.jpg",
+                    "UoWM.png",
+            },
+            {
+                title: i18n.t("TheatrikhOmada"),
+                url: "https://google.com",
+                imgUrl:
+                    "UoWM.png",
             },
         ],
     },
@@ -105,39 +111,39 @@ export const servicesData = [
             {
                 title: i18n.t("Liaison_office"),
                 url: "https://career.uowm.gr/",
-                imgUrl: "https://www.uom.gr/assets/site/public/nodes/4013/10348-7.png",
+                imgUrl: "UoWM.png",
             },
             {
                 title: i18n.t("practice_office"),
                 url: "https://www.uowm.gr/ekpaideysi/spoydes/praktiki-askisi/",
                 imgUrl:
-                    "https://foititisonline.gr/wp-content/uploads/2018/08/sinigoros-tou-foititi-3.jpg",
+                    "UoWM.png",
             },
             {
                 title: i18n.t("graduate_office"),
                 url: "https://www.uowm.gr/dioikisi/domes/diktyo-apofoiton/",
                 imgUrl:
-                    "https://www.uom.gr/assets/site/public/nodes/8310/9033-EIFLOGO.jpg",
+                    "UoWM.png",
             },
             {
                 title: i18n.t("erasmus_office"),
                 url: "https://www.uowm.gr/dioikisi/domes/grafeio-erasmus/",
-                imgUrl: "https://www.uom.gr/site/images/logo.png",
+                imgUrl: "UoWM.png",
             },
             {
                 title: i18n.t("Student_Advocate"),
                 url: "https://www.uowm.gr/dioikisi/domes/synigoros-toy-foititi-toy-pdm/",
-                imgUrl: "https://www.uom.gr/site/images/logo.png",
+                imgUrl: "UoWM.png",
             },
             {
                 title: i18n.t("Academic_Advisor"),
                 url: "https://cs.uowm.gr/archiki-selida/akadimaikos-symvoylos/",
-                imgUrl: "https://www.uom.gr/site/images/logo.png",
+                imgUrl: "UoWM.png",
             },
             {
                 title: i18n.t("Complaints_Management"),
                 url: "https://cs.uowm.gr/diadikasia-diacheirisis-paraponon/",
-                imgUrl: "https://www.uom.gr/site/images/logo.png",
+                imgUrl: "UoWM.png",
             },
         ],
     },
