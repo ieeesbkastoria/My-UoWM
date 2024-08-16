@@ -36,7 +36,7 @@
 
 */
 import registration_application from "./guides/el/registration_application.md";
-import uom_register from "./guides/el/uowm_register.md";
+import uowm_register from "./guides/el/uowm_register.md";
 import institutional_account from "./guides/el/institutional_account.md";
 import academic_email_activation from "./guides/el/academic_email_activation.md";
 import academic_id from "./guides/el/academic_id.md";
@@ -100,7 +100,7 @@ const guides = {
       text: i18n.t("registration_application_title"),
       guidePath: en_registration_application,
     }, {
-      text: i18n.t("uom_register_title"),
+      text: i18n.t("UoWM Register"),
       guidePath: en_uom_register,
 
     }, {
