@@ -25,6 +25,7 @@ import elAboutPage from "./assets/locales/el/about_page.js";
 import elError404 from "./assets/locales/el/error404.js"
 import studentCare from "./assets/locales/el/studentCare.js";
 import services from "./assets/locales/en/services.js";
+import restaurant from "./assets/locales/en/restaurant.js";
 
 const resources = {
   en: {
@@ -65,6 +66,7 @@ const resources = {
       graduation_redirection_message:"Redirecting to section",
       graduation_description:"Please select Department from Settings",
       on_weekend:"On Weekend",
+      restaurantPage: "Menu Anouncement & Proggram",
        // Student Care
        StudentCare: "Salasidou Despina, Phone: 2467440003, E-mail: dsalasidou@uowm.gr, merimna-kas@uowm.gr",
        StudentCare2: "Sotiropoulou Paraskevi, Phone: 2467440002, E-mail: cs04219@uowm.gr",
@@ -146,6 +148,7 @@ const resources = {
       graduation_redirection_message:"Ανακατεύθυνση στο τμήμα",
       graduation_description:"Παρακαλώ επιλέξτε τμήμα από τις ρυθμίσεις.",
       on_weekend:"Σάββατο - Κυριακή",
+      restaurantPage: "Ανακοίνωση Μενού & Πρόγραμμα",
 // Student Care
       StudentCare: "Σαλασίδου Δέσποινα, Τηλέφωνο: 2467440003, E-mail: dsalasidou@uowm.gr, merimna-kas@uowm.gr",
       StudentCare2: "Σωτηροπούλου Παρασκευή, Τηλέφωνο: 2467440002, E-mail: cs04219@uowm.gr",

@@ -1,6 +1,6 @@
-import { Flex, Box, Text, Button, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Box, Text, Button, useColorModeValue, Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 import i18n from "../i18n";
-import { TimeIcon, PhoneIcon } from "@chakra-ui/icons";
+import MealIcon from "../assets/icons/MealIcon";
 
 export default function RestaurantUniversity() {
   return (
@@ -16,62 +16,89 @@ export default function RestaurantUniversity() {
         flexDirection={{ base: "column", lg: "row" }}
         columnGap={"3rem"}
         alignItems="center"
-        justifyContent={"center"}
-        width={{ sm: "100%", lg: "fit-content" }}
-        height={{ lg: "75vh" }}
+        justifyContent="center"
+        width="100%"
         paddingX="16px"
       >
-        {/* Επικοινωνία  */}
+        {/* Blue Container */}
         <Box
           border="2px"
           borderRadius="1rem"
           borderColor={useColorModeValue("#00ABC1", "#f3f3f3")}
           bg={useColorModeValue("#00ABC1", "#f3f3f3")}
-          marginBottom={{ base: "1rem", lg: "0" }}
-          marginTop="1rem"
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
           py="1rem"
           px="0.75rem"
-          width="100%"
-          height={{ lg: "30%" }}
+          width={{ base: "100%", lg: "50%" }}  
+          maxWidth="100%"  
+          boxSizing="border-box"
+          overflowX="hidden"  
         >
           <Flex
-            mx="1rem"
-            flexDirection={"column"}
+            flexDirection="column"
             alignItems="flex-start"
-            rowGap={"0.75rem"}
-            justifyContent={"flex-start"}
-            columnGap={"1rem"}
+            justifyContent="flex-start"
             color={useColorModeValue("#f3f3f3", "black")}
             fontFamily="Syne"
             w="100%"
             fontSize={{ base: "md", lg: "2xl" }}
           >
-            <Flex flexDirection={"row"} alignItems="center">
-              <PhoneIcon w={27} h={27} />
-              <Text
-                fontSize={{ base: "lg", lg: "2xl" }}
+            {/* Contact Information */}
+            <Flex flexDirection="row" alignItems="center">
+              <Text 
+                fontSize={{ base: "lg", lg: "1xl" }}
                 ml="1rem"
                 as="span"
-                fontWeight={"bold"}
+                fontWeight="bold"
               >
-                {i18n.t("epikoinonia")}
+                {i18n.t("RestaurantInfo")}
               </Text>
             </Flex>
-
-            <Flex
-              flexDirection={"row"}
-              alignItems="center"
-              justifyContent="space-between"
-              w="100%"
-              gap="2rem"
-            >
-            </Flex>
           </Flex>
+
+          {/* Meal Timings Table */}
+          <Box
+            mt="2rem"
+            w="100%"
+            p={2}
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+            bg={useColorModeValue("#f3f3f3", "#00ABC1")}
+          >
+            <Table variant="simple">
+              <Thead>
+                <Tr>
+                  <Th color={useColorModeValue("#00ABC1", "#f3f3f3")} textAlign="center">
+                    {i18n.t("mealType")}
+                  </Th>
+                  <Th color={useColorModeValue("#00ABC1", "#f3f3f3")} textAlign="center">
+                    {i18n.t("timeServed")}
+                  </Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td textAlign="center">{i18n.t("breakfast")}</Td>
+                  <Td textAlign="center">08:00 - 09:30 </Td>
+                </Tr>
+                <Tr>
+                  <Td textAlign="center">{i18n.t("lunch")}</Td>
+                  <Td textAlign="center">12:00 - 15:30</Td>
+                </Tr>
+                <Tr>
+                  <Td textAlign="center">{i18n.t("dinner")}</Td>
+                  <Td textAlign="center">18:00 - 21:00</Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </Box>
         </Box>
       </Flex>
+
       <Button
         color={useColorModeValue("#00ABC1", "#f3f3f3")}
         variant="ghost"
@@ -107,10 +134,10 @@ export default function RestaurantUniversity() {
           window.open("https://www.uowm.gr/epikairotita/sitisi/enimerosi-gia-tin-leitoyrgia-ton-estiatorion-toy-panepistimioy-dytikis-makedonias-2024/");
         }}
         justifyContent="center"
+        mt="2rem"
       >
-        {i18n.t("istoselidaVivliothikis")} {/*να μπει το ονομα Ελληνικά και Αγγλικά*/}
+        {i18n.t("restaurantPage")}
       </Button>
-      
     </Flex>
-);
+  );
 }
