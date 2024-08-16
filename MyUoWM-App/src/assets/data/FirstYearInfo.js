@@ -36,7 +36,7 @@
 
 */
 import registration_application from "./guides/el/registration_application.md";
-import uom_register from "./guides/el/uom_register.md";
+import uom_register from "./guides/el/uowm_register.md";
 import institutional_account from "./guides/el/institutional_account.md";
 import academic_email_activation from "./guides/el/academic_email_activation.md";
 import academic_id from "./guides/el/academic_id.md";
@@ -48,7 +48,7 @@ import housing from "./guides/el/housing.md";
 import healthcare from "./guides/el/healthcare.md";
 
 import en_registration_application from "./guides/en/registration_application.md";
-import en_uom_register from "./guides/en/uom_register.md";
+import en_uom_register from "./guides/en/uowm_register.md";
 import en_institutional_account from "./guides/en/institutional_account.md";
 import en_academic_email_activation from "./guides/en/academic_email_activation.md";
 import en_academic_id from "./guides/en/academic_id.md";
@@ -69,8 +69,8 @@ const guides = {
         guidePath: registration_application,
       },
       {
-        text: i18n.t("uom_register_title"),
-        guidePath: uom_register,
+        text: i18n.t("UoWM Register"),
+        guidePath: uowm_register,
       },
       {
         text: i18n.t("institutional_account_title"),

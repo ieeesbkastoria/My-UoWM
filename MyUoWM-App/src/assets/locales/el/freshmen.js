@@ -1,5 +1,5 @@
 import registration_application from "../../data/guides/el/registration_application.md";
-import uom_register from "../../data/guides/el/uom_register.md";
+import uom_register from "../../data/guides/el/uowm_register.md";
 import institutional_account from "../../data/guides/el/institutional_account.md";
 import academic_email_activation from "../../data/guides/el/academic_email_activation.md";
 import academic_id from "../../data/guides/el/academic_id.md";

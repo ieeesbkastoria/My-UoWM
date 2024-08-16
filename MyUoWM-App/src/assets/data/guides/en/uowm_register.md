@@ -1,4 +1,4 @@
-# Login to the UoM Register page
+# Login to the UoWM Register page
 
 On the page [www.uom.gr/register](https://web.uowm.gr/register/) you will use the information:
 

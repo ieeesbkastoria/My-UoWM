@@ -1,4 +1,4 @@
-# Είσοδος στη σελίδα UoM Register
+# Είσοδος στη σελίδα UoWM Register
 
 Στη σελίδα [www.uowm.gr/register](https://web.uowm.gr/register/) χρησιμοποιείτε τα στοιχεία:
 
