@@ -111,7 +111,7 @@ export const servicesData = [
             {
                 title: i18n.t("Liaison_office"),
                 url: "https://career.uowm.gr/",
-                imgUrl: "https://career.uowm.gr/wp-content/uploads/2022/03/web_logo.png",
+                imgUrl: "Carrer.png",
             },
             {
                 title: i18n.t("practice_office"),
