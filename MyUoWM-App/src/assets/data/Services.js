@@ -78,24 +78,24 @@ export const servicesData = [
                 title: i18n.t("SyllogosPontiwnKastorias"),
                 url: "https://www.instagram.com/spf.kast/",
                 imgUrl:
-                    "SPF.png",
+                    "https://scontent.fskg5-2.fna.fbcdn.net/v/t39.30808-1/308148998_403024312015364_1491865361340249030_n.jpg?stp=dst-jpg_s200x200&_nc_cat=105&ccb=1-7&_nc_sid=f4b9fd&_nc_eui2=AeGOhsLM8x6tLVS-0qV-upCgVbxT3jvuvyNVvFPeO-6_IzKX3mmip8ZYXQo3hMh1RherMbU-ZSQ6tJ86cpaQeVqH&_nc_ohc=YA4s-kKdM8kQ7kNvgGA2_mQ&_nc_ht=scontent.fskg5-2.fna&oh=00_AYAZE5C9Axlq4rNMZbsgfSzXEQVgEgTbunrR9PXNLY7j7Q&oe=66CADEE2",
             },
             {
                 title: i18n.t("SyllogosKritikwnKastorias"),
-                url: "https://google.com",
+                url: "https://www.facebook.com/krhtikoi.kastorias",
                 imgUrl:
-                    "UoWM.png",
+                    "https://scontent.fskg5-1.fna.fbcdn.net/v/t39.30808-1/449751242_3134437136688397_960649798569108356_n.jpg?stp=c94.14.173.172a_dst-jpg_p200x200&_nc_cat=108&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeGIEubHrZYytV-4FiVlMwXwaOHOn5Z8Naho4c6flnw1qEPz7FhIJK_NNKMmWJFPB0ie3EaW-jRMxMD1REPaL7xh&_nc_ohc=pUMaguUeQU8Q7kNvgGixdBY&_nc_ht=scontent.fskg5-1.fna&oh=00_AYCaFGNggdK8KT80v60XCaBvxQcu_WvD4aFC1aXxysp5nQ&oe=66CAFC17",
             },
             {
                 title: i18n.t("DMCTeam"),
-                url: "https://google.com",
-                imgUrl: "UoWM.png",
+                url: "https://www.instagram.com/cdm_uowm",
+                imgUrl: "https://dmcteam.cdm.uowm.gr/wp-content/uploads/2019/11/dmcteam-logo.png",
             },
             {
                 title: i18n.t("MousikhOmada"),
-                url: "https://google.com",
+                url: "https://www.instagram.com/mousiki_kastorias/",
                 imgUrl:
-                    "UoWM.png",
+                    "MusicTeam.png",
             },
             {
                 title: i18n.t("TheatrikhOmada"),
