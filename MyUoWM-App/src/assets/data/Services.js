@@ -75,9 +75,9 @@ export const servicesData = [
             },
             {
                 title: i18n.t("SyllogosPontiwnKastorias"),
-                url: "https://google.com",
+                url: "https://www.instagram.com/spf.kast/",
                 imgUrl:
-                    "UoWM.png",
+                    "/Logos/SPF.png",
             },
             {
                 title: i18n.t("SyllogosKritikwnKastorias"),
@@ -111,24 +111,24 @@ export const servicesData = [
             {
                 title: i18n.t("Liaison_office"),
                 url: "https://career.uowm.gr/",
-                imgUrl: "Carrer.png",
+                imgUrl: "https://career.uowm.gr/wp-content/uploads/2022/03/web_logo.png",
             },
             {
                 title: i18n.t("practice_office"),
                 url: "https://www.uowm.gr/ekpaideysi/spoydes/praktiki-askisi/",
                 imgUrl:
-                    "logo.png",
+                    "https://career.uowm.gr/wp-content/uploads/2022/11/pra_ask.png",
             },
             {
                 title: i18n.t("graduate_office"),
                 url: "https://www.uowm.gr/dioikisi/domes/diktyo-apofoiton/",
                 imgUrl:
-                    "UoWM.png",
+                    "https://career.uowm.gr/wp-content/uploads/2022/11/erasmus.jpg",
             },
             {
                 title: i18n.t("erasmus_office"),
                 url: "https://www.uowm.gr/dioikisi/domes/grafeio-erasmus/",
-                imgUrl: "UoWM.png",
+                imgUrl: "https://career.uowm.gr/wp-content/uploads/2022/11/erasmus.png",
             },
             {
                 title: i18n.t("Student_Advocate"),
