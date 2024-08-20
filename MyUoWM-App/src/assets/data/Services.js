@@ -95,7 +95,7 @@ export const servicesData = [
                 title: i18n.t("MousikhOmada"),
                 url: "https://www.instagram.com/mousiki_kastorias/",
                 imgUrl:
-                    "MusicTeam.png",
+                    "UoWM.png",
             },
             {
                 title: i18n.t("TheatrikhOmada"),
