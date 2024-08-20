@@ -1,4 +1,6 @@
 import i18n from "../../i18n";
+import spfLogo from 'src/assets/data/logos/SPF.png';
+
 export const servicesData = [
     {
         tabName: i18n.t("online_services"),
@@ -77,7 +79,7 @@ export const servicesData = [
                 title: i18n.t("SyllogosPontiwnKastorias"),
                 url: "https://www.instagram.com/spf.kast/",
                 imgUrl:
-                    "/Logos/SPF.png",
+                    spfLogo,
             },
             {
                 title: i18n.t("SyllogosKritikwnKastorias"),
