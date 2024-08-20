@@ -8,47 +8,47 @@ export const servicesData = [
                 title: i18n.t("emaill"),
                 url: "https://noc.uowm.gr/www/services/email/",
                 imgUrl:
-                    "UoWM.png",
+                    "https://static.uowm.gr/images/services-email.png",
             },
             {
                 title: i18n.t("vpn"),
                 url: "https://noc.uowm.gr/www/services/vpn/",
 
                 imgUrl:
-                    "UoWM.png",
+                    "https://static.uowm.gr/images/services-vpn.png",
             },
             {
                 title: i18n.t("wifi"),
                 url: "https://noc.uowm.gr/www/services/wifi/",
 
                 imgUrl:
-                    "UoWM.png",
+                    "https://static.uowm.gr/images/services-wifi.png",
             },
             {
                 title: i18n.t("software"),
                 url: "https://noc.uowm.gr/www/services/software/",
                 imgUrl:
-                    "UoWM.png",
+                    "https://static.uowm.gr/images/services-software.png",
             },
             {
                 title: i18n.t("gsuite"),
                 url: "https://noc.uowm.gr/www/services/gsuite/",
 
-                imgUrl: "UoWM.png",
+                imgUrl: "https://static.uowm.gr/images/services-gsuite.png",
             },
             {
                 title: i18n.t("delos365"),
                 url: "https://noc.uowm.gr/www/services/delos365/",
 
                 imgUrl:
-                    "UoWM.png",
+                    "https://static.uowm.gr/images/services-delos365.png",
             },
             {
                 title: i18n.t("azure"),
                 url: "uowm.png",
 
                 imgUrl:
-                    "UoWM.png",
+                    "https://noc.uowm.gr/www/wp-content/uploads/2021/11/azure-Logo-300x86.png",
             },
         ],
     },
@@ -111,13 +111,13 @@ export const servicesData = [
             {
                 title: i18n.t("Liaison_office"),
                 url: "https://career.uowm.gr/",
-                imgUrl: "UoWM.png",
+                imgUrl: "https://career.uowm.gr/wp-content/uploads/2022/03/web_logo.png",
             },
             {
                 title: i18n.t("practice_office"),
                 url: "https://www.uowm.gr/ekpaideysi/spoydes/praktiki-askisi/",
                 imgUrl:
-                    "UoWM.png",
+                    "logo.png",
             },
             {
                 title: i18n.t("graduate_office"),
