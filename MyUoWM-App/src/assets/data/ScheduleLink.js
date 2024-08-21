@@ -45,7 +45,6 @@ export const schedulesData = new Map([
     {
       semester:
         "https://cs.uowm.gr/archiki-selida/orologio-programma-mathimaton",
-      exam: "https://cs.uowm.gr/archiki-selida/programma-spoudwn/programma-exetaseon/",
     },
   ]
 ]);

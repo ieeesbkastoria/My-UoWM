@@ -63,7 +63,7 @@ export const Categories = [
   {
     title: i18n.t("course_schedule"),
     iconSVG: <CalendarTimeIcon />,
-    route: "/semesterschedule",
+    route: "/semesterProp",
     span: 2,
     isExternal: true,
     requireSelection: true,
