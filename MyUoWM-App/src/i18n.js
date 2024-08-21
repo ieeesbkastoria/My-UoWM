@@ -25,7 +25,6 @@ import elAboutPage from "./assets/locales/el/about_page.js";
 import elError404 from "./assets/locales/el/error404.js"
 import studentCare from "./assets/locales/el/studentCare.js";
 import services from "./assets/locales/en/services.js";
-import restaurant from "./assets/locales/en/restaurant.js";
 
 const resources = {
   en: {

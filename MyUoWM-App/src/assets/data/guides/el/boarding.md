@@ -12,5 +12,4 @@
 
 - [Δικαιολογητικά για αίτηση σίτισης](https://www.uom.gr/assets/site/public/nodes/8576/7726-4618-dikaiologitika-sitisi-new-2020-21.docx)
 - [Υπεύθυνση δήλωση](https://www.uom.gr/assets/site/public/nodes/8576/7706-ypefthini-dilosi-sitisi-2020-2021.doc)
-- [ΦΕΚ για σίτιση](https://www.uom.gr/assets/site/public/nodes/8576/7689-2413-fek-1965-18-06-2012-b.pdf)
 - [Όρια εισοδήματος](https://www.uom.gr/assets/site/public/nodes/8576/7776-7704-3886-oria-sitisis-2020-2021.docx)
