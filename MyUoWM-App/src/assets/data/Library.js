@@ -18,6 +18,7 @@ export const LIBRARY_OPENING_HOURS = {
 };
 
 export const LIBRARY_PHONE_LIST = [
-    "Μπούρτσος Αθανάσιος, Βιβλιοθηκονόμος, τηλ.2467440006, email: abourtsos@uowm.gr", 
-    "Κωνσταντίνου Βάγια, Βιβλιοθηκονόμος, τηλ.2467440006, email: vkonstantinou@uowm.gr"
+    "Μπούρτσος Αθανάσιος, Βιβλιοθηκονόμος, email: abourtsos@uowm.gr", 
+    "Κωνσταντίνου Βάγια, Βιβλιοθηκονόμος, email: vkonstantinou@uowm.gr",
+    "Τηλέφωνο: 2467440000"
 ];

@@ -94,7 +94,7 @@ export const Categories = [
     pageToDisplay: <RestaurantUniversity/>,
   },
   {
-    title: "Student Portal",
+    title: i18n.t("StudentPortal"),
     iconSVG: <StudentInPCIcon />,
     route: "https://students.uowm.gr",
     span: 1,

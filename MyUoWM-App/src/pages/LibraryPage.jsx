@@ -73,7 +73,7 @@ export default function LibraryPage() {
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
-          height={{ lg: "30%" }}
+          height="auto"
         >
           <Flex
             flexDirection={"column"}
@@ -114,6 +114,10 @@ export default function LibraryPage() {
                   : i18n.t("kleista")}
               </Box>
             </Flex>
+              <Text>
+                <br/>
+                {LIBRARY_PHONE_LIST[2]}
+              </Text>
           </Flex>
         </Box>
         {/* Επικοινωνία  */}
@@ -130,7 +134,7 @@ export default function LibraryPage() {
           py="1rem"
           px="0.75rem"
           width="100%"
-          height={{ lg: "30%" }}
+          height="auto"
         >
           <Flex
             mx="1rem"
@@ -141,7 +145,7 @@ export default function LibraryPage() {
             columnGap={"1rem"}
             color={useColorModeValue("#f3f3f3", "black")}
             fontFamily="Syne"
-            w="100%"
+            w="auto"
             fontSize={{ base: "md", lg: "2xl" }}
           >
             <Flex flexDirection={"row"} alignItems="center">
@@ -164,9 +168,8 @@ export default function LibraryPage() {
               gap="2rem"
             >
               <Text>
-                {LIBRARY_PHONE_LIST[0]} <br />
-                <br />
-                {LIBRARY_PHONE_LIST[1]}
+                {LIBRARY_PHONE_LIST[0]} <br/>
+                {LIBRARY_PHONE_LIST[1]} <br/>
               </Text>
             </Flex>
           </Flex>

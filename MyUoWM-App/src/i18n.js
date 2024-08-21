@@ -66,6 +66,7 @@ const resources = {
       graduation_description:"Please select Department from Settings",
       on_weekend:"On Weekend",
       restaurantPage: "Menu Anouncement & Proggram",
+      StudentPortal: "Student Portal",
        // Student Care
        StudentCare: "Salasidou Despina, Phone: 2467440003, E-mail: dsalasidou@uowm.gr, merimna-kas@uowm.gr",
        StudentCare2: "Sotiropoulou Paraskevi, Phone: 2467440002, E-mail: cs04219@uowm.gr",
@@ -148,6 +149,7 @@ const resources = {
       graduation_description:"Παρακαλώ επιλέξτε τμήμα από τις ρυθμίσεις.",
       on_weekend:"Σάββατο - Κυριακή",
       restaurantPage: "Ανακοίνωση Μενού & Πρόγραμμα",
+      StudentPortal: "Ηλεκτρονική Γραμματεία",
 // Student Care
       StudentCare: "Σαλασίδου Δέσποινα, Τηλέφωνο: 2467440003, E-mail: dsalasidou@uowm.gr, merimna-kas@uowm.gr",
       StudentCare2: "Σωτηροπούλου Παρασκευή, Τηλέφωνο: 2467440002, E-mail: cs04219@uowm.gr",
