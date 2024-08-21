@@ -63,13 +63,13 @@ export const Categories = [
   {
     title: i18n.t("course_schedule"),
     iconSVG: <CalendarTimeIcon />,
-    route: "/semesterProp",
+    route: "https://cs.uowm.gr/archiki-selida/orologio-programma-mathimaton",
     span: 2,
     isExternal: true,
-    requireSelection: true,
+    requireSelection: false,
     position: 1,
     hide: false,
-    pageToDisplay: <SchedulePage semesterProp />,
+    pageToDisplay: null,
   },
   {
     title: "Open eClass",
@@ -196,12 +196,12 @@ export const Categories = [
   {
     title: i18n.t("announcements"),
     iconSVG: <DepAnnounceIcon />,
-    route: "/announcements",
+    route: "https://cs.uowm.gr/category/announcements/",
     span: 1,
     isExternal: true,
-    requireSelection: true,
+    requireSelection: false,
     position: 13,
     hide: false,
-    pageToDisplay: <AnnouncementsPage />,
+    pageToDisplay: null,
   },
 ];
