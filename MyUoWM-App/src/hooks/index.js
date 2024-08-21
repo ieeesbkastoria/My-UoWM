@@ -5,7 +5,6 @@ import { useTodaysMenu } from './useTodaysMenu';
 import { useLocalStorage } from './useLocalStorage';
 import { useWeeklyRestaurantMenu } from './useWeeklyRestaurantMenu';
 import { useDepName } from './useDepName';
-import { useProfessors } from './useProfessors';
 import { useSecretary } from './useSecretary';
 import { useGraduationLink } from './useGraduationLink';
 import { useFAQData } from './useFAQData';
@@ -22,7 +21,6 @@ export {
     useLocalStorage,
     useWeeklyRestaurantMenu,
     useDepName,
-    useProfessors,
     useSecretary,
     useGraduationLink,
     useFAQData,

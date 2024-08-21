@@ -39,7 +39,6 @@ import {
   DepAnnounceIcon,
   CalendarTimeIcon,
   ExamsTestIcon,
-  GraduationIcon,
   LaptopTextbookIcon,
   LibraryIcon,
   LocationIcon,
@@ -52,17 +51,13 @@ import {
   StudentInPCIcon,
 } from "./icons";
 import AnnouncementsPage from "../pages/AnnouncementPage";
-import ProfInfoPage from "../pages/ProfInfoPage";
-import RestaurantPage from "../pages/RestaurantPage";
 import ServicesPage from "../pages/ServicesPage";
-import GraduationPage from "../pages/GraduationPage";
 import LibraryPage from "../pages/LibraryPage";
 import FirstYearInfoPage from "../pages/FirstYearInfoPage";
 import SchedulePage from "../pages/SchedulePage";
 import MapPage from "../pages/MapPage";
 import StudentCare from "../pages/StudentCare";
 import RestaurantUniversity from "../pages/RestaurantUniversity";
-import { FaUniversity } from "react-icons/fa";
 import i18n from "../i18n";
 export const Categories = [
   {
