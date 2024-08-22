@@ -3,7 +3,6 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.*;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelClubRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
@@ -30,30 +29,22 @@ class AdminPanelServiceImplTest {
     private MyUoWmAdminPanelPersonnelRepository personnelRepository;
     @Mock
     private MyUoWmAdminPanelLinkRepository linkRepository;
-    @Mock
-    private MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
     private AdminPanelServiceImpl adminService;
 
     AutoCloseable autoCloseable;
     Club club;
     Link link1, link2, link3;
-    MealPlan mealPlan;
     Personnel personnel;
 
     @BeforeEach
     void setUp() {
         autoCloseable = MockitoAnnotations.openMocks(this);
-        adminService = new AdminPanelServiceImpl(personnelRepository,clubRepository,
-                linkRepository, mealPlanRepository);
+        adminService = new AdminPanelServiceImpl(personnelRepository,clubRepository, linkRepository);
 
         club = new Club("IEEE SB", "url.com");
         link1 = new Link(1L, "link4", "url.com");
         link2 = new Link(1L, "link2", "url.com");
         link3 = new Link(1L, "link3", "url.com");
-
-        mealPlan = new MealPlan(1L, 1L, 1,
-                "Monday", "dish1", "dish2",
-                MealType.DINNER, "salad", "cake");
 
         personnel = new Personnel("4444", "CS", "Kostas",
                 "6999999", "22", "kostas@uowm.gr");
@@ -95,17 +86,6 @@ class AdminPanelServiceImplTest {
                 () -> adminService.updateLinks(linkList));
 
         assertEquals(exception.getMessage(), "The list of links contains a non valid link usage");
-    }
-
-    // Test case Success
-    @Test
-    void testSaveMealPlan_Success() {
-        mock(MealPlan.class);
-        mock(MyUoWmAdminPanelMealPlanRepository.class);
-
-        var mealPlanList = List.of(mealPlan);
-
-        assertThat(adminService.saveMealPlan(mealPlanList).equals(mealPlanList)).isTrue();
     }
 
     // Test case Success

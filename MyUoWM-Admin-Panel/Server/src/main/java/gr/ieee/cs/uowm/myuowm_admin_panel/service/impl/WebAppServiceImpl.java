@@ -2,11 +2,9 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelClubRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
@@ -24,14 +22,6 @@ public class WebAppServiceImpl implements WebAppService {
     MyUoWmAdminPanelClubRepository clubRepository;
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelLinkRepository linkRepository;
-    MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
-
-    @Override
-    public List<MealPlan> getMealPlan() {
-        if(!mealPlanRepository.findByMealId(1L).isEmpty())
-            return mealPlanRepository.findByMealId(1L);
-        return Collections.EMPTY_LIST;
-    }
 
     @Override
     public List<Personnel> getAllPersonnel() {

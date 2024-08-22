@@ -2,7 +2,6 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.WebAppService;
 import lombok.AllArgsConstructor;
@@ -18,12 +17,6 @@ import java.util.List;
 public class WebAppController {
 
     private final WebAppService webAppService;
-
-    @GetMapping("/lesxi")
-    @ResponseStatus(HttpStatus.OK)
-    public List<MealPlan> getLesxi() {
-        return webAppService.getMealPlan();
-    }
 
     @GetMapping("/links")
     @ResponseStatus(HttpStatus.OK)

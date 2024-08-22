@@ -3,7 +3,6 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.controller;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.response.ResponseHandler;
 import gr.ieee.cs.uowm.myuowm_admin_panel.service.AdminPanelService;
@@ -32,14 +31,6 @@ public class AdminPanelController {
         var response = adminPanelService.updateLinks(links);
 
         return ResponseHandler.responseBuilder("The links have been updated successfully", HttpStatus.OK, response);
-    }
-
-    @PutMapping("/lesxi")
-    @PreAuthorize("hasAuthority('admin:update')")
-    public ResponseEntity<Object> updateDinnerPlan(@RequestBody List<MealPlan> mealPlan) {
-        var response = adminPanelService.saveMealPlan(mealPlan);
-
-        return ResponseHandler.responseBuilder("The meal plan has been successfully updated", HttpStatus.OK, response);
     }
 
     @PostMapping("/personnel")
