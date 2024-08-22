@@ -16,7 +16,6 @@ function App() {
       <Route path="add" element={<AddPersonnel />} />
       <Route path="update" element={<UpdatePersonnel />} />
       <Route path="clubs" element={<Login />} />
-      <Route path="meals" element={<MealPlan />} />
       <Route path="links" element={<ChangeLinks />} />
     </Routes>
   );
