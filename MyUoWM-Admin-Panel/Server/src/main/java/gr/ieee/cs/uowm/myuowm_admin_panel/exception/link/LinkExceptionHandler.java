@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class LinkExceptionHandler {
 
+    @SLF4J
     @ExceptionHandler(value = {LinkNotFoundException.class})
     public ResponseEntity<Object> linkNotFoundExceptionHandler
             (LinkNotFoundException linkNotFoundException)
@@ -17,7 +18,7 @@ public class LinkExceptionHandler {
                 linkNotFoundException.getCause(),
                 HttpStatus.NOT_FOUND
         );
-
+        log.error("Link Not Found (404) Exception: " + linkNotFoundException.getMessage());
         return new ResponseEntity<>(linkException, HttpStatus.NOT_FOUND);
     }
 }

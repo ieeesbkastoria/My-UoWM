@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ClubExceptionHandler {
 
+    @SLF4J
     @ExceptionHandler(ClubNotFoundException.class)
     public ResponseEntity<Object> clubNotFoundExceptionHandler
             (ClubNotFoundException clubNotFoundException)
@@ -17,7 +18,7 @@ public class ClubExceptionHandler {
                 clubNotFoundException.getCause(),
                 HttpStatus.NOT_FOUND
         );
-
+        log.error("Club Not Found (404) Exception: " + clubNotFoundException.getMessage());
         return new ResponseEntity<>(clubException, HttpStatus.NOT_FOUND);
     }
 }

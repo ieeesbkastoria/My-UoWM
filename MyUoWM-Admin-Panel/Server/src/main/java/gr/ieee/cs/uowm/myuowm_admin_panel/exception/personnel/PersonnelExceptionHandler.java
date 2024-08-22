@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class PersonnelExceptionHandler {
 
+    @SLF4J
     @ExceptionHandler(value = {PersonnelNotFoundException.class})
     public ResponseEntity<Object> personnelNotFoundResponse
             (PersonnelNotFoundException personnelNotFoundException)
@@ -17,7 +18,7 @@ public class PersonnelExceptionHandler {
                 personnelNotFoundException.getCause(),
                 HttpStatus.NOT_FOUND
         );
-
+        log.error("Personnel Not Found (404) Exception: " + personnelNotFoundException.getMessage());
         return new ResponseEntity<>(personnelException, HttpStatus.NOT_FOUND);
     }
 }
