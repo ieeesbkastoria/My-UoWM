@@ -3,7 +3,6 @@ import SignUp from './pages/SignUp'
 import Home from './pages/Home'
 import AddPersonnel from './pages/AddPersonnel'
 import UpdatePersonnel from './pages/UpdatePersonnel'
-import MealPlan from './pages/MealPlan'
 import ChangeLinks from './pages/ChangeLinks'
 import { Routes, Route } from 'react-router-dom';
 
