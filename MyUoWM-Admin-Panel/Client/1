@@ -1,0 +1,11 @@
+import UpdatePersonnel from '../components/UpdatePersonnel'
+import AddPersonnel from '../components/AddPersonnel'
+
+const Personnel = () => {
+  return(
+    <UpdatePersonnel />
+    <AddPersonnel />
+  )
+}
+
+export default Personnel;
