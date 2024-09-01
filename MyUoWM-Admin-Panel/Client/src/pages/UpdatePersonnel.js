@@ -1,38 +1,43 @@
 import useState from "react";
-import useAxiosPrivate from '../hooks/useAxiosPrivate';
-import UsePatch from '../hooks/UsePatch'
 import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
+import axiosInstance from "../axiosConfig";
 
-const POST_PERSONNEL_URL = 'http://localhost:8080/api/admin/personnel';
-const GET_PERSONNEL_URL = '/api/myuowm/personnel';
+const POST_PERSONNEL_URL = 'api/admin/personnel';
+const GET_PERSONNEL_URL = 'api/myuowm/personnel';
 
 const UpdatePersonnel = () => {
 
   const [personnel, setPersonnel] = useState();
   //Might need diffrent Axios(not private)
-  const axiosPrivate = useAxiosPrivate();
 
   const queryClient = new QueryClient();
 
-  const controller = new AbortController();
+  const fetchData = async () => {
+    try {
+      const response = await axiosInstance.get(GET_PERSONNEL_URL);
+      setPersonnel(response.data);
+    } catch (error) {
+      console.error("Error fetching data", error);
+    }
+  };
+
   const { data: employees, isLoading } = useQuery({
-    queryFn: () => async () => {
-      try {
-        const response = await axiosPrivate.get(GET_PERSONNEL_URL, {
-          signal: controller.signal
-        });
-        console.log(response.data);
-        setPersonnel(response.data);
-      } catch (err) {
-        console.error(err);
-        //TODO Redirect user to login if not loged in if Unauthorized
-      }
-    },
+    queryFn: fetchData,
     queryKey: ["employees"]
   })
 
+
+  const patchData = async () => {
+    try {
+      const response = await axiosInstance.patch(POST_PERSONNEL_URL, personnel);
+      console.log(response);
+    } catch (error) {
+      console.error("Error updating profile", error);
+    }
+  }
+
   const { mutateAsync: mutate } = useMutation({
-    mutationFn: UsePatch,
+    mutationFn: patchData,
     onSuccess: () => {
       queryClient.invalidateQueries(["employees"]);
     },
