@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect } from 'react';
-import useAuth from '../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import axios from '../api/axios';
@@ -25,7 +24,7 @@ const Login = () => {
       localStorage.setItem("token", response.data.token);
 
       // Redirect or set authentication state
-      window.location.href = "/"; // or use React Router to redirect
+      useNavigate("/");
     } catch (err) {
       setError("Invalid email or password");
     }
