@@ -1,8 +1,8 @@
 spring:
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/myuowm?useSSL=false
-    username: root
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ieee_admin_panel
+    username: postgres
     password: 4242
   jpa:
     hibernate:
@@ -11,7 +11,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-      database: mysql
+      database: postgres
 
 application:
   security:
