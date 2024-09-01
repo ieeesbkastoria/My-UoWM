@@ -2,11 +2,9 @@ package gr.ieee.cs.uowm.myuowm_admin_panel.service.impl;
 
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Club;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Link;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.MealPlan;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.model.Personnel;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelClubRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelLinkRepository;
-import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelMealPlanRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.datasource.repository.MyUoWmAdminPanelPersonnelRepository;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.club.ClubNotFoundException;
 import gr.ieee.cs.uowm.myuowm_admin_panel.exception.link.LinkNotFoundException;
@@ -25,7 +23,6 @@ public class AdminPanelServiceImpl implements AdminPanelService {
     MyUoWmAdminPanelPersonnelRepository personnelRepository;
     MyUoWmAdminPanelClubRepository clubRepository;
     MyUoWmAdminPanelLinkRepository linkRepository;
-    MyUoWmAdminPanelMealPlanRepository mealPlanRepository;
 
     @Override
     public List<Link> updateLinks(List<Link> links){
@@ -36,13 +33,6 @@ public class AdminPanelServiceImpl implements AdminPanelService {
 
         linkRepository.saveAll(links);
         return links;
-    }
-
-    @Override
-    public List<MealPlan> saveMealPlan(List<MealPlan> mealPlan) {
-        mealPlan.forEach(meal -> meal.setMealId(1L));
-        mealPlanRepository.saveAll(mealPlan);
-        return mealPlan;
     }
 
     @Override
