@@ -1,16 +1,12 @@
 # Open eClass registration
 
-Visit the [Open eClass](https://eclass.uowm.gr/) page.
+Visit the [Open eClass](https://eclass.uowm.gr/index.php?localize=en) page.
 
-Click on **'User Registration'** on the left.
+Click on **'Enter'** on the left.
 
-Click on **'Certification through the Institutional Account (URegister)'**.
+Enter your username (it should be your academic e-mail, only without the "@uowm.gr") and password of your institutional account.
 
-Enter your username and password of your institutional account.
-
-On the next page, select your department and any other information that is required and click on **'Submit'**.
-
-You will receive a confirmation email.
+After that click on **'Submit'**.
 
 Click on **'Subjects'** on the left, select the **'Undergraduate'** tab and then **'Department of Informatics'**.
 
