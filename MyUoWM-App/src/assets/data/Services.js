@@ -59,12 +59,12 @@ export const servicesData = [
         services: [
             {
                 title: i18n.t("IEEEStydentBranch"),
-                url: "https://google.com",
+                url: "https://www.instagram.com/ieeesbkastoria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
                 imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQukwUoTZ9s227DbAgGLkuuxv9I5G7uYHRvhg&s",
             },
             {
                 title: i18n.t("ErasmusStudentClub"),
-                url: "https://google.com",
+                url: "https://www.instagram.com/esn.westernmacedonia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
                 imgUrl:
                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKzQeBx8Zga6TlFdUP-PYbjcq4U2BlKjvnyg&s",
             },
@@ -82,7 +82,7 @@ export const servicesData = [
             },
             {
                 title: i18n.t("SyllogosKritikwnKastorias"),
-                url: "https://www.facebook.com/krhtikoi.kastorias",
+                url: "https://www.instagram.com/skf.kastorias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
                 imgUrl:
                     "https://scontent.fskg5-1.fna.fbcdn.net/v/t39.30808-1/449751242_3134437136688397_960649798569108356_n.jpg?stp=c94.14.173.172a_dst-jpg_p200x200&_nc_cat=108&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeGIEubHrZYytV-4FiVlMwXwaOHOn5Z8Naho4c6flnw1qEPz7FhIJK_NNKMmWJFPB0ie3EaW-jRMxMD1REPaL7xh&_nc_ohc=I4fO8OfZPPMQ7kNvgEYT6j_&_nc_ht=scontent.fskg5-1.fna&oh=00_AYBQno99ZJbu3L0ru4CdezDcaur0C3saLxrOGx04ifeyJQ&oe=66DBAF17",
             },
@@ -99,7 +99,7 @@ export const servicesData = [
             },
             {
                 title: i18n.t("TheatrikhOmada"),
-                url: "https://google.com",
+                url: "https://www.instagram.com/theatriki.kast?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
                 imgUrl:
                     "UoWM.png",
             },
