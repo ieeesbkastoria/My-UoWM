@@ -20,7 +20,7 @@ Choose the pickup location for the physical copy of the ID.
 
 Don't forget to click **'Submit'**. When you submit, you will receive a registration number. You should write it down. You will receive an email stating that the request has been successfully submitted.
 
-You can request the academic ID, that also functions as a discount for public transport.
+With the indication of your academic ID you are entitled to a student discount on public transport. 
 
 You should also swap your phone number for a student number.
 
