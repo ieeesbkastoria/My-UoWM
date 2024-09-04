@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2024 Open Source  UOM
+  Copyright (c) 2022 Open Source  UOM
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -36,80 +36,104 @@
 
 */
 
-import { Box, Image, Text, Accordion } from "@chakra-ui/react";
-import membersData from "../assets/data/projectMembers";
-import ProjectMembersCard from "../components/ProjectMembersCard";
-import UoMLogo from "../assets/UoWM.png";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Icon,
+  Image,
+  Stack,
+  Text,
+  VStack,
+  useColorModeValue,
+  Grid,
+} from "@chakra-ui/react";
+import membersData from "../assets/projectMembers";
+import iamUniWAMembers from "../assets/iamUniWAMembers";
+import UoMLogo from "../assets/iamUniWALogo.png";
+import ProjectMembersList from "../components/ProjectMembersList";
+import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
-import i18n from "../i18n";
-import { useSocialMediaURLs } from "../hooks";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
+
 function AboutSettingsPage() {
-  const SOCIAL_MEDIA_URLS = useSocialMediaURLs();
+  const SelectBorderColor = () => {
+    return useColorModeValue("primary", "light");
+  };
+
+  const SelectItemColor = () => {
+    return useColorModeValue("black", "white");
+  };
+
   return (
     <Box
       align="center"
       marginTop="1em"
-      fontFamily="Syne"
       fontSize={{ sm: 11.95, md: 16, lg: 26, xl: 32 }}
     >
-      <Image src={UoMLogo} width="200px" height="200px" />
-      <Text marginTop="1em" marginBottom="2rem" fontSize={{ sm: 26, md: 30, lg: 34, xl: 38 }}>
-        {i18n.t("about_title")}
+      <Image src={UoMLogo} width="300px" height="200px" />
+      <Text marginTop="1em" fontSize={{ sm: 26, md: 30, lg: 34, xl: 38 }}>
+        iamUniWA
         <br />
-        {i18n.t("about_version")}
+        Έκδοση v1.0.0
+        <br />
+        <br />
       </Text>
-      <Text fontSize={{ sm: 17, md: 21, lg: 26, xl: 30 }}>
-        @2024 OpenSourceUoM Team
+      {/* <Text fontSize={{ sm: 17, md: 21, lg: 26, xl: 30 }}>
+        @2022 OpenSourceUoM Team
         <br />
         All rights reserved
         <br />
         <br />
-      </Text>
-      <Text fontSize={{ sm: 17, md: 21, lg: 26, xl: 30 }}>
-        {i18n.t("about_find_us_on_socials")}
-      </Text>
+      </Text> */}
+      {/* <Text fontSize={{ sm: 17, md: 21, lg: 26, xl: 30 }}>Βρες μας στα Social Media</Text>
       <Box paddingTop="10px">
-        <SocialIcon
-          url={SOCIAL_MEDIA_URLS.facebook}
-          style={{ marginRight: "0.5rem" }}
-        />
-        <SocialIcon
-          url={SOCIAL_MEDIA_URLS.instagram}
-          style={{ marginRight: "0.5rem" }}
-        />
-        <SocialIcon
-          url={SOCIAL_MEDIA_URLS.youtube}
-          style={{ marginRight: "0.5rem" }}
-        />
-        <SocialIcon
-          url={SOCIAL_MEDIA_URLS.twitter}
-          style={{ marginRight: "0.5rem" }}
-        />
-        <SocialIcon
-          url={SOCIAL_MEDIA_URLS.LinkedIn}
-          style={{ marginRight: "0.5rem" }}
-        />
-        <SocialIcon
-          url={SOCIAL_MEDIA_URLS.gitlab}
-          style={{ marginRight: "0.5rem" }}
-        />
-        <SocialIcon
-          url={SOCIAL_MEDIA_URLS.discord}
-          style={{ marginRight: "0.5rem" }}
-        />
-      </Box>
-      <Text
-        fontSize={{ sm: 15, md: 18, lg: 23, xl: 27 }}
-        textAlign="center"
-        mt="2rem"
-        mx="2rem"
-      >
-        {i18n.t("about_project_members_title")}
-      </Text>
-      <Accordion allowToggle mt="1rem">
-        {membersData.map((data) => (
-          <ProjectMembersCard data={data} key={data.name} />
-        ))}
+        <SocialIcon url="https://www.facebook.com/OpenSourceUoM/" style={{ marginRight: "0.5rem" }} />
+        <SocialIcon url="https://www.instagram.com/opensourceuom/" style={{ marginRight: "0.5rem" }} />
+        <SocialIcon url="https://www.youtube.com/channel/UC98Ggzq6dl_nn5Y0BHb6SLA?sub_confirmation=1" style={{ marginRight: "0.5rem" }} />
+        <SocialIcon url="https://twitter.com/opensource_uom" style={{ marginRight: "0.5rem" }} />
+        <SocialIcon url="https://www.linkedin.com/company/80766091/" style={{ marginRight: "0.5rem" }} />
+        <SocialIcon url="https://gitlab.com/opensourceuom" style={{ marginRight: "0.5rem" }} />
+        <SocialIcon url="https://discord.com/invite/XtxtM3ZHUm" style={{ marginRight: "0.5rem" }} />
+      </Box> */}
+      <Accordion allowToggle="true" mt="1rem">
+        <Flex
+          w={{ sm: "90%", md: "75%", lg: "50%" }}
+          direction="row"
+          align="center"
+          justify="start"
+        >
+          <Grid
+            w="100%"
+            as={motion.section}
+            initial="initial"
+            animate="inView"
+            gap={{ sm: "1.5rem", lg: "2.5rem" }}
+            templateRows={{ sm: "1fr" }}
+          >
+            <ProjectMembersList
+              heading="Η ομάδα ανάπτυξης του myUoM"
+              membersList={membersData}
+            />
+            <ProjectMembersList
+              heading="Η ομάδα ανάπτυξης του myCS.uowm"
+              membersList={iamUniWAMembers}
+            />
+          </Grid>
+        </Flex>
       </Accordion>
     </Box>
   );

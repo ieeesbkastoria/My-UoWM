@@ -130,13 +130,13 @@ export const Categories = [
   {
     title: i18n.t("exams_schedule"),
     iconSVG: <ExamsTestIcon />,
-    route: "/examschedule",
+    route: "https://cs.uowm.gr/archiki-selida/programma-spoudwn/programma-exetaseon/",
     isExternal: true,
     span: 2,
-    requireSelection: true,
+    requireSelection: false,
     position: 7,
     hide: false,
-    pageToDisplay: <SchedulePage examsProp />,
+    pageToDisplay: null,
   },
   {
     title: i18n.t("academic_personnel"),
