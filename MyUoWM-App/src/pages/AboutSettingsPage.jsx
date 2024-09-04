@@ -85,7 +85,7 @@ function AboutSettingsPage() {
     >
       <Image src={"UoWM.png"} width="300px" height="200px" />
       <Text marginTop="1em" fontSize={{ sm: 26, md: 30, lg: 34, xl: 38 }}>
-        iamUniWA
+        myCS.uowm
         <br />
         Έκδοση v1.0.0
         <br />
