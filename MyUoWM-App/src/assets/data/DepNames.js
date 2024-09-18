@@ -39,7 +39,6 @@ import i18n from "../../i18n";
 
 export const DEPARTMENT_CODES = {
   INFORMATICS: "cs",
-  Math: "math",
   
 }
 export const DEPARTMENTS = [

@@ -38,7 +38,7 @@
 
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import myUOMLogo from "../assets/UoWM.png";
+import myCS from "../assets/UoWM.png";
 import { Flex, Box, Heading, Image, useColorModeValue } from "@chakra-ui/react";
 import SettingsButton from "./settings/SettingsButton";
 import { Categories } from "../assets/ConfigRoutes";
@@ -92,7 +92,7 @@ export default function Header() {
             w={{ sm: "100%", lg: "fit-content" }}
           >
             <Image
-              src={myUOMLogo}
+              src={myCS}
               onClick={goToHomePage}
               cursor="pointer"
               w={{ sm: "40px", xl: "60px" }}

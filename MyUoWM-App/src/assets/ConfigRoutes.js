@@ -50,11 +50,9 @@ import {
   StackedBooksIcon,
   StudentInPCIcon,
 } from "./icons";
-import AnnouncementsPage from "../pages/AnnouncementPage";
 import ServicesPage from "../pages/ServicesPage";
 import LibraryPage from "../pages/LibraryPage";
 import FirstYearInfoPage from "../pages/FirstYearInfoPage";
-import SchedulePage from "../pages/SchedulePage";
 import MapPage from "../pages/MapPage";
 import StudentCare from "../pages/StudentCare";
 import RestaurantUniversity from "../pages/RestaurantUniversity";

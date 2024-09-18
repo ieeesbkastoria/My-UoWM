@@ -76,7 +76,7 @@ export default function ProjectMembersList({ membersList, heading }) {
         </Flex>
         <AccordionPanel bgColor="transparent" pb={0}>
           {membersList.map((data) => (
-            <ProjectMembersCard data={data} key={data.name} />
+            <ProjectMembersCard data={data} key={data.name}  />
           ))}
         </AccordionPanel>
       </AccordionItem>

@@ -83,7 +83,7 @@ function AboutSettingsPage() {
       marginTop="1em"
       fontSize={{ sm: 11.95, md: 16, lg: 26, xl: 32 }}
     >
-      <Image src={"UoWM.png"} width="300px" height="200px" />
+      <Image src={"UoWM.png"} width="100px" height="100px" />
       <Text marginTop="1em" fontSize={{ sm: 26, md: 30, lg: 34, xl: 38 }}>
         myCS.uowm
         <br />

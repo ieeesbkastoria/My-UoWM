@@ -64,6 +64,7 @@ export default function ProjectMembersCard({ data }) {
       borderRadius="20"
       overflow="hidden"
       border="2px"
+      marginBottom={"10px"}
       borderColor={SelectBorderColor()}
     >
       <AccordionItem border="none" w="100%">

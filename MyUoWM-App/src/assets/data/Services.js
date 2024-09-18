@@ -78,13 +78,13 @@ export const servicesData = [
                 title: i18n.t("SyllogosPontiwnKastorias"),
                 url: "https://www.instagram.com/spf.kast/",
                 imgUrl:
-                    "https://scontent.fskg5-2.fna.fbcdn.net/v/t39.30808-1/308148998_403024312015364_1491865361340249030_n.jpg?stp=dst-jpg_s200x200&_nc_cat=105&ccb=1-7&_nc_sid=f4b9fd&_nc_eui2=AeGOhsLM8x6tLVS-0qV-upCgVbxT3jvuvyNVvFPeO-6_IzKX3mmip8ZYXQo3hMh1RherMbU-ZSQ6tJ86cpaQeVqH&_nc_ohc=QuOJH_MbulcQ7kNvgHyykst&_nc_ht=scontent.fskg5-2.fna&oh=00_AYDrlw9FlZHQsfeCflypqkLeKvVdvIfaRcKuwMge6FFP9A&oe=66DBCA22",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUX5onqToA6YTMbjz6TqAKxjThNqlAU6WVeg&s",
             },
             {
                 title: i18n.t("SyllogosKritikwnKastorias"),
                 url: "https://www.instagram.com/skf.kastorias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
                 imgUrl:
-                    "https://scontent.fskg5-1.fna.fbcdn.net/v/t39.30808-1/449751242_3134437136688397_960649798569108356_n.jpg?stp=c94.14.173.172a_dst-jpg_p200x200&_nc_cat=108&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeGIEubHrZYytV-4FiVlMwXwaOHOn5Z8Naho4c6flnw1qEPz7FhIJK_NNKMmWJFPB0ie3EaW-jRMxMD1REPaL7xh&_nc_ohc=I4fO8OfZPPMQ7kNvgEYT6j_&_nc_ht=scontent.fskg5-1.fna&oh=00_AYBQno99ZJbu3L0ru4CdezDcaur0C3saLxrOGx04ifeyJQ&oe=66DBAF17",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0V-Pkpuee_4G6bzkHJwLiLlprh0w4LVyDQ&s",
             },
             {
                 title: i18n.t("DMCTeam"),
