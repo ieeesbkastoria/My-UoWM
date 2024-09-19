@@ -38,7 +38,7 @@
 
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import myCS from "../assets/UoWM.png";
+import myCS from "../assets/Images/UoWM.png";
 import { Flex, Box, Heading, Image, useColorModeValue } from "@chakra-ui/react";
 import SettingsButton from "./settings/SettingsButton";
 import { Categories } from "../assets/ConfigRoutes";
