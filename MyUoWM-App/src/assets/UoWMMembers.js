@@ -1,9 +1,9 @@
 const UoWMMembers = [
   {
     name: "Παναγιώτης Παπαντώνης (Επιβλέπων)",
-    socialMedia: "",
+    socialMedia: "https://www.instagram.com/panagiotis_papantonis/",
     email: "",
-    img: "",
+    img: "https://drive.google.com/file/d/1TKQOYK03GX3xXt1FdEVPdfmzKTDD0fh0/view?usp=sharing",
   },
   {
     name: "Βαρβάρα Παναγιωτίδου (Μέλος)",
