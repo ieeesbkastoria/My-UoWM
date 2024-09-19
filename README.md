@@ -117,14 +117,3 @@ Project Link: [https://github.com/Open-Source-UoM/MyUoM](https://github.com/Open
 ## Thanks to all the Contributors ❤️
 
 <img src="https://contrib.rocks/image?repo=Open-Source-UoM/MyUoM" />
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/gitlab/contributors/opensourceuom/myUoM?style=for-the-badge
-[forks-shield]: https://img.shields.io/gitlab/forks/opensourceuom/myUoM?style=for-the-badge
-[stars-shield]: https://img.shields.io/gitlab/stars/opensourceuom/myUoM?style=for-the-badge
-[issues-shield]: https://img.shields.io/gitlab/issues/open/opensourceuom/myUoM?style=for-the-badge
-[license-shield]: https://img.shields.io/gitlab/license/opensourceuom/myUoM?style=for-the-badge
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[react-url]: https://reactjs.org/
