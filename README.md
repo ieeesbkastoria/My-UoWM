@@ -29,12 +29,12 @@
 <br />
 <div align="center">
     <img src="MyUoWM-App/src/assets/myUOMLogo.png" alt="Logo" width="80" height="80">
-  <h3 align="center">myCS</h3>
+  <h3 align="center">myCS (fork of myUoM</h3>
 
   <p align="center">
-    The official University of Macedonia Student application
+    The official University of Western Macedonia Student application
     <br />
-    <a href="https://github.com/Open-Source-UoM/MyUoM"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Open-Source-UoM/MyUoM"><strong>Explore the docs of the parent project »</strong></a>
     <br />
     <br />
     <a href="https://my.uom.gr/">View the Project</a>
@@ -67,6 +67,9 @@
 
 The myUoM app is a project of the Open Software Team of Applied Informatics, University of Macedonia (https://opensource.uom.gr).
 It was designed to facilitate students' daily interactions with the university.
+
+The myUoM project has been forked and modified by students of the IEEE Student Branch of University of Western Macedonia, Kastoria
+in order to implement the myCS app for the students of the Department of Informatics.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
