@@ -24,7 +24,7 @@
 <br />
 <div align="center">
     <img src="MyUoWM-App/src/assets/myUOMLogo.png" alt="Logo" width="80" height="80">
-  <h3 align="center">myCS (fork of myUoM)</h3>
+  <h3 align="center">mycs (fork of myUoM)</h3>
 
   <p align="center">
     The official University of Western Macedonia Student application
