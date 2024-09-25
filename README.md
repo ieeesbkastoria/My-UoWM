@@ -19,11 +19,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Forks][forks-shield]](https://github.com/Open-Source-UoM/MyUoM/fork)
-[![Stargazers][stars-shield]](https://github.com/Open-Source-UoM/MyUoM/stargazers)
-[![Issues][issues-shield]](https://github.com/Open-Source-UoM/MyUoM/issues)
-[![MIT License][license-shield]](https://github.com/Open-Source-UoM/MyUoM/blob/main/LICENSE)
-[![LinkedIn][linkedin-shield]](https://www.linkedin.com/company/80766091)
 
 <!-- PROJECT LOGO -->
 <br />
