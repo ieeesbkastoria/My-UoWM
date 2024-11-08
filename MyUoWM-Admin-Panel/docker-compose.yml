@@ -1,5 +1,3 @@
-name: my-cs-admin
-
 services:
   mongo:
     image: mongo:7.0.12
@@ -23,21 +21,23 @@ services:
       - 4004:4004
 
   frontend:
-      build:
-        context: ./client
-        dockerfile: Dockerfile
-      restart: unless-stopped
-      volumes:
-        - ./client:/app
-        - /app/node_modules
-      networks:
-        - my-cs-admin
-      command: npm run start
-      depends_on:
-        - api
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    networks:
+      - my-cs-admin
+    command: npm run start
+    depends_on:
+      - api
 
-  volumes:
-    mongo_data:
-  networks:
-    my-cs-admin:
-      driver: bridge
+volumes:
+  mongo_data:
+
+networks:
+  my-cs-admin:
+    driver: bridge
+
