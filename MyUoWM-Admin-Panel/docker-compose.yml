@@ -14,11 +14,10 @@ services:
     env_file: ./server/.env
     volumes:
       - ./server:/app
-      - /app/node_modules
     networks:
       - my-cs-admin
     ports:
-      - 4004:4004
+      - 4000:4000
 
   frontend:
     build:
@@ -27,12 +26,11 @@ services:
     restart: unless-stopped
     volumes:
       - ./client:/app
-      - /app/node_modules
     networks:
       - my-cs-admin
-    command: npm run start
-    depends_on:
-      - api
+    command: npm start
+    ports:
+      - 3000:3000
 
 volumes:
   mongo_data:
