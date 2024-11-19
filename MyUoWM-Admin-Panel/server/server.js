@@ -9,8 +9,10 @@ const userRoutes = require('./routes/user')
 const app = express()
 
 // middleware
-app.use(express.json({ limit: '1mb' }));
-app.use(express.urlencoded({ limit: '1mb', extended: true }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
+
+require('http').maxHeaderSize = 16384; // Increase to 16KB
 
 
 // routes
@@ -18,7 +20,7 @@ app.use('/api/links', linkRoutes)
 app.use('/api/user', userRoutes)
 
 app.use((req, res, next) => {
-  console.log(req.path, req.method)
+  console.log('Headers:', req.headers);
   next()
 })
 
