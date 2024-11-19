@@ -21,7 +21,7 @@ app.use('/api/links', LinkRoutes)
 app.use('/api/user', userRoutes)
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URL)
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
