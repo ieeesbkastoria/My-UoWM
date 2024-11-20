@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const getLinks = async (req, res) => {
   const user_id = req.user._id
 
-  const links = await Link.find({ user_id }).sort({ createdAt: -1 })
+  const links = await Link.find({ }).sort({ createdAt: -1 })
 
   res.status(200).json(links)
 }
