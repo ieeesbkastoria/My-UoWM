@@ -10,11 +10,12 @@ const requireAuth = require('../middleware/requireAuth')
 
 const router = express.Router()
 
-// require auth for all links routes
-router.use(requireAuth)
 
 // GET all links
 router.get('/', getLinks)
+
+// require auth for all links routes
+router.use(requireAuth)
 
 //GET a single link
 router.get('/:id', getLink)

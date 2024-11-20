@@ -3,10 +3,11 @@ const mongoose = require('mongoose')
 
 // get all links
 const getLinks = async (req, res) => {
-  const user_id = req.user._id
-
   const links = await Link.find({ }).sort({ createdAt: -1 })
 
+  if (!links) {
+    return res.status(404).json({ error: 'No Hyperlinks found' })
+  }
   res.status(200).json(links)
 }
 
