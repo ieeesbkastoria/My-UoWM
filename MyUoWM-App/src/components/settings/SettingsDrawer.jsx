@@ -24,7 +24,6 @@ import { Link } from "react-router-dom";
 import { CloseIcon } from "../../assets/icons";
 import i18n from "../../i18n";
 import LanguagePicker from "./LanguagePicker";
-import DepartmentPicker from "./DepartmentPicker";
 import SettingsOption from "./SettingsOption";
 import ThemeToggle from "./ThemeToggle";
 
@@ -77,8 +76,6 @@ export function SettingsDrawer({ isOpen, onClose }) {
                         my={"2rem"}
                     >
                         <LanguagePicker />
-                        <DepartmentPicker onClose={onClose} />
-
                     </Flex>
                     <Box>
                         <FormControl

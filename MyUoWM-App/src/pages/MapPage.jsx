@@ -36,9 +36,7 @@
 
 */
 import React from 'react';
-import { Flex, Box, Text, Button, useColorModeValue } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { useDepName, useMapData } from "../hooks";
+import { Flex, Box, useColorModeValue } from "@chakra-ui/react";
 import i18n from "../i18n";
 
 function MapPage() {
@@ -51,16 +49,10 @@ function MapPage() {
     width: '100%',
   };
 
-  const boxStyle = {
-    backgroundColor: 'white',
-    border: '1px solid #ccc',
-    padding: '20px',
-    marginBottom: '20px',
-    zIndex: 10,
-  };
-
-
-
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div style={containerStyle}>
       <Box
@@ -76,7 +68,7 @@ function MapPage() {
           py="1rem"
           px="0.75rem"
           width="100%"
-          height="10%"
+          height="20%"
         >
           <Flex
             mx="1rem"
@@ -93,7 +85,8 @@ function MapPage() {
         </Box>
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1xjlab_NeXx0zko8xr77Garj0bVh7p-A&ehbc=2E312F&noprof=1" 
       width="80%" 
-      height="900vh"
+      height="100%"
+      title='Map of Kastoria'
       ></iframe>
     </div>
   );

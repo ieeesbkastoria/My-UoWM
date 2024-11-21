@@ -35,12 +35,16 @@
     -Fakidis
 
 */
-
+import React from 'react';
 import { Flex, Box, Text, Button, useColorModeValue } from "@chakra-ui/react";
 import i18n from "../i18n";
 import { TimeIcon, PhoneIcon } from "@chakra-ui/icons";
 import { LIBRARY_OPENING_HOURS, LIBRARY_PHONE_LIST } from "../assets/data/Library";
+
 export default function LibraryPage() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Flex
       w="100vw"

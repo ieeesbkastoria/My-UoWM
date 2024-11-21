@@ -38,45 +38,18 @@
 
 import {
   Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionIcon,
-  AccordionPanel,
   Box,
-  Button,
   Flex,
-  HStack,
-  Icon,
   Image,
-  Stack,
   Text,
-  VStack,
-  useColorModeValue,
   Grid,
 } from "@chakra-ui/react";
 import membersData from "../assets/data/projectMembers";
 import UoWMMembers from "../assets/UoWMMembers";
 import ProjectMembersList from "../components/ProjectMembersList";
 import { motion } from "framer-motion";
-import { SocialIcon } from "react-social-icons";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
 
 function AboutSettingsPage() {
-  const SelectBorderColor = () => {
-    return useColorModeValue("primary", "light");
-  };
-
-  const SelectItemColor = () => {
-    return useColorModeValue("black", "white");
-  };
-
   return (
     <Box
       align="center"
@@ -91,7 +64,7 @@ function AboutSettingsPage() {
         <br />
         <br />
       </Text>
-      <Accordion allowToggle="true" mt="1rem">
+      <Accordion allowMultiple mt="1rem">
         <Flex
           w={{ sm: "90%", md: "75%", lg: "50%" }}
           direction="row"

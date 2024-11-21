@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import ServicesCard from "../components/ServicesCard";
 import i18n from "../i18n";
-
+import React from 'react';
 
 
 function StudentCarePage() {
@@ -14,7 +13,9 @@ function StudentCarePage() {
     // height: '100vh',
     width: '100%',
   };
-
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={containerStyle}>
       <Box
@@ -44,8 +45,6 @@ function StudentCarePage() {
             fontSize={{ base: "md", lg: "2xl" }}
           > 
             {i18n.t("StudentCare")}
-            <br></br>
-            {i18n.t("StudentCare2")}
           </Flex>
       </Box>
       <br></br>

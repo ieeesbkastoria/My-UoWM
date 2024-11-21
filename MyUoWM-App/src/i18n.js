@@ -24,7 +24,6 @@ import elSettingsPage from "./assets/locales/el/settings_page.js";
 import elAboutPage from "./assets/locales/el/about_page.js";
 import elError404 from "./assets/locales/el/error404.js"
 import studentCare from "./assets/locales/el/studentCare.js";
-import services from "./assets/locales/en/services.js";
 
 const resources = {
   en: {
@@ -65,7 +64,7 @@ const resources = {
       graduation_redirection_message:"Redirecting to section",
       graduation_description:"Please select Department from Settings",
       on_weekend:"On Weekend",
-      restaurantPage: "Menu Anouncement & Proggram",
+      restaurantPage: "Menu Announcement & Program",
       StudentPortal: "Student Portal",
        // Student Care
        StudentCare: "Salasidou Despina, Phone: 2467440003, E-mail: dsalasidou@uowm.gr, merimna-kas@uowm.gr",

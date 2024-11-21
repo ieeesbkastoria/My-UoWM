@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-cs-deployment
+  namespace: my-cs
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: my-cs
+  template:
+    metadata:
+      labels:
+        app: my-cs
+      annotations:
+        linkerd.io/inject: enabled
+    spec:
+      containers:
+        - name: my-cs-frontend
+          image: ieeesbkastoria/mycs-uowm:latest
+          ports:
+            - containerPort: 80

@@ -49,7 +49,11 @@ function App() {
   // Load the preferred language from local storage and set it initially
   useEffect(() => {
     const storedLanguage = localStorage.getItem('preferred_language');
-    if (storedLanguage && i18n.options.whitelist.includes(storedLanguage)) {
+    // Set Greek as the default language if no language is stored
+    if (!storedLanguage) {
+      i18n.changeLanguage('el');  // 'el' is the code for Greek
+      localStorage.setItem('preferred_language', 'el'); // Optionally store the default language in localStorage
+    } else if (i18n.options.whitelist.includes(storedLanguage)) {
       i18n.changeLanguage(storedLanguage);
     }
   }, []);

@@ -46,10 +46,4 @@ export const AnnouncementsData = [
     link: "https://cs.uowm.gr/category/announcements/",
 
   },
-  {
-    code: DEPARTMENT_CODES.Math,
-    link: "https://math.uowm.gr/",
-  },
-
-
 ]

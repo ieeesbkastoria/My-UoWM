@@ -46,5 +46,4 @@ export const DEPARTMENTS = [
     code: DEPARTMENT_CODES.INFORMATICS,
     name: i18n.t("cs_department"),
   }
-  // CS & Math for now
 ];

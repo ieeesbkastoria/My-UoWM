@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-cs-balancer
+  namespace: my-cs
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-cs
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      name: http

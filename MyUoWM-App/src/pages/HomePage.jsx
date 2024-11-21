@@ -61,7 +61,7 @@ function filterOutHiddenPages(categories) {
 }
 
 export default function HomePage() {
-  const [categoriesListForSearch, setCategoriesListForSearch] =
+  const [categoriesListForSearch,] =
     useState(Categories);
   const categoriesSorted = sortToPlaceInDefinedOrder(Categories);
   const categoriesSortedAndWithoutHiddenPages =

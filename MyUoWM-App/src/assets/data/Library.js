@@ -20,5 +20,5 @@ export const LIBRARY_OPENING_HOURS = {
 export const LIBRARY_PHONE_LIST = [
     "Μπούρτσος Αθανάσιος, Βιβλιοθηκονόμος, email: abourtsos@uowm.gr", 
     "Κωνσταντίνου Βάγια, Βιβλιοθηκονόμος, email: vkonstantinou@uowm.gr",
-    "Τηλέφωνο: 2467440000"
+    "Τηλέφωνο: 2467440006"
 ];

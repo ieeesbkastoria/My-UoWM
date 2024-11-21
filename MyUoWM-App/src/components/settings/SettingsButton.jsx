@@ -49,7 +49,7 @@ export default function MenuButton() {
     window.addEventListener("popstate", () => {
       onClose();
     });
-  }, []);
+  }, );
 
   const handleClick = () => {
     window.history.pushState(null, "", "/");

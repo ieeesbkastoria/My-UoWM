@@ -1,6 +1,5 @@
 import { Flex, Box, Text, Button, useColorModeValue, Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 import i18n from "../i18n";
-import MealIcon from "../assets/icons/MealIcon";
 
 export default function RestaurantUniversity() {
   return (
