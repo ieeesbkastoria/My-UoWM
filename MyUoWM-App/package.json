@@ -12,11 +12,13 @@
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^6.5.1",
     "i18next": "^22.4.14",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.2.0",
     "react-icons": "^4.4.0",
     "react-img-mapper": "^1.5.1",
+    "react-leaflet": "^3.2.5",
     "react-markdown": "^8.0.7",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -31,11 +33,9 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\""
   },
-
   "engines": {
     "node": ">=14.21.3"
   },
-  
   "eslintConfig": {
     "extends": [
       "react-app",
