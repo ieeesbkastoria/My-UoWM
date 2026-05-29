@@ -76,13 +76,6 @@ export default function RestaurantUniversity() {
               >
                 {t("today")}: {dayLabel}
               </Text>
-              <Text
-                fontSize={{ base: "md", lg: "lg" }}
-                fontWeight="semibold"
-                mt="0.25rem"
-              >
-                {t("extra")}: {todayMenu.extra[lang].join(", ")}
-              </Text>
             </Box>
           </Flex>
         </Box>
@@ -149,8 +142,13 @@ export default function RestaurantUniversity() {
             <Text mt="0.5rem">
               <b>{t("firstCourse")}:</b> {todayMenu.lunch.first[lang].join(", ")}
             </Text>
+            <Text mt="0.25rem" whiteSpace="pre-line">
+              <b>{t("mainCourse")}:</b>
+              {"\n"}
+              {todayMenu.lunch.main[lang].join(",\n")}
+            </Text>
             <Text mt="0.25rem">
-              <b>{t("mainCourse")}:</b> {todayMenu.lunch.main[lang].join(", ")}
+              <b>{t("extra")}:</b> {todayMenu.lunchExtra[lang].join(", ")}
             </Text>
           </Flex>
         </Box>
@@ -180,8 +178,13 @@ export default function RestaurantUniversity() {
             <Text mt="0.5rem">
               <b>{t("firstCourse")}:</b> {todayMenu.dinner.first[lang].join(", ")}
             </Text>
+            <Text mt="0.25rem" whiteSpace="pre-line">
+              <b>{t("mainCourse")}:</b>
+              {"\n"}
+              {todayMenu.dinner.main[lang].join(",\n")}
+            </Text>
             <Text mt="0.25rem">
-              <b>{t("mainCourse")}:</b> {todayMenu.dinner.main[lang].join(", ")}
+              <b>{t("extra")}:</b> {todayMenu.dinnerExtra[lang].join(", ")}
             </Text>
           </Flex>
         </Box>
